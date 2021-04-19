@@ -1,0 +1,166 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import "~bootstrap/dist/css/bootstrap.css"; */
+
+
+/* extra Small devices (landscape phones, 576px and up) */
+@media only screen (min-width: 280px) {
+  .main-container {
+      min-height: 100vh;
+      background-color: white;
+  }
+
+  notification-list {
+      max-height: 80vh;
+      overflow-y: auto;
+
+      padding: 10px 30px;
+  }
+}
+
+/*  Small devices (landscape phones, 576px and up) */
+@media (min-width: 400px) {
+  .main-container {
+      min-height: 100vh;
+  }
+
+  .notification-list {
+      max-height: 80vh;
+      overflow-y: auto;
+
+      padding: 10px 30px;
+  }
+}
+
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .main-container {
+      min-height: 100vh;
+  }
+  .notification-list fa-bookmark {
+    cursor:pointer;
+  }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .main-container {
+      min-height: 100vh;
+  }
+  .notification-list {
+      max-height: 80vh;
+      overflow-y: auto;
+      width: 35vw;
+      padding: 10px 30px;
+  }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .main-container {
+      min-height: 100vh;
+      background-color: white;
+      margin-top: 5vh;
+  }
+
+  .navbar {
+      padding: 10px 200px !important;
+      width: auto;
+      min-height: 12vh;
+  }
+  .notification-list {
+      max-height: 80vh;
+      overflow-y: auto;
+      width: 35vw;
+      padding: 10px 30px;
+  }
+}
+
+
+.site-bg{
+  background-color: #003018;
+}
+
+.site-cl{
+  color: #003018;
+}
+
+.site-bg-img {
+background-image: url('./assets/images/green.jpg');
+background-size: 100% 100%;
+}
+
+.navbar .nav-link{
+  color: white;
+}
+.navbar-brand{
+  color: white;
+  font-size: 25px !important;
+}
+.navbar .nav-link:hover{
+  text-decoration: underline;
+
+}
+
+
+
+
+
+.nav-item i{
+  font-size: 23px;
+}
+.notification-count {
+  margin: 0px -8px;
+  margin-bottom: 28px;
+  padding: 4px 8px;
+  padding-bottom: 8px;
+  background-color: crimson;
+  min-width: 26px !important;
+  border-radius: 36%;
+  font-size: 12px;
+}
+
+#style-15::-webkit-scrollbar-track
+{
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+background-color: #F5F5F5;
+border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar
+{
+width: 6px;
+background-color: #F5F5F5;
+  cursor: pointer;
+}
+
+/* .scrollbar::-webkit-scrollbar-thumb
+{
+  cursor: pointer;
+border-radius: 10px;
+background-color: #FFF;
+background-image: -webkit-gradient(linear,
+                   40% 0%,
+                   75% 84%,
+                   from(#4D9C41),
+                   to(#19911D),
+                   color-stop(.6,#54DE5D))
+} */
+
+.navbar-toggler{
+  margin-top: 8px;
+}
+
+i.fas {
+  cursor: pointer;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+
+.unread {
+  background: #F0F0F0;
+}

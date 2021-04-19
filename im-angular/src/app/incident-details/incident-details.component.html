@@ -1,0 +1,197 @@
+<div class="container main-container">
+  <!-- Page Title-->
+  <div class="row">
+    <div class="col col-sm-12">
+      <h3 class="site-cl">Incident Details</h3>
+    </div>
+  </div>
+  <br> <br>
+  <!-- Title-->
+  <div class="row section">
+    <div class="col-md-8 col-sm-12">
+      <h4 class="text-primary"> Title will go here  <i class="fas fa-edit text-primary"></i></h4>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <p class="text-muted timstamp">Created by Umar 5 hours ago </p>
+    </div>
+  </div>
+
+   <!-- Fields and updates-->
+  <div class="row section">
+    <div class=" col-md-6  col-sm-12" >
+      <h6 class="text-primary">Description : <i class="fas fa-edit text-primary"></i></h6>
+      <div class="field scrollbar">
+        <p class="text-muted">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quibusdam maiores totam, saepe ipsa necessitatibus
+          magni! Molestias beatae, asperiores, tempore maiores odio sunt sit quasi veritatis architecto incidunt at ipsum.
+        </p>
+      </div>
+      <div class="">
+        <textarea id="description " class="scrollbar" oninput="auto_grow(this)">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quibusdam maiores totam, saepe ipsa necessitatibus magni! Molestias beatae, asperiores, tempore maiores odio sunt sit quasi veritatis architecto incidunt at ipsum.
+         </textarea>
+         <div class="w-100 text-right fields-update-icon">
+          <i class="fas fa-times-circle text-warning" title="Cancel"></i>
+          <i class="fas fa-check text-success" title="Save"></i>
+         </div>
+
+      </div>
+
+      <h6 class="text-primary">Additional Details : <i class="fas fa-edit text-primary"></i></h6>
+      <div class="field scrollbar">
+        <p class="text-muted  ">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quibusdam maiores totam, saepe ipsa necessitatibus
+          magni! Molestias beatae, asperiores, tempore maiores odio sunt sit quasi veritatis architecto incidunt at ipsum.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quibusdam maiores totam, saepe ipsa necessitatibus
+          magni! Molestias beatae, asperiores, tempore maiores odio sunt sit quasi veritatis architecto incidunt at ipsum.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quibusdam maiores totam, saepe ipsa necessitatibus
+          magni! Molestias beatae, asperiores, tempore maiores odio sunt sit quasi veritatis architecto incidunt at ipsum.
+        </p>
+      </div>
+      <div class="">
+        <textarea class="scrollbar" oninput="auto_grow(this)">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quibusdam maiores totam, saepe ipsa necessitatibus magni! Molestias beatae, asperiores, tempore maiores odio sunt sit quasi veritatis architecto incidunt at ipsum.
+          </textarea>
+          <div class="w-100 text-right fields-update-icon">
+            <i class="fas fa-times-circle text-warning" title="Cancel"></i>
+            <i class="fas fa-check text-success" title="Save"></i>
+           </div>
+      </div>
+
+      <h6 class="text-primary"> Attachments:</h6>
+        <table class="table">
+          <tr>
+            <td><i class="fas fa-times-circle  text-danger"></i>File 1</td>
+            <td><i class="fas fa-times-circle  text-danger"></i>File 2</td>
+
+          </tr>
+          <tr>
+            <td><i class="fas fa-times-circle  text-danger"></i>File 4</td>
+            <td><i class="fas fa-times-circle  text-danger"></i>File 5</td>
+
+          </tr>
+          <tr>
+            <td><i class="fas fa-times-circle  text-danger"></i>File 7</td>
+            <td><i class="fas fa-times-circle  text-danger"></i>File 8</td>
+
+          </tr>
+        </table>
+
+    </div>
+
+    <div class=" col-md-5 offset-md-1 col-sm-12">
+      <table class="table update-section">
+        <tr>
+          <td ><h6 class="text-primary">Status</h6></td>
+          <td>
+            <select class="browser-default  dropdown-custom">
+              <option selected>In Progress</option>
+              <option value="1">New</option>
+              <option value="2">Closed</option>
+              <option value="3">Approved</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><h6 class="text-primary">Assignee</h6></td>
+            <td>
+              <!-- Example single danger button -->
+                <div class="btn-group">
+                  <input type="text" value="Umar Shareef" class="dropdown-toggle dropdown-custom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+
+                  <div class="dropdown-menu justify-content-center">
+                    <div class="dropdown-item">
+                    <input type="text" placeholder="Search" class="input-text"  />
+                    </div>
+
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                  </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+          <td><h6 class="text-primary">Start Date</h6></td>
+          <td>3 days ago</td>
+        </tr>
+        <tr>
+          <td><h6 class="text-primary">Due Date</h6></td>
+          <td>In 2 weeks</td>
+        </tr>
+
+      </table>
+
+    </div>
+  </div>
+
+
+   <!-- Comments-->
+  <div class="row section">
+    <div class=" col-md-8 col-sm-12">
+
+      <h4>Comments</h4>
+  <br>
+      <div class="commentBox">
+
+        <div class="commentHeader d-flex">
+          <div class="w-75"><a class="text-primary">Umar Shareef</a> added a comment. - 7 days ago </div>
+          <div class="w-25 d-flex justify-content-end">
+            <i class="fas fa-edit text-primary"></i>
+            <i class="fas fa-times-circle text-danger" title="Cancel"></i>
+          </div>
+        </div>
+        <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores tempora quibusdam
+          cum iure alias fugiat. Qui ipsum labore fuga recusandae quo est aliquid sunt repellendus soluta odio,
+          consequatur inventore animi!
+        </p>
+        <div class="">
+          <textarea class="scrollbar">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quibusdam maiores totam, saepe ipsa necessitatibus magni! Molestias beatae, asperiores, tempore maiores odio sunt sit quasi veritatis architecto incidunt at ipsum.
+                              </textarea>
+          <div class="w-100 text-right fields-update-icon">
+            <i class="fas fa-times-circle text-warning" title="Cancel"></i>
+            <i class="fas fa-check text-success" title="Save"></i>
+          </div>
+        </div>
+
+        <ul class="commentFiles">
+          <li> <a class="center Indigo-text darken-4"><i class="fas fa-times-circle text-danger" title="Cancel"></i>File 1</a> </li>
+          <li> <a class="center Indigo-text darken-4">File 2</a> </li>
+          <li> <a class="center Indigo-text darken-4">File 3</a> </li>
+        </ul>
+
+        <hr>
+      </div>
+
+
+
+      <h5>Add Comment</h5>
+      <div class="input-field">
+        <textarea id="comment" placeholder="Type a comment here" oninput="auto_grow(this)" class=""></textarea>
+      </div>
+      <div class="file-field ">
+
+      </div>
+
+      <div class="comment-buttons text-center ">
+        <button class="btn  text-white bg-success">
+          <span>Add</span>
+          <i class="fas fa-check "></i>
+
+        </button>
+
+        <button class="btn bg-warning text-white">
+          <span>Cancel</span>
+          <i class="fas fa-times-circle  text-white"></i>
+
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+
+</div><!-- end of container-->

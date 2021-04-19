@@ -1,0 +1,54 @@
+
+ /* extra Small devices (landscape phones, 576px and up) */
+ @media (min-width: 279px) {
+  .login-container{
+      margin-top: 0vh;
+      height: 100vh;
+  }
+
+}
+
+/*  Small devices (landscape phones, 576px and up) */
+@media (min-width: 400px) {
+  .login-container{
+      margin-top: 0vh;
+      height: 100vh;
+  }
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .login-container{
+      margin-top: 0vh;
+      width: 60% !important;
+      height: 100vh;
+  }
+
+
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .login-container{
+      margin-top: 15vh;
+      height: 70vh;
+      width: 60% !important;
+  }
+
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .login-container{
+      margin-top: 15vh;
+      height: 70vh;
+      width: 30% !important;
+  }
+
+}
+
+.login-container{
+  background-color: white;
+  padding: 80px;
+}
