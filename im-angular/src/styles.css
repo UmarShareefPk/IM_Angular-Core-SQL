@@ -135,7 +135,7 @@ background-color: #F5F5F5;
   cursor: pointer;
 }
 
-/* .scrollbar::-webkit-scrollbar-thumb
+.scrollbar::-webkit-scrollbar-thumb
 {
   cursor: pointer;
 border-radius: 10px;
@@ -146,7 +146,7 @@ background-image: -webkit-gradient(linear,
                    from(#4D9C41),
                    to(#19911D),
                    color-stop(.6,#54DE5D))
-} */
+}
 
 .navbar-toggler{
   margin-top: 8px;

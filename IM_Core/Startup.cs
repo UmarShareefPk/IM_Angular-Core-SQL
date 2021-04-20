@@ -46,7 +46,7 @@ namespace IM_Core
                 {
                     policy.AllowAnyHeader()
                         .AllowAnyMethod()
-                        .WithOrigins("https://localhost:44338", "http://localhost:3000", "http://localhost:44200")
+                        .WithOrigins("https://localhost:44338", "http://localhost:3000", "http://localhost:4200")
                         .AllowCredentials();
                 });
             });

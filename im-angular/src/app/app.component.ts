@@ -1,7 +1,8 @@
-import { DOCUMENT , Location } from '@angular/common';
+import { DOCUMENT  } from '@angular/common';
 import { Inject } from '@angular/core';
 import { Component, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,19 +10,22 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+
+isloggedIn:boolean = false;
   constructor(
     @Inject(DOCUMENT) document: any,
     private r: Renderer2,
     private route: ActivatedRoute,
     private router: Router,
-    private location: Location
+    private auth: AuthService
   ) {
 
   }
 
   ngOnInit(): void {
 
-  }
+    this.auth.userLoggedInObs.
+    subscribe(m=> this.isloggedIn = m);
 
-  title = 'im-angular';
+  }
 }

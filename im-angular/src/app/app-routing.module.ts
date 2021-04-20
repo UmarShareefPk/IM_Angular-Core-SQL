@@ -21,7 +21,7 @@ import { LoginComponent } from './login/login.component';
 // ];
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/incidents', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'incidents', component: IncidentListingComponent },
   { path: 'incidentDetails/:id',   component: IncidentDetailsComponent }

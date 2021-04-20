@@ -3,5 +3,5 @@
 	<a routerLink="/incidents" routerLinkActive="active">Incidents</a>
   <a routerLink="/incidentDetails/1" routerLinkActive="active">incident Details</a>
 </nav> -->
-<app-navbar></app-navbar>
+<app-navbar *ngIf="isloggedIn" ></app-navbar>
 <router-outlet></router-outlet>
