@@ -164,3 +164,7 @@ i.fas {
 .unread {
   background: #F0F0F0;
 }
+
+.fields-update-icon i{
+  margin-left: 5px;
+}
