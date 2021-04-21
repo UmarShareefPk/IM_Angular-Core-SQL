@@ -24,8 +24,7 @@ isloggedIn:boolean = false;
 
   ngOnInit(): void {
 
-    this.auth.userLoggedInObs.
-    subscribe(m=> this.isloggedIn = m);
+    this.auth.userLoggedInObs.subscribe((m) => (this.isloggedIn = m));// know as soon as login state is changed
 
   }
 }

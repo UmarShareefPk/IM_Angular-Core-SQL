@@ -14,6 +14,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HttpInterceptorService } from './http-interceptor.service';
 import { HttpErrorInterceptorService } from './http-error-interceptor.service';
+import { PaginationComponent } from './pagination/pagination.component';
+import { Apis } from './config';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { HttpErrorInterceptorService } from './http-error-interceptor.service';
     NavbarComponent,
     LoginComponent,
     IncidentListingComponent,
-    IncidentDetailsComponent
+    IncidentDetailsComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { HttpErrorInterceptorService } from './http-error-interceptor.service';
     AuthService,
     UserService,
     IncidentService,
+    Apis,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpInterceptorService,

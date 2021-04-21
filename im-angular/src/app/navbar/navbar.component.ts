@@ -12,6 +12,12 @@ export class NavbarComponent implements OnInit {
   constructor( private auth: AuthService, private router:Router) { }
 
   ngOnInit(): void {
+    // know as soon as login state is changed
+    // this.auth.userLoggedInObs.subscribe((m) => {
+    //  if(!m) //is not login
+    //   this.router.navigate(["/login"]);
+
+    // });
   }
 
   logoutClick(){
