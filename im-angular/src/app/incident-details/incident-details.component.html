@@ -9,7 +9,7 @@
   <!-- Title-->
   <div class="row section">
     <div class="col-md-8 col-sm-12">
-      <h4 class="text-primary"> Title will go here  <i class="fas fa-edit text-primary"></i></h4>
+      <h4 class="text-primary"> {{incident.Title}} <i class="fas fa-edit text-primary"></i></h4>
     </div>
     <div class="col-md-4 col-sm-12">
       <p class="text-muted timstamp">Created by Umar 5 hours ago </p>
@@ -22,13 +22,12 @@
       <h6 class="text-primary">Description : <i class="fas fa-edit text-primary"></i></h6>
       <div class="field scrollbar">
         <p class="text-muted">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quibusdam maiores totam, saepe ipsa necessitatibus
-          magni! Molestias beatae, asperiores, tempore maiores odio sunt sit quasi veritatis architecto incidunt at ipsum.
+          {{incident.Description}}
         </p>
       </div>
       <div class="">
         <textarea id="description " class="scrollbar" (input)="auto_grow($event)">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quibusdam maiores totam, saepe ipsa necessitatibus magni! Molestias beatae, asperiores, tempore maiores odio sunt sit quasi veritatis architecto incidunt at ipsum.
+          {{incident.Description}}
          </textarea>
          <div class="w-100 text-right fields-update-icon">
           <i class="fas fa-times-circle text-warning" title="Cancel"></i>
@@ -40,14 +39,12 @@
       <h6 class="text-primary">Additional Details : <i class="fas fa-edit text-primary"></i></h6>
       <div class="field scrollbar">
         <p class="text-muted  ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quibusdam maiores totam, saepe ipsa necessitatibus
-          magni! Molestias beatae, asperiores, tempore maiores odio sunt sit quasi veritatis architecto incidunt at ipsum.
-           sit quasi veritatis architecto incidunt at ipsum.
+          {{incident.AdditionalData}}
         </p>
       </div>
       <div class="">
         <textarea class="scrollbar" (input)="auto_grow($event)">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quibusdam maiores totam, saepe ipsa necessitatibus magni! Molestias beatae, asperiores, tempore maiores odio sunt sit quasi veritatis architecto incidunt at ipsum.
+          {{incident.AdditionalData}}
           </textarea>
           <div class="w-100 text-right fields-update-icon">
             <i class="fas fa-times-circle text-warning" title="Cancel"></i>
@@ -57,15 +54,10 @@
 
       <h6 class="text-primary"> Attachments:</h6>
         <table class="table">
-          <tr>
-            <td><i class="fas fa-times-circle  text-danger"></i>File 1</td>
+          <tr *ngFor="let file of incident.Attachments">
+            <td><i class="fas fa-times-circle  text-danger"></i>{{file.FileName}}</td>
           </tr>
-          <tr>
-            <td><i class="fas fa-times-circle  text-danger"></i>File 4</td>
-          </tr>
-          <tr>
-            <td><i class="fas fa-times-circle  text-danger"></i>File 7</td>
-          </tr>
+
         </table>
 
     </div>

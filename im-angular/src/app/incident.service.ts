@@ -19,11 +19,19 @@ export class IncidentService {
     url = url + "&SortDirection=" + (sortDir? sortDir : "asc");
     url = url + "&Search=" + search;
 
-    return this.http.get(url).pipe(map(m=>{
+    return this.http.get(url).pipe(
+      map((m) => {
+        return m;
+      })
+    );
+  }
 
-      return m;
-    }))
-
+  getIncidentById(id:string){
+    let url = this.api.getIncidentByIdUrl + id;
+    return this.http.get(url).pipe(
+      map((m) => {
+        return m;
+      }));
   }
 
 

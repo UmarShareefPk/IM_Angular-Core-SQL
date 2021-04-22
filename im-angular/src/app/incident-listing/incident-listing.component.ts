@@ -77,8 +77,7 @@ search:string = "";
   }
 
   titleClick(id: string) {
-    alert(id);
-    //this.router.navigate(['/incidentDetails', id]);
+    this.router.navigate(['/incidentDetails', id]);
   }
 
 }

@@ -54,4 +54,15 @@ table td a {
    outline:none;
 }
 
+table tr td.title{
+  cursor: pointer !important;
+
+}
+
+
+
+table tr td.title:hover{
+  cursor: pointer !important;
+  text-decoration: underline !important;
+}
 

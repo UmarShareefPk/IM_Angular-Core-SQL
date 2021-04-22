@@ -25,4 +25,12 @@ export class NavbarComponent implements OnInit {
     this.auth.logout();
   }
 
+  manuChanged(target:string, event:any){
+    event.preventDefault();
+    if(target=="incidents")
+     this.router.navigate(['/incidents']);
+    else if(target=="usertListing")
+     this.router.navigate(['/users']);
+  }
+
 }
