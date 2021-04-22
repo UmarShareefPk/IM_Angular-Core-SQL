@@ -10,11 +10,11 @@ export class HttpInterceptorService implements HttpInterceptor{
 
   intercept(req:any, next:any){
   //  return next.handle(req);
-    console.log('intercept ' + req.url);
+   // console.log('intercept ' + req.url);
     if((<string>req.url).indexOf('authenticate') > 0){
       return next.handle(req);
     }
-
+   // console.log("token needed");
     let token = localStorage.getItem('token');
 
     if(token){

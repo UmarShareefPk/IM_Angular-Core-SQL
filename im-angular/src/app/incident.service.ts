@@ -11,16 +11,16 @@ export class IncidentService {
   constructor(private http:HttpClient, private api:Apis) {
   }
 
-  getIncidentsWithPage(pageSize:Number, pageNumber:Number, sortBy:string, sortDir:string):any {
+  getIncidentsWithPage(pageSize:Number, pageNumber:Number, sortBy:string, sortDir:string, search:string):any {
     let url =  this.api.incidentsWithPageUrl;
     url = url + "PageSize=" + pageSize;
     url = url + "&PageNumber=" + pageNumber;
     url = url + "&SortBy=" + (sortBy? sortBy : "test");
     url = url + "&SortDirection=" + (sortDir? sortDir : "asc");
-    url = url + "&Search=" + "";
-    console.log("URL : ", url);
+    url = url + "&Search=" + search;
+
     return this.http.get(url).pipe(map(m=>{
-      console.log(m);
+
       return m;
     }))
 

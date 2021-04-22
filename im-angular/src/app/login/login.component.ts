@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     @Inject(DOCUMENT) document: any,
     private r: Renderer2,
-    private auth: AuthService
+    private auth: AuthService,
+    private userService:UserService
   ) {}
 
   ngOnInit(): void {
@@ -32,6 +34,7 @@ export class LoginComponent implements OnInit {
         if (m) {
           this.r.removeClass(document.body, 'site-bg-img');
           this.router.navigate(['/incidents']);
+          this.userService.getAllUsers().subscribe(m=> localStorage.setItem("allUsers", JSON.stringify(m)));
         } else {
           this.error = 'Incorrect username or password.';
         }

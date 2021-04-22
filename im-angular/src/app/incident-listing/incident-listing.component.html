@@ -26,89 +26,24 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><a (click)="titleClick('umar')">First incident </a></td>
-            <td class="description text-muted"
-              title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque perferendis ipsum repudiandae nulla sequi culpa! Sint nulla fugit quidem tenetur magni corrupti expedita magnam vitae, at totam voluptatum iusto aliquam.">
-              Lorem ipsum dolor...</td>
-            <td>Umar Shareef</td>
-            <td>Yasir Rasheed</td>
-            <td>12/9/2020</td>
-            <td>12/31/2020</td>
-            <td>Open</td>
-          </tr>
-          <tr>
-            <td>2nd incident</td>
-            <td class="description"
-              title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque perferendis ipsum repudiandae nulla sequi culpa! Sint nulla fugit quidem tenetur magni corrupti expedita magnam vitae, at totam voluptatum iusto aliquam.">
-              Lorem ipsum dolor...</td>
-            <td>Nawaz Shareef</td>
-            <td>Khan Rasheed</td>
-            <td>11/9/2020</td>
-            <td>12/31/2020</td>
-            <td>New</td>
-          </tr>
-          <tr>
-            <td>Third incident</td>
-            <td class="description"
-              title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque perferendis ipsum repudiandae nulla sequi culpa! Sint nulla fugit quidem tenetur magni corrupti expedita magnam vitae, at totam voluptatum iusto aliquam.">
-              Lorem ipsum dolor...</td>
-            <td>Shahbaz Shareef</td>
-            <td>Imran Khan</td>
-            <td>10/9/2020</td>
-            <td>12/15/2020</td>
-            <td>In Progress</td>
-          </tr>
-          <tr>
-            <td>Third incident</td>
-            <td class="description"
-              title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque perferendis ipsum repudiandae nulla sequi culpa! Sint nulla fugit quidem tenetur magni corrupti expedita magnam vitae, at totam voluptatum iusto aliquam.">
-              Lorem ipsum dolor...</td>
-            <td>Shahbaz Shareef</td>
-            <td>Imran Khan</td>
-            <td>10/9/2020</td>
-            <td>12/15/2020</td>
-            <td>In Progress</td>
-          </tr>
-          <tr>
-            <td>Third incident</td>
-            <td class="description"
-              title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque perferendis ipsum repudiandae nulla sequi culpa! Sint nulla fugit quidem tenetur magni corrupti expedita magnam vitae, at totam voluptatum iusto aliquam.">
-              Lorem ipsum dolor...</td>
-            <td>Shahbaz Shareef</td>
-            <td>Imran Khan</td>
-            <td>10/9/2020</td>
-            <td>12/15/2020</td>
-            <td>In Progress</td>
-          </tr>
-          <tr>
-            <td>Third incident</td>
-            <td class="description"
-              title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque perferendis ipsum repudiandae nulla sequi culpa! Sint nulla fugit quidem tenetur magni corrupti expedita magnam vitae, at totam voluptatum iusto aliquam.">
-              Lorem ipsum dolor...</td>
-            <td>Shahbaz Shareef</td>
-            <td>Imran Khan</td>
-            <td>10/9/2020</td>
-            <td>12/15/2020</td>
-            <td>In Progress</td>
-          </tr>
-          <tr>
-            <td>Third incident</td>
-            <td class="description"
-              title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque perferendis ipsum repudiandae nulla sequi culpa! Sint nulla fugit quidem tenetur magni corrupti expedita magnam vitae, at totam voluptatum iusto aliquam.">
-              Lorem ipsum dolor...</td>
-            <td>Shahbaz Shareef</td>
-            <td>Imran Khan</td>
-            <td>10/9/2020</td>
-            <td>12/15/2020</td>
-            <td>In Progress</td>
-          </tr>
+          <tr *ngFor="let incident of incidents">
 
+            <td class="text-nowrap"><a title="{{incident.Title}}" (click)="titleClick(incident.Id)">{{(incident.Title.length > 15 ? incident.Title.slice(0, 15) + "..." : incident.Title)}}</a></td>
+            <td class="description text-muted text-nowrap w-25"
+              title="{{incident.Description}}">
+              {{incident.Description.slice(0,30)}}...</td>
+            <td>{{getUserNameById(incident.AssignedTo)}}</td>
+            <td>{{getUserNameById(incident.CreatedBy)}}</td>
+            <td><span title= '{{getMoment(incident.CreatedAT).format("MMMM DD YYYY, h:mm:ss a")}}'>{{getMoment(incident.CreatedAT).fromNow() }} </span></td>
+            <td><span title= '{{getMoment(incident.DueDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{getMoment(incident.DueDate).fromNow() }} </span></td>
+            <td>{{statusName(incident.Status)}}</td>
 
+          </tr>
         </tbody>
       </table>
     </div>
-  <app-pagination></app-pagination>
+
+  <app-pagination [totalRecords]="totalRecords"  (pageNumberChanged)="pageNumberChanged($event)" ></app-pagination>
 
 
 
