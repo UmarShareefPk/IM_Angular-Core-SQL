@@ -1,20 +1,22 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, NgZone, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { IncidentService } from '../incident.service';
 import * as moment from 'moment';
 import { Moment } from 'moment';
 import { CommonService } from '../common.service';
-import { takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import { map, takeUntil } from 'rxjs/operators';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-incident-listing',
   templateUrl: './incident-listing.component.html',
   styleUrls: ['./incident-listing.component.css'],
 })
-export class IncidentListingComponent implements OnInit, OnDestroy  {
+export class IncidentListingComponent implements OnInit  {
 
-protected ngUnsubscribe: Subject<void> = new Subject<void>();
+request: any; // to cancel previous requests
+status:string = "loading"; //loading, error, noData
+
 pageSize:number = 5;
 pageNumber:number = 1;
 totalRecords:number = 0;
@@ -27,23 +29,32 @@ search:string = "";
     public commonService:CommonService
   ) {}
 
+
   ngOnInit(): void {
     this.loadIncidents();
   }
-  public ngOnDestroy(): void {
-    this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
-}
 
   loadIncidents(){
-    this.incidentService.getIncidentsWithPage(this.pageSize, this.pageNumber, '', '', this.search)
-    .pipe( takeUntil(this.ngUnsubscribe) )
+    if(this.request)
+       this.request.unsubscribe();
+    this.incidents = [];
+    this.status = "Loading";
+
+
+    this.request =  this.incidentService.getIncidentsWithPage(this.pageSize, this.pageNumber, '', '', this.search)
+    .pipe(map(m => {this.status = ""; return m}))
     .subscribe(
       (m: any) => {
         this.incidents = m.Incidents;
         this.totalRecords = m.Total_Incidents;
+        if(this.totalRecords === 0)
+          this.status = "noData";
+        else
+          this.status = "";
       },
-      (error: any) => console.log('error', error)
+      (error: any) => {
+        this.status="error";
+      }
     );
   }
 
