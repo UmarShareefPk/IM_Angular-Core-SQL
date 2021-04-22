@@ -32,13 +32,14 @@ export class PaginationComponent implements OnInit, OnChanges {
   }
 
   setInformation(){
-
-    let start = 1;
+    let start = 0;
     let end = 0;
     end = this.pageSize * this.pageNumber;
-    start = end - this.pageSize + 1;
+    start = end - this.pageSize + 1 ;
     if(end > this.totalRecords)
       end = this.totalRecords;
+    if(start > this.totalRecords)
+      start = this.totalRecords;
     this.information = `Showin from ${start} to ${end} of ${this.totalRecords} records`;
   }
 

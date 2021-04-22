@@ -34,7 +34,7 @@
         </thead>
         <tbody>
           <tr>
-            <td colspan="7" *ngIf="status==='Loading'" > <h3 class="text-center text-primary">Loading...</h3> </td>
+            <td colspan="7" *ngIf="status==='loading'" > <h3 class="text-center text-primary">Loading...</h3> </td>
             <td colspan="7" *ngIf="status==='noData'" > <h3 class="text-center text-warning">No Incident with this criteria.</h3> </td>
             <td colspan="7" *ngIf="status==='error'" > <h3 class="text-center text-danger">An Error has occured. Try logging in again.</h3> </td>
         </tr>
@@ -54,8 +54,8 @@
       </table>
     </div>
 
-  <app-pagination [totalRecords]="totalRecords" [pageNumber]="pageNumber"
-  (pageNumberChanged)="pageNumberChanged($event)"  (pageSizeChanged)="pageSizeChanged($event)">
+  <app-pagination *ngIf="status==='' || status == 'loading'" [totalRecords]="totalRecords" [pageNumber]="pageNumber"
+    (pageNumberChanged)="pageNumberChanged($event)" (pageSizeChanged)="pageSizeChanged($event)">
   </app-pagination>
 
 
