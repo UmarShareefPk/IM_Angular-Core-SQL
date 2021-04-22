@@ -9,6 +9,13 @@
     </div>
   </div>
 
+  <div class="row search-bar">
+    <div class="col-sm-12">
+        <span class="text-muted" > Search : </span>
+        <input type="text" class="txt w-50 text-muted" (input)="searchChanged($event)"  placeholder="Type title or description" />
+    </div>
+</div>
+
  <!-- Listing-->
 <div class="row">
   <div class="col col-sm-12">
@@ -32,18 +39,20 @@
             <td class="description text-muted text-nowrap w-25"
               title="{{incident.Description}}">
               {{incident.Description.slice(0,30)}}...</td>
-            <td>{{getUserNameById(incident.AssignedTo)}}</td>
-            <td>{{getUserNameById(incident.CreatedBy)}}</td>
-            <td><span title= '{{getMoment(incident.CreatedAT).format("MMMM DD YYYY, h:mm:ss a")}}'>{{getMoment(incident.CreatedAT).fromNow() }} </span></td>
-            <td><span title= '{{getMoment(incident.DueDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{getMoment(incident.DueDate).fromNow() }} </span></td>
-            <td>{{statusName(incident.Status)}}</td>
+            <td>{{commonService.getUserNameById(incident.AssignedTo)}}</td>
+            <td>{{commonService.getUserNameById(incident.CreatedBy)}}</td>
+            <td><span title= '{{commonService.getMoment(incident.CreatedAT).format("MMMM DD YYYY, h:mm:ss a")}}'>{{commonService.getMoment(incident.CreatedAT).fromNow() }} </span></td>
+            <td><span title= '{{commonService.getMoment(incident.DueDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{commonService.getMoment(incident.DueDate).fromNow() }} </span></td>
+            <td>{{commonService.statusName(incident.Status)}}</td>
 
           </tr>
         </tbody>
       </table>
     </div>
 
-  <app-pagination [totalRecords]="totalRecords"  (pageNumberChanged)="pageNumberChanged($event)" ></app-pagination>
+  <app-pagination [totalRecords]="totalRecords" [pageNumber]="pageNumber"
+  (pageNumberChanged)="pageNumberChanged($event)"  (pageSizeChanged)="pageSizeChanged($event)">
+  </app-pagination>
 
 
 

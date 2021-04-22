@@ -262,7 +262,7 @@ namespace IM_Core.ApiControllers
         [Authorize]
         public IncidentsWithPage GetIncidentsWithPage(int PageSize, int PageNumber, string SortBy, string SortDirection, string Search)
         {
-            // Thread.Sleep(7000);
+             Thread.Sleep(3000);
             return IncidentsMethods.GetIncidentsPage(PageSize, PageNumber, SortBy, SortDirection, Search);
         }
 
