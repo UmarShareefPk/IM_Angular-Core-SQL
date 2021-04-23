@@ -13,8 +13,7 @@
       <i class="fas fa-times-circle text-danger" title="Cancel"></i>
     </div>
   </div>
-  <p class="text-muted">{{commentText}}
-  </p>
+
 
   <div class="" *ngIf="commentEdit">
     <textarea class="scrollbar" (input)="common.auto_grow($event)">
@@ -24,6 +23,8 @@
       <i class="fas fa-check text-success" title="Save"></i>
     </div>
   </div>
+  <p class="text-muted field scrollbar">{{commentText}}
+  </p>
 
   <table class="table">
 

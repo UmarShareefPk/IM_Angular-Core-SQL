@@ -19,3 +19,8 @@
   min-height: 40px;
   max-height: 100px;
 }
+
+.field{
+  max-height: 25vh;
+  overflow-y: auto;
+}
