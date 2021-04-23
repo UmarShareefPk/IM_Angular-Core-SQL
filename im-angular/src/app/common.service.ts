@@ -15,6 +15,8 @@ export class CommonService {
     let user = allUsers.find((user) => {
         return user.Id === id;
     });
+    if(!user)
+      return id;
     return user.FirstName + " " + user.LastName;
   }
 
@@ -36,6 +38,14 @@ export class CommonService {
   getMoment(datetime:any):Moment{
     let myMoment: moment.Moment = moment(datetime);
     return myMoment;
+
+  }
+
+  auto_grow(event: any) {
+    // for textareas
+    let element = event.target;
+    element.style.height = '5px';
+    element.style.height = element.scrollHeight + 'px';
   }
 
 }

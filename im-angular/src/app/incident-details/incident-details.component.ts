@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { CommonService } from '../common.service';
 import { IncidentService } from '../incident.service';
 
 @Component({
@@ -8,30 +9,33 @@ import { IncidentService } from '../incident.service';
   styleUrls: ['./incident-details.component.css'],
 })
 export class IncidentDetailsComponent implements OnInit {
-
-  incident : any = {};
+  incident: any = {};
+  status: string = 'N';
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private incidentService: IncidentService
+    private incidentService: IncidentService,
+    public common: CommonService
   ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
       let id = params.get('id');
-      this.incidentService.getIncidentById(id || "")
-      .subscribe(
-        (m)=> {this.incident = m; }
-        ,(err) => {console.log(err)}
-        )
+      this.incidentService.getIncidentById(id || '').subscribe(
+        (m) => {
+          this.incident = m;
+          this.setFields();
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
     });
   }
 
-  auto_grow(event: any) {
-    // for textareas
-    let element = event.target;
-    element.style.height = '5px';
-    element.style.height = element.scrollHeight + 'px';
+  setFields() {
+    this.status = this.incident.Status;
   }
+
 }

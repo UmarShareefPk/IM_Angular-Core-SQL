@@ -12,7 +12,9 @@
       <h4 class="text-primary"> {{incident.Title}} <i class="fas fa-edit text-primary"></i></h4>
     </div>
     <div class="col-md-4 col-sm-12">
-      <p class="text-muted timstamp">Created by Umar 5 hours ago </p>
+      <p class="text-muted timstamp">Created by  <a class="text-primary">{{common.getUserNameById(incident.CreatedBy)}} </a>
+        <span title='{{common.getMoment(incident.CreatedAT).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(incident.CreatedAT).fromNow()}}</span>
+      </p>
     </div>
   </div>
 
@@ -26,7 +28,7 @@
         </p>
       </div>
       <div class="">
-        <textarea id="description " class="scrollbar" (input)="auto_grow($event)">
+        <textarea id="description " class="scrollbar" (input)="common.auto_grow($event)">
           {{incident.Description}}
          </textarea>
          <div class="w-100 text-right fields-update-icon">
@@ -43,7 +45,7 @@
         </p>
       </div>
       <div class="">
-        <textarea class="scrollbar" (input)="auto_grow($event)">
+        <textarea class="scrollbar" (input)="common.auto_grow($event)">
           {{incident.AdditionalData}}
           </textarea>
           <div class="w-100 text-right fields-update-icon">
@@ -67,11 +69,11 @@
         <tr>
           <td ><h6 class="text-primary">Status</h6></td>
           <td>
-            <select class="browser-default  dropdown-custom">
-              <option selected>In Progress</option>
-              <option value="1">New</option>
-              <option value="2">Closed</option>
-              <option value="3">Approved</option>
+            <select [(ngModel)]="status"  class="browser-default  dropdown-custom">
+              <option value="I">In Progress</option>
+              <option value="N">New</option>
+              <option value="C">Closed</option>
+              <option value="A">Approved</option>
             </select>
           </td>
         </tr>
@@ -113,54 +115,17 @@
 
    <!-- Comments-->
   <div class="row section">
-    <div class=" col-md-8 col-sm-12">
+    <div class=" col-md-6 col-sm-12">
 
       <h4>Comments</h4>
   <br>
-      <div class="commentBox">
-
-        <div class="commentHeader d-flex">
-          <div class="w-75"><a class="text-primary">Umar Shareef</a> added a comment. - 7 days ago </div>
-          <div class="w-25 d-flex justify-content-end">
-            <i class="fas fa-edit text-primary"></i>
-            <i class="fas fa-times-circle text-danger" title="Cancel"></i>
-          </div>
-        </div>
-        <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores tempora quibusdam
-          cum iure alias fugiat. Qui ipsum labore fuga recusandae quo est aliquid sunt repellendus soluta odio,
-          consequatur inventore animi!
-        </p>
-        <div class="">
-          <textarea class="scrollbar">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quibusdam maiores totam, saepe ipsa necessitatibus magni! Molestias beatae, asperiores, tempore maiores odio sunt sit quasi veritatis architecto incidunt at ipsum.
-                              </textarea>
-          <div class="w-100 text-right fields-update-icon">
-            <i class="fas fa-times-circle text-warning" title="Cancel"></i>
-            <i class="fas fa-check text-success" title="Save"></i>
-          </div>
-        </div>
-
-        <table class="table">
-          <tr>
-            <td><i class="fas fa-times-circle  text-danger"></i>File 1</td>
-          </tr>
-          <tr>
-            <td><i class="fas fa-times-circle  text-danger"></i>File 4</td>
-          </tr>
-          <tr>
-            <td><i class="fas fa-times-circle  text-danger"></i>File 7</td>
-          </tr>
-        </table>
-
-
-        <hr>
-      </div>
-
-
+    <div *ngFor="let c of incident.Comments">
+      <app-comment [comment]="c" ></app-comment>
+    </div>
 
       <h5>Add Comment</h5>
       <div class="input-field">
-        <textarea id="comment" placeholder="Type a comment here"  (input)="auto_grow($event)" class=""></textarea>
+        <textarea id="comment" placeholder="Type a comment here"  (input)="common.auto_grow($event)" class=""></textarea>
       </div>
       <div class="custom-file upload-container">
         <button class="btn bg-primary text-white"><i class="fas fa-paperclip"></i></button>

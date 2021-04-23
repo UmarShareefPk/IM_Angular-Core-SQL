@@ -100,15 +100,11 @@ ul.field li {
 }
 
 /*Comments */
-
-
-.commentHeader{
-padding-bottom: 20px;
+.comment-buttons button{
+  margin-left: 5px;
 }
 
-.comment-buttons{
-   margin-top: 1vh;
-}
+
 
 .dropdown-item.text-primary{
    cursor:pointer;

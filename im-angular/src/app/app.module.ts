@@ -17,6 +17,7 @@ import { HttpErrorInterceptorService } from './http-error-interceptor.service';
 import { PaginationComponent } from './pagination/pagination.component';
 import { Apis } from './config';
 import { CommonService } from './common.service';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CommonService } from './common.service';
     LoginComponent,
     IncidentListingComponent,
     IncidentDetailsComponent,
-    PaginationComponent
+    PaginationComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,

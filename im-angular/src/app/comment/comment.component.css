@@ -1,0 +1,21 @@
+.commentHeader{
+  padding-bottom: 20px;
+  }
+
+  .comment-buttons{
+     margin-top: 1vh;
+  }
+  .input-text, textarea {
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+ }
+ .input-text:focus , textarea:focus{
+   outline: none;
+ }
+ textarea{
+  width: 100%;
+  resize: none;
+  overflow: hidden;
+  min-height: 40px;
+  max-height: 100px;
+}
