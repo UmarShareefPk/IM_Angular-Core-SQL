@@ -4,21 +4,23 @@
     <div class="w-75">
       <a class="text-primary">{{common.getUserNameById(comment.UserId)}}</a>
       added a comment. -
-      <span title='{{common.getMoment(comment.CreateDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(comment.CreateDate).fromNow()}}</span>
+      <span
+        title='{{common.getMoment(comment.CreateDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(comment.CreateDate).fromNow()}}</span>
     </div>
 
     <div class="w-25 d-flex justify-content-end">
-      <i class="fas fa-edit text-primary"></i>
+      <i class="fas fa-edit text-primary" (click)="commentEditClick(true)"></i>
       <i class="fas fa-times-circle text-danger" title="Cancel"></i>
     </div>
   </div>
-  <p class="text-muted">{{comment.CommentText}}
+  <p class="text-muted">{{commentText}}
   </p>
-  <div class="">
+
+  <div class="" *ngIf="commentEdit">
     <textarea class="scrollbar" (input)="common.auto_grow($event)">
-      {{comment.CommentText}}</textarea>
+      {{commentText}}</textarea>
     <div class="w-100 text-right fields-update-icon">
-      <i class="fas fa-times-circle text-warning" title="Cancel"></i>
+      <i class="fas fa-times-circle text-warning" title="Cancel" (click)="commentEditClick(false)"></i>
       <i class="fas fa-check text-success" title="Save"></i>
     </div>
   </div>

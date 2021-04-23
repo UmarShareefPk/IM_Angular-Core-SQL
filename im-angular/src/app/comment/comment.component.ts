@@ -6,18 +6,27 @@ import { CommonService } from '../common.service';
   templateUrl: './comment.component.html',
   styleUrls: ['./comment.component.css']
 })
-export class CommentComponent implements OnInit, OnChanges {
+export class CommentComponent implements OnInit {
 
   @Input() comment:any = {};
+
+
+  commentText:string = "";
+  commentEditText:string = "";
+  commentEdit:boolean = false;
 
   constructor(public common:CommonService) { }
 
   ngOnInit(): void {
     //console.log(this.comment);
+    this.commentText = this.comment.CommentText;
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    //console.log("ng changes");
+  commentEditClick(show:boolean){
+    if(show)
+      this.commentEdit = true;
+    else
+      this.commentEdit = false;
   }
 
 

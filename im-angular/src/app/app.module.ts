@@ -18,6 +18,7 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { Apis } from './config';
 import { CommonService } from './common.service';
 import { CommentComponent } from './comment/comment.component';
+import { AssigneeDropdownComponent } from './assignee-dropdown/assignee-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CommentComponent } from './comment/comment.component';
     IncidentListingComponent,
     IncidentDetailsComponent,
     PaginationComponent,
-    CommentComponent
+    CommentComponent,
+    AssigneeDropdownComponent
   ],
   imports: [
     BrowserModule,

@@ -20,6 +20,10 @@ export class CommonService {
     return user.FirstName + " " + user.LastName;
   }
 
+  getAllUsers(){
+    return JSON.parse(localStorage.getItem("allUsers") || '{}');
+  }
+
   statusName(status:string):string{
     switch(status){
       case "N":

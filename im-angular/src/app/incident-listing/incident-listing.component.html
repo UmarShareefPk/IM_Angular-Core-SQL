@@ -39,7 +39,7 @@
             <td colspan="7" *ngIf="status==='error'" > <h3 class="text-center text-danger">An Error has occured. Try logging in again.</h3> </td>
         </tr>
           <tr *ngFor="let incident of incidents">
-            <td class="text-nowrap title"><a title="{{incident.Title}}" (click)="titleClick(incident.Id)">{{(incident.Title.length > 15 ? incident.Title.slice(0, 15) + "..." : incident.Title)}}</a></td>
+            <td class="text-nowrap title" (click)="titleClick(incident.Id)"><a title="{{incident.Title}}" >{{(incident.Title.length > 15 ? incident.Title.slice(0, 15) + "..." : incident.Title)}}</a></td>
             <td class="description text-muted text-nowrap w-25"
               title="{{incident.Description}}">
               {{incident.Description.slice(0,30)}}...</td>

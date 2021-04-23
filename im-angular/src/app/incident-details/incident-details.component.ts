@@ -11,6 +11,20 @@ import { IncidentService } from '../incident.service';
 export class IncidentDetailsComponent implements OnInit {
   incident: any = {};
   status: string = 'N';
+  startDate:string = "";
+  duetDate:string = "";
+
+  title:string = "";
+  titleEditText:string = "";
+  titleEdit:boolean = false;
+
+  description:string = "";
+  descriptionEditText:string = "";
+  descriptionEdit:boolean = false;
+
+  addtionalData:string = "";
+  addtionalDataEditText:string = "";
+  addtionalDataEdit:boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -35,7 +49,37 @@ export class IncidentDetailsComponent implements OnInit {
   }
 
   setFields() {
+    this.title = this.incident.Title;
     this.status = this.incident.Status;
+    this.startDate= this.incident.StartTime;
+    this.duetDate = this.incident.DueDate;
+    this.description = this.incident.Description;
+    this.addtionalData = this.incident.AdditionalData;
+  }
+
+  assigneeChanged(newAssignee:any){
+    alert(this.common.getUserNameById(newAssignee));
+  }
+
+  titleEditClick(show:boolean){
+    if(show)
+      this.titleEdit = true;
+    else
+      this.titleEdit = false;
+  }
+
+  descriptionEditClick(show:boolean){
+    if(show)
+      this.descriptionEdit = true;
+    else
+      this.descriptionEdit = false;
+  }
+
+  addtionalDataEditClick(show:boolean){
+    if(show)
+      this.addtionalDataEdit = true;
+    else
+      this.addtionalDataEdit = false;
   }
 
 }

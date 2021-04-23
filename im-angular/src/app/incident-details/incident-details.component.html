@@ -9,8 +9,17 @@
   <!-- Title-->
   <div class="row section">
     <div class="col-md-8 col-sm-12">
-      <h4 class="text-primary"> {{incident.Title}} <i class="fas fa-edit text-primary"></i></h4>
+      <h4 class="text-primary"> {{title}} <i class="fas fa-edit text-primary" (click)="titleEditClick(true)"></i></h4>
+
+      <ng-container  *ngIf="titleEdit">
+        <input type="text" id="titleTxt" class="input-text w-100" value="{{title}}" />
+        <div class="w-100 text-right fields-update-icon">
+          <i class="fas fa-times-circle text-warning" title="Cancel" (click)="titleEditClick(false)"></i>
+          <i class="fas fa-check text-success" title="Save" onclick="titleUpdate();"> </i>
+        </div>
+      </ng-container>
     </div>
+
     <div class="col-md-4 col-sm-12">
       <p class="text-muted timstamp">Created by  <a class="text-primary">{{common.getUserNameById(incident.CreatedBy)}} </a>
         <span title='{{common.getMoment(incident.CreatedAT).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(incident.CreatedAT).fromNow()}}</span>
@@ -21,35 +30,40 @@
    <!-- Fields and updates-->
   <div class="row section">
     <div class=" col-md-6  col-sm-12" >
-      <h6 class="text-primary">Description : <i class="fas fa-edit text-primary"></i></h6>
+      <h6 class="text-primary">
+        Description :
+        <i class="fas fa-edit text-primary" (click)="descriptionEditClick(true)" ></i>
+      </h6>
       <div class="field scrollbar">
         <p class="text-muted">
-          {{incident.Description}}
+          {{description}}
         </p>
       </div>
-      <div class="">
+      <div class="" *ngIf="descriptionEdit">
         <textarea id="description " class="scrollbar" (input)="common.auto_grow($event)">
-          {{incident.Description}}
+          {{description}}
          </textarea>
          <div class="w-100 text-right fields-update-icon">
-          <i class="fas fa-times-circle text-warning" title="Cancel"></i>
+          <i class="fas fa-times-circle text-warning" title="Cancel" (click)="descriptionEditClick(false)"></i>
           <i class="fas fa-check text-success" title="Save"></i>
          </div>
 
       </div>
 
-      <h6 class="text-primary">Additional Details : <i class="fas fa-edit text-primary"></i></h6>
+      <h6 class="text-primary">Additional Details :
+        <i class="fas fa-edit text-primary" (click)="addtionalDataEditClick(true)"></i>
+      </h6>
       <div class="field scrollbar">
         <p class="text-muted  ">
           {{incident.AdditionalData}}
         </p>
       </div>
-      <div class="">
+      <div class=""  *ngIf="addtionalDataEdit">
         <textarea class="scrollbar" (input)="common.auto_grow($event)">
           {{incident.AdditionalData}}
           </textarea>
           <div class="w-100 text-right fields-update-icon">
-            <i class="fas fa-times-circle text-warning" title="Cancel"></i>
+            <i class="fas fa-times-circle text-warning" title="Cancel" (click)="addtionalDataEditClick(false)"></i>
             <i class="fas fa-check text-success" title="Save"></i>
            </div>
       </div>
@@ -80,31 +94,16 @@
         <tr>
           <td><h6 class="text-primary">Assignee</h6></td>
             <td>
-              <!-- Example single danger button -->
-                <div class="btn-group">
-                  <input type="text" id="assigneeDdl" value="" class="dropdown-toggle dropdown-custom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" readonly>
-                  <div class="dropdown-menu justify-content-center">
-                     <div class="dropdown-item">
-                        <input type="text" id="assigneeSearchtxt" placeholder="Search" class="input-text">
-                     </div>
-                     <div id="assgineeHtml" class="assignee-list scrollbar">
-                       <span class="dropdown-item text-primary" onclick="assigneeSelected('0E214638-26DB-492E-B37A-A9F5C3A051A8')">Test Test</span>
-                       <span class="dropdown-item text-primary" onclick="assigneeSelected('0F0C7B84-318A-4485-95C7-4A0E340E8E6E')">Wasif farooq</span>
-                       <span class="dropdown-item text-primary" onclick="assigneeSelected('16819E79-25A3-46C9-8B1F-8FB6C6F8AC61')">Umar Shareef</span>
-                       <span class="dropdown-item text-primary" onclick="assigneeSelected('226860F1-E693-49B3-B803-16113366C440')">lindsey farooq</span>
-                       <span class="dropdown-item text-primary" onclick="assigneeSelected('345F5F20-9098-4C01-B2B6-9371CD53967F')">Umar Khan</span>
-                       </div>
-                </div>
-                </div>
+              <app-assignee-dropdown [selectedAssignee]="incident.AssignedTo" (assigneeChanged)="assigneeChanged($event)" ></app-assignee-dropdown>
             </td>
         </tr>
         <tr>
           <td><h6 class="text-primary">Start Date</h6></td>
-          <td>3 days ago</td>
+          <td><span title='{{common.getMoment(startDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(startDate).fromNow()}}</span></td>
         </tr>
         <tr>
           <td><h6 class="text-primary">Due Date</h6></td>
-          <td>In 2 weeks</td>
+          <td><span title='{{common.getMoment(duetDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(duetDate).fromNow()}}</span></td>
         </tr>
 
       </table>
