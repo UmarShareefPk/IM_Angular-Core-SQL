@@ -9,7 +9,7 @@
   <!-- Title-->
   <div class="row section">
     <div class="col-md-8 col-sm-12">
-      <h4 class="text-primary"> {{title}} <i class="fas fa-edit text-primary" (click)="titleEditClick(true)"></i></h4>
+      <h4 class="text-primary"> {{title}} <i class="fas fa-edit text-primary" (click)="titleEditClick(!titleEdit)"></i></h4>
 
       <ng-container  *ngIf="titleEdit">
         <input type="text" id="titleTxt" class="input-text w-100" value="{{title}}" />
@@ -32,7 +32,7 @@
     <div class=" col-md-6  col-sm-12" >
       <h6 class="text-primary">
         Description :
-        <i class="fas fa-edit text-primary" (click)="descriptionEditClick(true)" ></i>
+        <i class="fas fa-edit text-primary" (click)="descriptionEditClick(!descriptionEdit)" ></i>
       </h6>
       <div class="field scrollbar">
         <p class="text-muted">
@@ -51,7 +51,7 @@
       </div>
 
       <h6 class="text-primary">Additional Details :
-        <i class="fas fa-edit text-primary" (click)="addtionalDataEditClick(true)"></i>
+        <i class="fas fa-edit text-primary" (click)="addtionalDataEditClick(!addtionalDataEdit)"></i>
       </h6>
       <div class="field scrollbar">
         <p class="text-muted  ">
@@ -98,12 +98,28 @@
             </td>
         </tr>
         <tr>
-          <td><h6 class="text-primary">Start Date</h6></td>
-          <td><span title='{{common.getMoment(startDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(startDate).fromNow()}}</span></td>
+          <td>
+            <h6 class="text-primary">
+              Start Date  <i class="fas fa-edit text-primary" (click)="startDateEditClick(!startDateEdit)"></i>
+            </h6>
+          </td>
+          <td>
+            <span *ngIf="!startDateEdit" title='{{common.getMoment(startDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(startDate).fromNow()}}</span>
+            <ng-container *ngIf="startDateEdit">
+              <input [owlDateTime]="startdt" [(ngModel)]="startDate" [owlDateTimeTrigger]="startdt" class="input-text">
+              <owl-date-time #startdt (afterPickerClosed)="startDateChanged()"></owl-date-time>
+            </ng-container>
+          </td>
         </tr>
         <tr>
-          <td><h6 class="text-primary">Due Date</h6></td>
-          <td><span title='{{common.getMoment(duetDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(duetDate).fromNow()}}</span></td>
+          <td><h6 class="text-primary">Due Date <i class="fas fa-edit text-primary" (click)="dueDateEditClick(!dueDateEdit)"></i></h6></td>
+          <td>
+            <span *ngIf="!dueDateEdit" title='{{common.getMoment(duetDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(duetDate).fromNow()}}</span>
+            <ng-container *ngIf="dueDateEdit">
+              <input [owlDateTime]="duetDatedt" [(ngModel)]="duetDate" [owlDateTimeTrigger]="duetDatedt" class="input-text">
+              <owl-date-time #duetDatedt (afterPickerClosed)="dueDateChanged()"></owl-date-time>
+            </ng-container>
+          </td>
         </tr>
 
       </table>

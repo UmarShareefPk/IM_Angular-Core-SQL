@@ -19,6 +19,8 @@ import { Apis } from './config';
 import { CommonService } from './common.service';
 import { CommentComponent } from './comment/comment.component';
 import { AssigneeDropdownComponent } from './assignee-dropdown/assignee-dropdown.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,10 @@ import { AssigneeDropdownComponent } from './assignee-dropdown/assignee-dropdown
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AuthService,

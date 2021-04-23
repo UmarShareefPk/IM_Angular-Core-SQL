@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* @import "~bootstrap/dist/css/bootstrap.css"; */
-
+@import "~ng-pick-datetime/assets/style/picker.min.css";
 
 /* extra Small devices (landscape phones, 576px and up) */
 @media only screen (min-width: 280px) {

@@ -26,6 +26,9 @@ export class IncidentDetailsComponent implements OnInit {
   addtionalDataEditText:string = "";
   addtionalDataEdit:boolean = false;
 
+  startDateEdit:boolean = false;
+  dueDateEdit:boolean = false;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -80,6 +83,28 @@ export class IncidentDetailsComponent implements OnInit {
       this.addtionalDataEdit = true;
     else
       this.addtionalDataEdit = false;
+  }
+
+  startDateEditClick(show:boolean){
+    if(show)
+      this.startDateEdit = true;
+    else
+      this.startDateEdit = false;
+  }
+
+  startDateChanged(){
+    this.startDateEdit =false;
+  }
+
+  dueDateEditClick(show:boolean){
+    if(show)
+      this.dueDateEdit = true;
+    else
+      this.dueDateEdit = false;
+  }
+
+  dueDateChanged(){
+    this.dueDateEdit =false;
   }
 
 }
