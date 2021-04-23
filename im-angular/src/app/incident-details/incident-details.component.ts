@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { CommonService } from '../common.service';
 import { IncidentService } from '../incident.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-incident-details',
@@ -97,6 +98,7 @@ export class IncidentDetailsComponent implements OnInit {
   }
 
   dueDateEditClick(show:boolean){
+  this.sweet();
     if(show)
       this.dueDateEdit = true;
     else
@@ -105,6 +107,33 @@ export class IncidentDetailsComponent implements OnInit {
 
   dueDateChanged(){
     this.dueDateEdit =false;
+  }
+
+  sweet(){
+    swal.fire("hi");
+    swal.fire(
+      'The Internet?',
+      'That thing is still around?',
+      'question'
+    );
+    swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
+    })
+
   }
 
 }
