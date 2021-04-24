@@ -103,31 +103,4 @@ ul.field li {
 }
 
 /*Comments */
-.comment-buttons button{
-  margin-left: 5px;
-}
 
-
-.custom-file.upload-container {
-   position: relative;
-}
-
-.custom-file.upload-container .file {
-   position: absolute;
-   top: 5px;
-   left: 0;
-   opacity: 0;
-}
-
-.custom-file.upload-container .fa-paperclip {
-   font-size: x-large;
-}
-
-.custom-file.upload-container .txt {
-   border: none;
-   border-bottom: 1px solid #9e9e9e;
-}
-
-.custom-file.upload-container .txt:focus {
-   outline: none;
-}

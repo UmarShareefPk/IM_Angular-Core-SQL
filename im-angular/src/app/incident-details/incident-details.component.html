@@ -12,10 +12,10 @@
       <h4 class="text-primary"> {{title}} <i class="fas fa-edit text-primary" (click)="titleEditClick(!titleEdit)"></i></h4>
 
       <ng-container  *ngIf="titleEdit">
-        <input type="text" id="titleTxt" class="input-text w-100" value="{{title}}" />
+        <input type="text" id="titleTxt" class="input-text w-100" [(ngModel)]="titleEditText" />
         <div class="w-100 text-right fields-update-icon">
           <i class="fas fa-times-circle text-warning" title="Cancel" (click)="titleEditClick(false)"></i>
-          <i class="fas fa-check text-success" title="Save" onclick="titleUpdate();"> </i>
+          <i class="fas fa-check text-success" title="Save" (click)="updateIncident('title');"> </i>
         </div>
       </ng-container>
     </div>
@@ -40,12 +40,11 @@
         </p>
       </div>
       <div class="" *ngIf="descriptionEdit">
-        <textarea id="description " class="scrollbar" (input)="common.auto_grow($event)">
-          {{description}}
+        <textarea id="description " class="scrollbar" [(ngModel)]="descriptionEditText" (input)="common.auto_grow($event)">
          </textarea>
          <div class="w-100 text-right fields-update-icon">
           <i class="fas fa-times-circle text-warning" title="Cancel" (click)="descriptionEditClick(false)"></i>
-          <i class="fas fa-check text-success" title="Save"></i>
+          <i class="fas fa-check text-success" title="Save" (click)="updateIncident('description');"></i>
          </div>
 
       </div>
@@ -55,16 +54,15 @@
       </h6>
       <div class="field scrollbar">
         <p class="text-muted  ">
-          {{incident.AdditionalData}}
+          {{addtionalData}}
         </p>
       </div>
       <div class=""  *ngIf="addtionalDataEdit">
-        <textarea class="scrollbar" (input)="common.auto_grow($event)">
-          {{incident.AdditionalData}}
+        <textarea class="scrollbar"  [(ngModel)]="addtionalDataEditText"  (input)="common.auto_grow($event)">
           </textarea>
           <div class="w-100 text-right fields-update-icon">
             <i class="fas fa-times-circle text-warning" title="Cancel" (click)="addtionalDataEditClick(false)"></i>
-            <i class="fas fa-check text-success" title="Save"></i>
+            <i class="fas fa-check text-success" title="Save" (click)="updateIncident('additionalData');"></i>
            </div>
       </div>
 
@@ -83,7 +81,7 @@
         <tr>
           <td ><h6 class="text-primary">Status</h6></td>
           <td>
-            <select [(ngModel)]="status"  class="browser-default  dropdown-custom">
+            <select [(ngModel)]="status" (change)="statusChanged($event)"  class="browser-default  dropdown-custom">
               <option value="I">In Progress</option>
               <option value="N">New</option>
               <option value="C">Closed</option>
@@ -114,9 +112,9 @@
         <tr>
           <td><h6 class="text-primary">Due Date <i class="fas fa-edit text-primary" (click)="dueDateEditClick(!dueDateEdit)"></i></h6></td>
           <td>
-            <span *ngIf="!dueDateEdit" title='{{common.getMoment(duetDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(duetDate).fromNow()}}</span>
+            <span *ngIf="!dueDateEdit" title='{{common.getMoment(dueDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(dueDate).fromNow()}}</span>
             <ng-container *ngIf="dueDateEdit">
-              <input [owlDateTime]="duetDatedt" [(ngModel)]="duetDate" [owlDateTimeTrigger]="duetDatedt" class="input-text">
+              <input [owlDateTime]="duetDatedt" [(ngModel)]="dueDate" [owlDateTimeTrigger]="duetDatedt" class="input-text">
               <owl-date-time #duetDatedt (afterPickerClosed)="dueDateChanged()"></owl-date-time>
             </ng-container>
           </td>
@@ -135,32 +133,10 @@
       <h4>Comments</h4>
   <br>
     <div *ngFor="let c of incident.Comments">
-      <app-comment [comment]="c" ></app-comment>
+      <app-comment [comment]="c" (commentChanged)="commentChanged($event)" (commentDeleted)="commentDeleted($event)" ></app-comment>
     </div>
 
-      <h5>Add Comment</h5>
-      <div class="input-field">
-        <textarea id="comment" placeholder="Type a comment here"  (input)="common.auto_grow($event)" class=""></textarea>
-      </div>
-      <div class="custom-file upload-container">
-        <button class="btn bg-primary text-white"><i class="fas fa-paperclip"></i></button>
-        <input class="file" id="commentFiles" onchange="$('#filestxt').val($('#commentFiles')[0].files.length+ ' file selected.')" type="file" multiple />
-        <input type="text" id="filestxt" class="txt w-75 text-muted" value="Upload Files" readonly>
-    </div>
-
-      <div class="comment-buttons text-center ">
-        <button class="btn  text-white bg-success">
-          <span>Add</span>
-          <i class="fas fa-check "></i>
-
-        </button>
-
-        <button class="btn bg-warning text-white">
-          <span>Cancel</span>
-          <i class="fas fa-times-circle  text-white"></i>
-
-        </button>
-      </div>
+    <app-add-comment></app-add-comment>
     </div>
 
   </div>

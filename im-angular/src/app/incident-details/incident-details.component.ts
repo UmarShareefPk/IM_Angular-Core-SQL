@@ -12,8 +12,7 @@ import swal from 'sweetalert2';
 export class IncidentDetailsComponent implements OnInit {
   incident: any = {};
   status: string = 'N';
-  startDate:string = "";
-  duetDate:string = "";
+
 
   title:string = "";
   titleEditText:string = "";
@@ -27,6 +26,8 @@ export class IncidentDetailsComponent implements OnInit {
   addtionalDataEditText:string = "";
   addtionalDataEdit:boolean = false;
 
+  startDate:string = "";
+  dueDate:string = "";
   startDateEdit:boolean = false;
   dueDateEdit:boolean = false;
 
@@ -53,16 +54,21 @@ export class IncidentDetailsComponent implements OnInit {
   }
 
   setFields() {
-    this.title = this.incident.Title;
+    this.title = this.titleEditText = this.incident.Title;
+    this.description = this.descriptionEditText = this.incident.Description;
+    this.addtionalData = this.addtionalDataEditText = this.incident.AdditionalData;
     this.status = this.incident.Status;
     this.startDate= this.incident.StartTime;
-    this.duetDate = this.incident.DueDate;
-    this.description = this.incident.Description;
-    this.addtionalData = this.incident.AdditionalData;
+    this.dueDate = this.incident.DueDate;
+
+  }
+
+  statusChanged(event:any){
+    this.updateIncidentByField("Status", this.status);
   }
 
   assigneeChanged(newAssignee:any){
-    alert(this.common.getUserNameById(newAssignee));
+    this.updateIncidentByField("AssignedTO", newAssignee);
   }
 
   titleEditClick(show:boolean){
@@ -94,11 +100,17 @@ export class IncidentDetailsComponent implements OnInit {
   }
 
   startDateChanged(){
-    this.startDateEdit =false;
+    if(!this.common.getMoment(this.startDate).isValid()){
+      swal.fire("Invalid Date.");
+      this.startDate = this.incident.StartTime;
+    }
+    else{
+        this.updateIncidentByField("StartTime", this.startDate);
+        this.startDateEdit =false;
+    }
   }
 
   dueDateEditClick(show:boolean){
-  this.sweet();
     if(show)
       this.dueDateEdit = true;
     else
@@ -106,7 +118,69 @@ export class IncidentDetailsComponent implements OnInit {
   }
 
   dueDateChanged(){
-    this.dueDateEdit =false;
+    if(!this.common.getMoment(this.dueDate).isValid()){
+      swal.fire("Invalid Date.");
+      this.dueDate = this.incident.DueDate;
+    }
+    else{
+        this.updateIncidentByField("DueDate", this.dueDate);
+        this.dueDateEdit =false;
+    }
+  }
+
+  updateIncident(source:string){
+    switch (source) {
+      case 'title':
+        this.titleEditText = this.titleEditText.trim();
+        if(this.titleEditText == ""){
+          swal.fire("Title cannot be empty.");
+        break;
+        }
+        this.updateIncidentByField('Title', this.titleEditText);
+        this.title = this.titleEditText;
+        this.titleEdit = false;
+        break;
+      case 'description':
+        this.descriptionEditText = this.descriptionEditText.trim();
+        if(this.descriptionEditText == ""){
+          swal.fire("Description cannot be empty.");
+        break;
+        }
+        this.updateIncidentByField('Description', this.descriptionEditText);
+        this.description = this.descriptionEditText;
+        this.descriptionEdit = false;
+        break;
+      case 'additionalData':
+        this.addtionalDataEditText = this.addtionalDataEditText.trim();
+        this.updateIncidentByField('AdditionalData', this.addtionalDataEditText);
+        this.addtionalData = this.addtionalDataEditText;
+        this.addtionalDataEdit = false;
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  updateIncidentByField(field:string , value:string) {
+    let parameters = {
+      IncidentId : this.incident.Id,
+      Parameter : field,
+      Value : value,
+      UserId : this.common.getLoggedInUser()
+    };
+    this.incidentService.updateIncident(parameters).subscribe(
+      (m) => m,
+      (err) => console.log(err)
+    );
+  }
+
+  commentChanged(comment:any){
+    console.log(comment);
+  }
+
+  commentDeleted(commentId:string){
+    console.log(commentId);
   }
 
   sweet(){

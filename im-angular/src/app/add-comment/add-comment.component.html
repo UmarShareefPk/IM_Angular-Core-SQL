@@ -1,0 +1,23 @@
+<h5>Add Comment</h5>
+<div class="input-field">
+  <textarea id="comment" placeholder="Type a comment here"  (input)="common.auto_grow($event)" class=""></textarea>
+</div>
+<div class="custom-file upload-container">
+  <button class="btn bg-primary text-white"><i class="fas fa-paperclip"></i></button>
+  <input class="file" id="commentFiles" onchange="$('#filestxt').val($('#commentFiles')[0].files.length+ ' file selected.')" type="file" multiple />
+  <input type="text" id="filestxt" class="txt w-75 text-muted" value="Upload Files" readonly>
+</div>
+
+<div class="comment-buttons text-center ">
+  <button class="btn  text-white bg-success">
+    <span>Add</span>
+    <i class="fas fa-check "></i>
+
+  </button>
+
+  <button class="btn bg-warning text-white">
+    <span>Cancel</span>
+    <i class="fas fa-times-circle  text-white"></i>
+
+  </button>
+</div>

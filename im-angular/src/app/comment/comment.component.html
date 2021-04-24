@@ -10,17 +10,17 @@
 
     <div class="w-25 d-flex justify-content-end">
       <i class="fas fa-edit text-primary" (click)="commentEditClick(!commentEdit)"></i>
-      <i class="fas fa-times-circle text-danger" title="Cancel"></i>
+      <i class="fas fa-times-circle text-danger" title="Delete" (click)="deleteComment()"></i>
     </div>
   </div>
 
 
   <div class="" *ngIf="commentEdit">
-    <textarea class="scrollbar" (input)="common.auto_grow($event)">
-      {{commentText}}</textarea>
+    <textarea [(ngModel)] = "commentEditText" class="scrollbar" (input)="common.auto_grow($event)">
+    </textarea>
     <div class="w-100 text-right fields-update-icon">
       <i class="fas fa-times-circle text-warning" title="Cancel" (click)="commentEditClick(false)"></i>
-      <i class="fas fa-check text-success" title="Save"></i>
+      <i class="fas fa-check text-success" title="Save"  (click)="commentEditSave()"></i>
     </div>
   </div>
   <p class="text-muted field scrollbar">{{commentText}}

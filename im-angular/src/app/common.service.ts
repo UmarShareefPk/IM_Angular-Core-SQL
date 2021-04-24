@@ -24,6 +24,11 @@ export class CommonService {
     return JSON.parse(localStorage.getItem("allUsers") || '{}');
   }
 
+  getLoggedInUser(){
+    let loginInfo = JSON.parse(localStorage.getItem("user") || '{}');
+    return loginInfo.user.Id;
+  }
+
   statusName(status:string):string{
     switch(status){
       case "N":

@@ -16,7 +16,7 @@ export class HttpErrorInterceptorService implements HttpInterceptor {
     return next.handle(req)
     .pipe(
       catchError(err => {
-        console.log("error" , err.error.message);
+        console.log("error" , err);
           if (err.status === 401) {
              // this.bs.logOut()// auto logout if 401 response returned from api
               ;
