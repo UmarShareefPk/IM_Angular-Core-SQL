@@ -11,6 +11,7 @@ export class AssigneeDropdownComponent implements OnInit {
   constructor(public common:CommonService) { }
 
   @Input() selectedAssignee:string = "";
+  @Input() width:string = "w-100";
   @Output() assigneeChanged: EventEmitter<string> = new EventEmitter();
 
   allAssignees:any[] = [];

@@ -1,0 +1,77 @@
+<div class="container main-container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class="site-cl">Add New Incident</h3>
+    </div>
+  </div>
+
+
+  <div class="row section">
+    <div class="offset-md-2 col-md-8 col-sm-12 text-center">
+      <table class="table new-incident">
+        <tr>
+          <td>
+            <h6 class="text-muted">Title</h6>
+          </td>
+          <td><input [(ngModel)]="title" type="text" placeholder="" class="w-100 txt" /></td>
+        </tr>
+        <tr>
+          <td>
+            <h6 class="text-muted">Assignee</h6>
+          </td>
+          <td class="w-100">
+            <app-assignee-dropdown [selectedAssignee]="''" (assigneeChanged)="assigneeChanged($event)" ></app-assignee-dropdown>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h6 class="text-muted">Description</h6>
+          </td>
+          <td><textarea class="w-100 txt text-muted" [(ngModel)]="description" placeholder="" (input)="common.auto_grow($event)"></textarea></td>
+        </tr>
+        <tr>
+          <td>
+            <h6 class="text-muted">Additional Details</h6>
+          </td>
+          <td><textarea class="w-100 txt" [(ngModel)]="addtionalDetails" (input)="common.auto_grow($event)"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h6 class="text-muted">Start Time</h6>
+          </td>
+          <td>
+            <input [owlDateTime]="startdt" [(ngModel)]="startDate" [owlDateTimeTrigger]="startdt" type="text"  class="w-100 txt" />
+            <owl-date-time #startdt (afterPickerClosed)="startDateChanged()"></owl-date-time>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h6 class="text-muted">Due Date</h6>
+          </td>
+          <td>
+            <input [owlDateTime]="duetDatedt" [(ngModel)]="dueDate"  [owlDateTimeTrigger]="duetDatedt" type="text" class="w-100 txt" />
+              <owl-date-time #duetDatedt (afterPickerClosed)="dueDateChanged()"></owl-date-time>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div class="custom-file upload-container w-100 text-left">
+              <button class="btn bg-primary text-white"><i class="fas fa-paperclip"></i></button>
+              <input class="file" id="files"
+              (change)="filesChange($event)" type="file" multiple />
+              <input type="text" id="filestxt" value="{{filesText}}" class="txt  text-muted" value="Click here to upload Files" readonly >
+            </div>
+
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-center btns" >
+            <input type="button" (click)="saveIncident();" class="btn bg-success text-white" value="Save" />
+            <input type="button" class="btn bg-warning text-white" value="Cancel" />
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

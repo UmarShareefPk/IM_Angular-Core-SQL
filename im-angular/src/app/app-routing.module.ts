@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { IncidentDetailsComponent } from './incident-details/incident-details.component';
 import { IncidentListingComponent } from './incident-listing/incident-listing.component';
 import { LoginComponent } from './login/login.component';
+import { NewIncidentComponent } from './new-incident/new-incident.component';
 
 // const routes: Routes = [
 //   { path: '', redirectTo: '/departments', pathMatch: 'full' },
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/incidents', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'incidents', component: IncidentListingComponent },
-  { path: 'incidentDetails/:id',   component: IncidentDetailsComponent }
+  { path: 'incidentDetails/:id',   component: IncidentDetailsComponent },
+  { path: 'newIncident',   component: NewIncidentComponent }
 ];
 
 @NgModule({

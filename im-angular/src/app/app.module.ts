@@ -22,6 +22,7 @@ import { AssigneeDropdownComponent } from './assignee-dropdown/assignee-dropdown
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { AddCommentComponent } from './add-comment/add-comment.component';
+import { NewIncidentComponent } from './new-incident/new-incident.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { AddCommentComponent } from './add-comment/add-comment.component';
     PaginationComponent,
     CommentComponent,
     AssigneeDropdownComponent,
-    AddCommentComponent
+    AddCommentComponent,
+    NewIncidentComponent
   ],
   imports: [
     BrowserModule,

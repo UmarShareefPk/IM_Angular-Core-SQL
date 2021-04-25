@@ -33,6 +33,9 @@ search:string = "";
   ngOnInit(): void {
     this.loadIncidents();
   }
+  newincident(){
+    this.router.navigate(['/newIncident']);
+  }
 
   loadIncidents(){
     if(this.request)

@@ -95,7 +95,7 @@
         <tr>
           <td><h6 class="text-primary">Assignee</h6></td>
             <td>
-              <app-assignee-dropdown [selectedAssignee]="incident.AssignedTo" (assigneeChanged)="assigneeChanged($event)" ></app-assignee-dropdown>
+              <app-assignee-dropdown [selectedAssignee]="incident.AssignedTo" [width]="'w-75'" (assigneeChanged)="assigneeChanged($event)" ></app-assignee-dropdown>
             </td>
         </tr>
         <tr>
