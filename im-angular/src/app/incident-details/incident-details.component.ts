@@ -175,12 +175,22 @@ export class IncidentDetailsComponent implements OnInit {
     );
   }
 
+  commentAdded(newComment:any){
+    console.log("newcomment" , newComment);
+  }
+
   commentChanged(comment:any){
-    console.log(comment);
+    //console.log(comment);
+    // no implementation needed so far
   }
 
   commentDeleted(commentId:string){
     console.log(commentId);
+    let changedincident = { ...this.incident };
+         changedincident.Comments = changedincident.Comments.filter(
+           (comment:any) => comment.Id !== commentId
+         );
+    this.incident = changedincident;
   }
 
   sweet(){

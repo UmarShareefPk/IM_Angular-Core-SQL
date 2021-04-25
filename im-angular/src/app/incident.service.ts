@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { delay, map } from 'rxjs/operators';
 import { Apis } from './config';
@@ -46,7 +46,7 @@ export class IncidentService {
 
   addNewComment(formData:any){
     let url = this.api.addNewCommentUrl;
-    return this.http.post(url, formData).pipe(
+    return this.http.post(url, formData ).pipe(
       map((m) => {
         console.log(m);
         return m;
@@ -63,7 +63,7 @@ export class IncidentService {
       incidentId +
       '&userId=' +
       userId;
-    return this.http.get(url).pipe(
+    return this.http.get(url,{responseType: 'text'}).pipe(
       map((m) => {
         return m;
       }));

@@ -136,7 +136,7 @@
       <app-comment [comment]="c" (commentChanged)="commentChanged($event)" (commentDeleted)="commentDeleted($event)" ></app-comment>
     </div>
 
-    <app-add-comment></app-add-comment>
+    <app-add-comment [incidentId]="incident.Id" (commentAdded)="commentAdded($event)" ></app-add-comment>
     </div>
 
   </div>

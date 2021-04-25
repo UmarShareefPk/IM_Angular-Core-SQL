@@ -221,10 +221,8 @@ namespace IM_Core.ApiControllers
         [Authorize]
         public string DeleteComment(string commentId, string incidentId, string userId)
         {
-
             IncidentsMethods.DeleteComment(commentId, userId);
             string path = _hostingEnvironment.ContentRootPath + "\\Attachments\\Incidents\\" + incidentId + "\\Comments\\" + commentId;
-           // string path = System.Web.HttpContext.Current.Server.MapPath("~/Attachments/Incidents/" + incidentId + "/Comments/" + commentId);
 
             if (Directory.Exists(@path))
             {
