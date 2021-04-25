@@ -41,7 +41,7 @@ export class IncidentService {
 
   addNewIncident(formData: any) {
     let url = this.api.addNewIncidentUrl;
-    return this.http.post(url, formData).pipe(
+    return this.http.post(url, formData, { responseType: 'text' }).pipe(
       map((m) => {
         console.log(m);
         return m;

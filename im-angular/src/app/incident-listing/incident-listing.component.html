@@ -45,7 +45,7 @@
               {{incident.Description.slice(0,30)}}...</td>
             <td>{{commonService.getUserNameById(incident.AssignedTo)}}</td>
             <td>{{commonService.getUserNameById(incident.CreatedBy)}}</td>
-            <td><span title= '{{commonService.getMoment(incident.CreatedAT).format("MMMM DD YYYY, h:mm:ss a")}}'>{{commonService.getMoment(incident.CreatedAT).fromNow() }} </span></td>
+            <td><span data-toggle="tooltip" class="bs-tooltip" title= '{{commonService.getMoment(incident.CreatedAT).format("MMMM DD YYYY, h:mm:ss a")}}'>{{commonService.getMoment(incident.CreatedAT).fromNow() }} </span></td>
             <td><span title= '{{commonService.getMoment(incident.DueDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{commonService.getMoment(incident.DueDate).fromNow() }} </span></td>
             <td>{{commonService.statusName(incident.Status)}}</td>
 

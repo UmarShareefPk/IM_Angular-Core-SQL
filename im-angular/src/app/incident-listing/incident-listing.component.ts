@@ -1,11 +1,8 @@
 import { ChangeDetectorRef, Component, NgZone, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { IncidentService } from '../incident.service';
-import * as moment from 'moment';
-import { Moment } from 'moment';
 import { CommonService } from '../common.service';
 import { map, takeUntil } from 'rxjs/operators';
-import { BehaviorSubject, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-incident-listing',
