@@ -38,8 +38,7 @@ search:string = "";
     if(this.request)
        this.request.unsubscribe();
     this.incidents = [];
-    this.status = "loading";
-
+   this.status = "loading";
 
     this.request =  this.incidentService.getIncidentsWithPage(this.pageSize, this.pageNumber, '', '', this.search)
     .pipe(map(m => {this.status = ""; return m}))

@@ -23,13 +23,16 @@
       <i class="fas fa-check text-success" title="Save"  (click)="commentEditSave()"></i>
     </div>
   </div>
-  <p class="text-muted field scrollbar">{{commentText}}
+  <p class="text-muted field scrollbar text-center">{{commentText}}
   </p>
 
   <table class="table">
 
     <tr *ngFor="let file of comment.attachments">
-      <td><i class="fas fa-times-circle  text-danger"></i>{{file.FileName}}</td>
+      <td>
+        <i class="fas fa-times-circle  text-danger" title="Remove"  (click)="deleteFile(file)" ></i>
+        <a class="text-primary comment-file" (click)="downloadFile(file)"> {{file.FileName}} </a>
+      </td>
     </tr>
 
   </table>

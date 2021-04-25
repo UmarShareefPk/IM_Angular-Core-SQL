@@ -14,6 +14,7 @@ export class AddCommentComponent implements OnInit {
   @Output() commentAdded = new EventEmitter();
   comment:string = "";
   files:any[] = [];
+  filesText:string = "Upload files";
 
   constructor(public common:CommonService, private incidentService:IncidentService) { }
 
@@ -22,6 +23,7 @@ export class AddCommentComponent implements OnInit {
 
   fileChange(event:any){
    this.files =  event.target.files;
+   this.filesText = this.files.length+ ' file selected.';
   }
 
   saveComment(){
@@ -48,6 +50,9 @@ export class AddCommentComponent implements OnInit {
       (m) => {
         console.log(m);
         this.commentAdded.emit(m);
+        this.comment = "";
+        this.files = [];
+        this.filesText = "Upload files"
       },
       (err) => console.log(err)
     );

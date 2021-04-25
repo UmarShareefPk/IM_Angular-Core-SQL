@@ -61,34 +61,73 @@ export class CommentComponent implements OnInit {
     );
   }
 
-   deleteComment()  {
-    swal.fire({
-      title: 'Are you sure?',
-      text: "Are you sure you want to delete this comment.",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-      if (result.isConfirmed) {
-
-        this.incidentService
-        .deleteComment(
-          this.comment.Id,
-          this.comment.IncidentId,
-          this.common.getLoggedInUser()
-        )
-        .subscribe(
-          (m) => {
-            console.log("m" , m);
-            this.commentDeleted.emit(this.comment.Id);
-          },
-          (err) => console.log(err)
-        );
-
-      }
-    })
+  downloadFile(file:any){
+    this.incidentService.downloadFile( "comment" ,this.comment.Id, this.comment.IncidentId, file);
   }
 
-}
+  deleteFile(file:any){
+
+      swal
+        .fire({
+          title: 'Are you sure?',
+          text: 'Are you sure you want to delete this file.',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!',
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+            this.incidentService
+              .deleteAttachment(
+                'comment',
+                this.comment.Id,
+                this.comment.IncidentId,
+                this.common.getLoggedInUser(),
+                file
+              )
+              .subscribe(
+                (m) => {
+                  let attachments = [ ...this.comment.attachments ];
+                  this.comment.attachments = attachments.filter(
+                    (cfile: any) => cfile.Id !== file.Id
+                  );
+                },
+                (err) => console.log(err)
+              );
+          }
+        });
+  }
+
+   deleteComment()  {
+    swal
+      .fire({
+        title: 'Are you sure?',
+        text: 'Are you sure you want to delete this comment.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!',
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          this.incidentService
+            .deleteComment(
+              this.comment.Id,
+              this.comment.IncidentId,
+              this.common.getLoggedInUser()
+            )
+            .subscribe(
+              (m) => {
+                console.log('m', m);
+                this.commentDeleted.emit(this.comment.Id);
+              },
+              (err) => console.log(err)
+            );
+        }
+      });
+  }
+
+} // end of class

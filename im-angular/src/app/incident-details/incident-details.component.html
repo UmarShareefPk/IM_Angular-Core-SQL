@@ -69,7 +69,10 @@
       <h6 class="text-primary"> Attachments:</h6>
         <table class="table">
           <tr *ngFor="let file of incident.Attachments">
-            <td><i class="fas fa-times-circle  text-danger"></i>{{file.FileName}}</td>
+            <td>
+              <i class="fas fa-times-circle  text-danger" title="Remove"  (click)="deleteFile(file)"></i>
+              <a class="incident-file text-primary" (click)="downloadFile(file)"> {{file.FileName}} </a>
+            </td>
           </tr>
 
         </table>

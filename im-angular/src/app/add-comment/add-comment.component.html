@@ -6,11 +6,10 @@
 
 <div class="custom-file upload-container">
   <button class="btn bg-primary text-white"><i class="fas fa-paperclip"></i></button>
-  <input class="file" id="commentFiles"  (change)="fileChange($event)"
-    onchange="$('#filestxt').val($('#commentFiles')[0].files.length+ ' file selected.')" type="file" multiple />
-  <input type="text" id="filestxt" class="txt w-75 text-muted" value="Upload Files" readonly>
+  <input class="file" id="commentFiles"  (change)="fileChange($event)"  type="file" multiple />
+  <input type="text" id="filestxt" value="{{filesText}}" class="txt w-75 text-muted" value="Upload Files" readonly>
 </div>
-<br>
+
 <div class="comment-buttons text-center ">
   <button class="btn  text-white bg-success" (click)="saveComment()">
     <span>Add</span>

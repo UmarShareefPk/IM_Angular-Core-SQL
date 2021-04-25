@@ -102,5 +102,12 @@ ul.field li {
    cursor: pointer;
 }
 
-/*Comments */
+.incident-file{
+  cursor: pointer;
+}
+a.incident-file:hover{
+  text-decoration: underline;
+  color: black;
+}
+
 

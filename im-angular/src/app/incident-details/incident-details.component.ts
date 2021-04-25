@@ -60,7 +60,46 @@ export class IncidentDetailsComponent implements OnInit {
     this.status = this.incident.Status;
     this.startDate= this.incident.StartTime;
     this.dueDate = this.incident.DueDate;
+  }
 
+  downloadFile(file:any){
+    this.incidentService.downloadFile( "incident" ,"", this.incident.Id, file);
+  }
+
+  deleteFile(file:any){
+
+      swal
+        .fire({
+          title: 'Are you sure?',
+          text: 'Are you sure you want to delete this file.',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!',
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+            this.incidentService
+              .deleteAttachment(
+                'incident',
+                '',
+                this.incident.Id,
+                this.common.getLoggedInUser(),
+                file
+              )
+              .subscribe(
+                (m) => {
+                  let changedincident = { ...this.incident };
+                  changedincident.Attachments = changedincident.Attachments.filter(
+                    (ifile:any) => ifile.Id !== file.Id
+                  );
+                  this.incident = changedincident;
+                },
+                (err) => console.log(err)
+              );
+          }
+        });
   }
 
   statusChanged(event:any){
@@ -177,6 +216,11 @@ export class IncidentDetailsComponent implements OnInit {
 
   commentAdded(newComment:any){
     console.log("newcomment" , newComment);
+    let changedincident = { ...this.incident };
+    changedincident.Comments = [newComment].concat(
+      changedincident.Comments
+    );
+    this.incident = changedincident;
   }
 
   commentChanged(comment:any){

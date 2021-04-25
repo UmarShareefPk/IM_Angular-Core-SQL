@@ -24,3 +24,11 @@
   max-height: 25vh;
   overflow-y: auto;
 }
+
+.comment-file{
+  cursor: pointer;
+}
+a.comment-file:hover{
+  text-decoration: underline;
+  color: black;
+}
