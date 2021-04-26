@@ -2,12 +2,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { delay, map } from 'rxjs/operators';
 import { Apis } from './config';
+import { NotificationService } from './notification.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class IncidentService {
-  constructor(private http: HttpClient, private api: Apis) {}
+  constructor(private http: HttpClient, private api: Apis, private notificationService:NotificationService) {}
 
   getIncidentsWithPage(
     pageSize: Number,
@@ -53,7 +54,8 @@ export class IncidentService {
     let url = this.api.addNewCommentUrl;
     return this.http.post(url, formData).pipe(
       map((m) => {
-        console.log(m);
+        let comment:any = m;
+        this.notificationService.incidentUpdatedSignalR(comment.IncidentId)
         return m;
       })
     );
@@ -70,6 +72,7 @@ export class IncidentService {
       userId;
     return this.http.get(url, { responseType: 'text' }).pipe(
       map((m) => {
+        this.notificationService.incidentUpdatedSignalR(incidentId)
         return m;
       })
     );
@@ -79,7 +82,7 @@ export class IncidentService {
     let url = this.api.updateIncidentUrl;
     return this.http.post(url, parameters).pipe(
       map((m) => {
-        console.log(m);
+        this.notificationService.incidentUpdatedSignalR(parameters.IncidentId);
         return m;
       })
     );
@@ -89,7 +92,8 @@ export class IncidentService {
     let url = this.api.updateCommentUrl;
     return this.http.post(url, comment).pipe(
       map((m) => {
-        console.log(m);
+        console.log(comment);
+        this.notificationService.incidentUpdatedSignalR(comment.IncidentId);
         return m;
       })
     );
@@ -107,6 +111,7 @@ export class IncidentService {
       '&contentType=' + file.ContentType;
     return this.http.get(url, { responseType: 'text' }).pipe(
       map((m) => {
+        this.notificationService.incidentUpdatedSignalR(incidentId);
         return m;
       })
     );

@@ -44,7 +44,7 @@ export class CommentComponent implements OnInit {
 
     let changedComment = {
       Id : this.comment.Id,
-      IncidentId : this.comment.incidentId,
+      IncidentId : this.comment.IncidentId,
       UserId : this.common.getLoggedInUser(),
       CreateDate : new Date(),
       CommentText : this.commentEditText,

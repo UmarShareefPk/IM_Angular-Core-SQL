@@ -16,7 +16,7 @@ export class UserService {
         console.log(m)
         return m;
       })
-    )
+    );
   }
 
   getUsersWithPage(
@@ -40,7 +40,6 @@ export class UserService {
     );
   }
 
-
   addNewUser(formData: any) {
     let url = this.api.addNewUserUrl;
     return this.http.post(url, formData, { responseType: 'text' }).pipe(
@@ -50,6 +49,22 @@ export class UserService {
       })
     );
   }
+
+updateHubId(hubId:string, userId:string){
+  let url = this.api.updateHubIdUrl;
+  return this.http
+    .post<any>(url, {
+      HubId : hubId,
+      UserId : userId
+    })
+    .pipe(
+      map((m) => {
+        console.log('m', m);
+        return m;
+      })
+    );
+}
+
 
 
 }

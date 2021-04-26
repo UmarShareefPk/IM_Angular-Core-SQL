@@ -21,22 +21,27 @@
                       <div id="notifications" class="notification-list scrollbar">
                         <table class="table">
                           <tbody>
-                             <tr class="">
-                                <td colspan="3"><a class="text-primary" href="/Incident/IncidentDetails/D1C6B5F0-B37A-4B82-886F-B780FD4DD3A8">Maryam Umar changed Status on incident.</a></td>
-                                <td colspan="1"><small class="text-nowrap" style="margin-left:10px;"><span title="April 16 2021, 1:56:52 am">5 days ago</span> </small></td>
-                                <td colspan="1"><i title="Mark Unread" class="far fa-bookmark text-right" onclick="setStatus(this, '686B810D-6A56-47C3-A14C-EC8DE4821B2A');" aria-hidden="true"></i><span class="sr-only">Mark Unread</span></td>
-                             </tr>
-                             <tr class="unread">
-                                <td colspan="3"><a class="text-primary" href="/Incident/IncidentDetails/D1C6B5F0-B37A-4B82-886F-B780FD4DD3A8">Maryam Umar deleted a comment from incident.</a></td>
-                                <td colspan="1"><small class="text-nowrap" style="margin-left:10px;"><span title="April 16 2021, 1:56:20 am">5 days ago</span> </small></td>
-                                <td colspan="1"><i title="Mark Read" class="fas fa-bookmark text-right" onclick="setStatus(this, '09E11077-FA9C-4940-9DB0-1CD69ACCC40C');" aria-hidden="true"></i><span class="sr-only">Mark Read</span></td>
-                             </tr>
-                             <tr class="">
-                                <td colspan="3"><a class="text-primary" href="/Incident/IncidentDetails/D1C6B5F0-B37A-4B82-886F-B780FD4DD3A8">Maryam Umar changed Status on incident.</a></td>
-                                <td colspan="1"><small class="text-nowrap" style="margin-left:10px;"><span title="April 15 2021, 11:35:04 pm">5 days ago</span> </small></td>
-                                <td colspan="1"><i title="Mark Unread" class="far fa-bookmark text-right" onclick="setStatus(this, '6DCD8467-6D96-4A12-9C93-65B6A8845E0E');" aria-hidden="true"></i><span class="sr-only">Mark Unread</span></td>
+                            <ng-container *ngFor="let notification of notifications">
+                              <tr  [class.unread]="!notification.IsRead">
+                                <td colspan="3">
+                                  <a class="text-primary notification" (click)="openIncident(notification.IncidentId, notification.Id)" >{{notification.NotifyAbout}}</a>
+                                </td>
+                                <td colspan="1">
+                                  <small class="text-nowrap" style="margin-left:10px;">
+                                    <span title= '{{common.getMoment(notification.CreateDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(notification.CreateDate).fromNow() }} </span>
+                                  </small>
+                                </td>
+                                <td colspan="1" *ngIf="notification.IsRead">
+                                  <i title="Mark Unread" class="far fa-bookmark text-right" (click)="setNotificationStatus($event, notification.Id, false)" aria-hidden="true"></i>
+                                  <span class="sr-only">Mark Unread</span>
+                                </td>
+                                <td colspan="1" *ngIf="!notification.IsRead">
+                                  <i title="Mark Read" class="fas fa-bookmark text-right" (click)="setNotificationStatus($event, notification.Id, true)" aria-hidden="true"></i>
+                                  <span class="sr-only">Mark Read</span>
+                                </td>
                              </tr>
 
+                            </ng-container>
                           </tbody>
                        </table>
                       </div>
@@ -44,7 +49,7 @@
               </div>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#"><span class="notification-count" id="notificationCount">5 new</span></a>
+              <a class="nav-link" href="#" *ngIf="unReadCount>0"><span class="notification-count" id="notificationCount">{{unReadCount}} new</span></a>
           </li>
           <li class="nav-item">
         </li>

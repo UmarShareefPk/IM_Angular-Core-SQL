@@ -1,0 +1,7 @@
+table tr td a.notification{
+  cursor: pointer;
+}
+
+table tr td a.notification:hover{
+  text-decoration: underline;
+}

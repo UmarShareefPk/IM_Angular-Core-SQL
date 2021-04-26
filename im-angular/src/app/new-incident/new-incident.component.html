@@ -13,7 +13,7 @@
           <td>
             <h6 class="text-muted">Title</h6>
           </td>
-          <td><input [(ngModel)]="title" type="text" placeholder="" class="w-100 txt" /></td>
+          <td><input [(ngModel)]="title" type="text" placeholder="" class="w-100 txt" maxlength="100" /></td>
         </tr>
         <tr>
           <td>
@@ -67,8 +67,15 @@
         </tr>
         <tr>
           <td colspan="2" class="text-center btns" >
-            <input type="button" (click)="saveIncident();" class="btn bg-success text-white" value="Save" />
-            <input type="button" (click)="cancelClicked();" class="btn bg-warning text-white" value="Cancel" />
+            <button class="btn bg-success text-white" (click)="saveIncident();" >
+              Save
+              <i class="fas fa-save"></i>
+            </button>
+            <button class="btn bg-warning text-white" (click)="cancelClicked();" >
+              Cancel
+              <i class="far fa-window-close"></i>
+            </button>
+
           </td>
         </tr>
       </table>

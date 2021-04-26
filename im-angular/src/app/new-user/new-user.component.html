@@ -11,20 +11,20 @@
       <table class="table new-incident">
         <tr>
             <td><h6 class="text-muted text-nowrap">First Name</h6></td>
-            <td><input id="firstName" [(ngModel)]="firstName" type="text" placeholder="" class="w-100 txt" /></td>
+            <td><input id="firstName" [(ngModel)]="firstName" type="text" maxlength="50" class="w-100 txt" /></td>
         </tr>
 
         <tr>
             <td><h6 class="text-muted text-nowrap">Last Name</h6></td>
-            <td><input id="lastName" [(ngModel)]="lastName"  type="text" placeholder="" class="w-100 txt" /></td>
+            <td><input id="lastName"  [(ngModel)]="lastName"  type="text" maxlength="50" class="w-100 txt" /></td>
         </tr>
         <tr>
             <td><h6 class="text-muted">Email</h6></td>
-            <td><input id="email" [(ngModel)]="email"  type="text" placeholder="" class="w-100 txt" /></td>
+            <td><input id="email" [(ngModel)]="email"  type="text" maxlength="50" class="w-100 txt" /></td>
         </tr>
         <tr>
             <td><h6 class="text-muted">Phone</h6></td>
-            <td><input id="phone" [(ngModel)]="phone"  type="text" placeholder="" class="w-100 txt" /></td>
+            <td><input id="phone" [(ngModel)]="phone"  type="text" maxlength="50" class="w-100 txt" /></td>
         </tr>
 
         <tr>
@@ -39,8 +39,14 @@
         </tr>
         <tr>
           <td colspan="2" class="text-center btns" >
-            <input type="button" (click)="saveUser();" class="btn bg-success text-white" value="Save" />
-            <input type="button" (click)="cancelClicked();" class="btn bg-warning text-white" value="Cancel" />
+            <button class="btn bg-success text-white" (click)="saveUser();" >
+              Save
+              <i class="fas fa-save"></i>
+            </button>
+            <button class="btn bg-warning text-white" (click)="cancelClicked();" >
+              Cancel
+              <i class="far fa-window-close"></i>
+            </button>
           </td>
         </tr>
     </table>

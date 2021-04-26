@@ -12,7 +12,7 @@
       <h4 class="text-primary"> {{title}} <i class="fas fa-edit text-primary" (click)="titleEditClick(!titleEdit)"></i></h4>
 
       <ng-container  *ngIf="titleEdit">
-        <input type="text" id="titleTxt" class="input-text w-100" [(ngModel)]="titleEditText" />
+        <input type="text" id="titleTxt" class="input-text w-100" [(ngModel)]="titleEditText" maxlength="100" />
         <div class="w-100 text-right fields-update-icon">
           <i class="fas fa-times-circle text-warning" title="Cancel" (click)="titleEditClick(false)"></i>
           <i class="fas fa-check text-success" title="Save" (click)="updateIncident('title');"> </i>
