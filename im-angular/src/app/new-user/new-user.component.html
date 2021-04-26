@@ -1,0 +1,49 @@
+<div class="container main-container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class="site-cl">Add New User</h3>
+    </div>
+  </div>
+
+
+  <div class="row section">
+    <div class="offset-md-2 col-md-8 col-sm-12 text-center">
+      <table class="table new-incident">
+        <tr>
+            <td><h6 class="text-muted text-nowrap">First Name</h6></td>
+            <td><input id="firstName" [(ngModel)]="firstName" type="text" placeholder="" class="w-100 txt" /></td>
+        </tr>
+
+        <tr>
+            <td><h6 class="text-muted text-nowrap">Last Name</h6></td>
+            <td><input id="lastName" [(ngModel)]="lastName"  type="text" placeholder="" class="w-100 txt" /></td>
+        </tr>
+        <tr>
+            <td><h6 class="text-muted">Email</h6></td>
+            <td><input id="email" [(ngModel)]="email"  type="text" placeholder="" class="w-100 txt" /></td>
+        </tr>
+        <tr>
+            <td><h6 class="text-muted">Phone</h6></td>
+            <td><input id="phone" [(ngModel)]="phone"  type="text" placeholder="" class="w-100 txt" /></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <div class="custom-file upload-container w-100 text-left">
+                    <button class="btn bg-primary text-white"><i class="fas fa-paperclip"></i></button>
+                    <input class="file" id="files"   (change)="filesChange($event)" type="file"  />
+                    <input type="text" id="filestxt" value="{{filesText}}" class="txt  text-muted" value="Click here to upload Files" readonly >
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-center btns" >
+            <input type="button" (click)="saveUser();" class="btn bg-success text-white" value="Save" />
+            <input type="button" (click)="cancelClicked();" class="btn bg-warning text-white" value="Cancel" />
+          </td>
+        </tr>
+    </table>
+    </div>
+  </div>
+</div>

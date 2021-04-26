@@ -50,7 +50,7 @@ export class NewIncidentComponent implements OnInit {
   }
 
   cancelClicked(){
-    this.router.navigate(['/incidents']);
+      this.router.navigate(['/incidents']);
   }
 
   validate() {

@@ -1,0 +1,104 @@
+
+ /* extra Small devices (landscape phones, 576px and up) */
+ @media (min-width: 279px) {
+
+}
+
+ /*  Small devices (landscape phones, 576px and up) */
+@media (min-width: 400px) {
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+table th {
+   white-space: nowrap;
+   color:  #003018;
+}
+table td {
+   color: darkslategrey;
+}
+
+.table td, .table th {
+
+   line-height:1;
+   vertical-align: middle !important;
+}
+
+
+
+.section{
+   padding-bottom: 2vh;
+}
+
+.table.new-incident{
+   border-collapse: separate;
+   border-spacing: 0.8em;
+}
+
+.table.new-incident tr td:nth-child(1){
+   width: 10%;
+}
+
+.table.new-incident tr td:nth-child(2){
+   width: 90%;
+}
+
+.table.new-incident .txt{
+   border: none;
+   border-bottom: 1px solid #9e9e9e;
+}
+.table.new-incident .txt:focus{
+ outline: none;
+}
+
+.table.new-incident textarea{
+   width: 100%;
+   resize: none;
+   overflow: hidden;
+   min-height: 2px;
+   max-height: 100px;
+}
+
+.custom-file.upload-container{
+   position: relative;
+}
+   .custom-file.upload-container .file {
+       position: absolute;
+       top: 0px;
+       left: 0;
+       opacity: 0;
+       height: 100%;
+       width: 100%;
+       cursor:pointer;
+   }
+
+.custom-file.upload-container .fa-paperclip{
+   font-size: x-large;
+}
+.custom-file.upload-container #filestxt{
+   width:91%;
+}
+
+.assignee-list {
+   max-height: 50vh;
+   overflow-y: auto;
+   line-height:2;
+}
+
+.btns input{
+  margin-left: 20px;
+}

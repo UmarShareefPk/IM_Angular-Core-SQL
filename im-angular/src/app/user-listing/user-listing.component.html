@@ -1,0 +1,58 @@
+<div class="container main-container">
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h3 class="site-cl">Users</h3>
+    </div>
+    <div class="col-sm-6 text-right">
+       <a  class="btn text-white bg-success" (click)="newUser()">Add New</a>
+    </div>
+  </div>
+
+  <div class="row search-bar">
+    <div class="col-sm-12">
+        <span class="text-muted" > Search : </span>
+        <input type="text" class="txt w-50 text-muted" (input)="searchChanged($event)"  placeholder="Type title or description" />
+    </div>
+</div>
+
+ <!-- Listing-->
+<div class="row">
+  <div class="col col-sm-12">
+    <div class="table-responsive">
+      <table class="table ">
+        <thead>
+          <tr  *ngIf="status==='' || status == 'loading'">
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Created Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="7" *ngIf="status==='loading'" > <h5 class="text-center text-muted">Loading...</h5> </td>
+            <td colspan="7" *ngIf="status==='noData'" > <h3 class="text-center text-warning">No User with this name.</h3> </td>
+            <td colspan="7" *ngIf="status==='error'" > <h3 class="text-center text-danger">An Error has occured. Try logging in again.</h3> </td>
+        </tr>
+          <tr *ngFor="let user of users">
+            <td>{{user.FirstName}}</td>
+            <td>{{user.LastName}}</td>
+            <td>{{user.Email}}</td>
+            <td><span title= '{{commonService.getMoment(user.CreateDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{commonService.getMoment(user.CreateDate).fromNow() }} </span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  <app-pagination *ngIf="status==='' || status == 'loading'" [totalRecords]="totalRecords" [pageNumber]="pageNumber"
+    (pageNumberChanged)="pageNumberChanged($event)" (pageSizeChanged)="pageSizeChanged($event)">
+  </app-pagination>
+
+
+
+  </div>
+</div>
+
+</div>
+
