@@ -62,13 +62,20 @@ export class NavbarComponent implements OnInit {
   }
 
   openIncident(incidentId:string, notificationId:string){
+
     this.setNotificationStatus(null,notificationId, true);
+
+    if(window.location.href.toString().includes(incidentId)){
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this.router.onSameUrlNavigation = 'reload';
+    }
+
     this.router.navigate(['/incidentDetails', incidentId]);
   }
 
   setNotificationStatus(event:any, id:string, isRead:boolean){
     if(event)
-      event.preventDefault();
+      event.stopPropagation();
 
     this.notificationService.setNotificationStatus(id, isRead).subscribe(
       (m) => {

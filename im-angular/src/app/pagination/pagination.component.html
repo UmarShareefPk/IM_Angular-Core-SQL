@@ -22,12 +22,13 @@
 
         <li class="page-item"><a class="page-link" href="#" (click)="previousClick($event)">Previous</a></li>
 
+        <li class="page-item" *ngIf="pagesBeforeExists">   <span class="page-link">...</span> </li>
         <li class="page-item"  *ngFor="let page of pages; let i = index">
-          <a class="page-link" [class.active]="(i+1===pageNumber)" href="#" (click)="pageNumberClick(page, $event)">
+          <a class="page-link" [class.active]="(page ===pageNumber)" href="#" (click)="pageNumberClick(page, $event)">
             {{page}}
           </a>
         </li>
-
+        <li class="page-item" *ngIf="pagesAfterExists">   <span class="page-link">...</span> </li>
         <li class="page-item"><a class="page-link" href="#" (click)="nextClick($event)">Next</a></li>
       </ul>
     </nav>

@@ -8,6 +8,9 @@ import { Component, Input, OnInit, Output, EventEmitter, OnChanges, SimpleChange
 export class PaginationComponent implements OnInit, OnChanges {
   pageSize: number = 5;
   pages: number[] = [];
+  pagesBeforeExists:boolean =  false;
+  pagesAfterExists:boolean =  false;
+
   information : string = "";
 
   @Input() pageNumber: number = 1;
@@ -28,7 +31,13 @@ export class PaginationComponent implements OnInit, OnChanges {
     let totalPages = Math.ceil(this.totalRecords / this.pageSize );
     this.pages = [];
 
-    for (let i = 1; i <= totalPages; i++)     this.pages.push(i);
+    for (let i = 1; i <= totalPages; i++) {
+      if(i < this.pageNumber + 4 && i > this.pageNumber - 4 )
+           this.pages.push(i);
+    }
+
+    this.pagesBeforeExists = this.pages[0] > 1? true : false;
+    this.pagesAfterExists =this.pages[this.pages.length - 1] < totalPages ? true : false;
   }
 
   setInformation(){
@@ -40,7 +49,8 @@ export class PaginationComponent implements OnInit, OnChanges {
       end = this.totalRecords;
     if(start > this.totalRecords)
       start = this.totalRecords;
-    this.information = `Showin from ${start} to ${end} of ${this.totalRecords} records`;
+    this.information = `Showin from ${start} to ${end} of ${this.totalRecords} records` +
+                      ` (${Math.ceil(this.totalRecords / this.pageSize )} pages)`;
   }
 
   pageNumberClick(pageNumber: any, event: any) {
@@ -69,7 +79,7 @@ export class PaginationComponent implements OnInit, OnChanges {
 
   nextClick(event:any){
     event.preventDefault();
-    if (this.pageNumber + 1 > this.pages.length ) return;  //already on last page
+    if (this.pageNumber  == this.pages[this.pages.length - 1] ) return;  //already on last page
     this.pageNumber = this.pageNumber + 1;
     this.pageNumberChanged.emit( this.pageNumber);
     this.setInformation();

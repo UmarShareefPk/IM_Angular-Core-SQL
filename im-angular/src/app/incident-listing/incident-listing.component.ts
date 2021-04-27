@@ -79,4 +79,14 @@ search:string = "";
     this.router.navigate(['/incidentDetails', id]);
   }
 
+  dueDateClass(dueDate:string, status:string){
+    if(status == "C" || status =="A")
+      return "text-success";
+
+     if(new Date(dueDate) < (new Date()) )
+       return "text-danger";
+
+    return "text-warning";
+  }
+
 }
