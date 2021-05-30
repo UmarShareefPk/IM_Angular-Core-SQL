@@ -8,6 +8,8 @@ import {  JsonHubProtocol,
 import { NotificationService } from '../notification.service';
 import { UserService } from '../user.service';
 import { CommonService } from '../common.service';
+import { Apis } from '../config';
+
 
 @Component({
   selector: 'app-navbar',
@@ -24,7 +26,8 @@ export class NavbarComponent implements OnInit {
     private router: Router,
     private notificationService: NotificationService,
     private userService:UserService,
-    public common:CommonService
+    public common:CommonService,
+    private api: Apis
   ) {}
 
   ngOnInit(): void {
@@ -96,7 +99,7 @@ export class NavbarComponent implements OnInit {
 
   ReceiveSignalRUpdates() {
     const newConnection = new HubConnectionBuilder()
-      .withUrl('https://localhost:44310/hubs/notifications')
+      .withUrl( this.api.baseUrl +  'hubs/notifications')
       .withAutomaticReconnect()
       .withHubProtocol(new JsonHubProtocol())
       .configureLogging(LogLevel.Information)

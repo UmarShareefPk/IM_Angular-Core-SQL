@@ -5,7 +5,8 @@ import { Injectable } from "@angular/core";
 })
 
 export class Apis {
-  baseUrl : string = "https://localhost:44310/";
+  //baseUrl : string = "https://localhost:44310/";
+  baseUrl : string = "http://im/IMCore/";
 
   authenticateUrl : string;
   allUsersUrl :string;

@@ -24,7 +24,7 @@ import { UserListingComponent } from './user-listing/user-listing.component';
 // ];
 
 const routes: Routes = [
-  { path: '', redirectTo: '/incidents', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'incidents', component: IncidentListingComponent },
   { path: 'incidentDetails/:id',   component: IncidentDetailsComponent },

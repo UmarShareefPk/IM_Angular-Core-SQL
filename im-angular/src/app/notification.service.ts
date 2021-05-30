@@ -35,7 +35,7 @@ export class NotificationService {
 
   incidentUpdatedSignalR (incidentId:string) {
     const connection:any = new HubConnectionBuilder()
-    .withUrl('https://localhost:44310/hubs/notifications')
+    .withUrl(this.api.baseUrl + 'hubs/notifications')
     .withAutomaticReconnect()
     .withHubProtocol(new JsonHubProtocol())
     .configureLogging(LogLevel.Information)

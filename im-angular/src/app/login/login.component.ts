@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   loginClick(event: any) {
     event.preventDefault();
-
+    console.log("calling validate user");
     this.auth.validateUser(this.username, this.password).subscribe(
       (m) => {
         if (m) {
