@@ -66,7 +66,7 @@
   .navbar {
       padding: 10px 200px !important;
       width: auto;
-      min-height: 12vh;
+      /* min-height: 12vh; */
   }
   .notification-list {
       max-height: 80vh;

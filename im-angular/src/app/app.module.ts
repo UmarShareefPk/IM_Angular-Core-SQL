@@ -25,6 +25,7 @@ import { AddCommentComponent } from './incidentComponents/incidentDetails/add-co
 import { NewIncidentComponent } from './incidentComponents/new-incident/new-incident.component';
 import { UserListingComponent } from './userComponents/user-listing/user-listing.component';
 import { NewUserComponent } from './userComponents/new-user/new-user.component';
+import { DashboardComponent } from './incidentComponents/dashboard/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { NewUserComponent } from './userComponents/new-user/new-user.component';
     AddCommentComponent,
     NewIncidentComponent,
     UserListingComponent,
-    NewUserComponent
+    NewUserComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
