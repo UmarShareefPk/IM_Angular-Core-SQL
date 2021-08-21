@@ -5,11 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
-import { IncidentListingComponent } from './incident-listing/incident-listing.component';
-import { IncidentDetailsComponent } from './incident-details/incident-details.component';
-import { AuthService } from './auth.service';
+import { IncidentListingComponent } from './incidentComponents/incident-listing/incident-listing.component';
+import { IncidentDetailsComponent } from './incidentComponents/incidentDetails/incident-details/incident-details.component';
+import { AuthService } from './services/auth.service';
 import { UserService } from './user.service';
-import { IncidentService } from './incident.service';
+import { IncidentService } from './services/incident.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HttpInterceptorService } from './http-interceptor.service';
@@ -17,14 +17,14 @@ import { HttpErrorInterceptorService } from './http-error-interceptor.service';
 import { PaginationComponent } from './pagination/pagination.component';
 import { Apis } from './config';
 import { CommonService } from './common.service';
-import { CommentComponent } from './comment/comment.component';
+import { CommentComponent } from './incidentComponents/incidentDetails/comment/comment.component';
 import { AssigneeDropdownComponent } from './assignee-dropdown/assignee-dropdown.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
-import { AddCommentComponent } from './add-comment/add-comment.component';
-import { NewIncidentComponent } from './new-incident/new-incident.component';
-import { UserListingComponent } from './user-listing/user-listing.component';
-import { NewUserComponent } from './new-user/new-user.component';
+import { AddCommentComponent } from './incidentComponents/incidentDetails/add-comment/add-comment.component';
+import { NewIncidentComponent } from './incidentComponents/new-incident/new-incident.component';
+import { UserListingComponent } from './userComponents/user-listing/user-listing.component';
+import { NewUserComponent } from './userComponents/new-user/new-user.component';
 
 
 @NgModule({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { CommonService } from '../common.service';
-import { IncidentService } from '../incident.service';
+import { CommonService } from '../../../common.service';
+import { IncidentService } from '../../../services/incident.service';
 import swal from 'sweetalert2';
 
 @Component({

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IncidentDetailsComponent } from './incident-details/incident-details.component';
-import { IncidentListingComponent } from './incident-listing/incident-listing.component';
+import { IncidentDetailsComponent } from './incidentComponents/incidentDetails/incident-details/incident-details.component';
+import { IncidentListingComponent } from './incidentComponents/incident-listing/incident-listing.component';
 import { LoginComponent } from './login/login.component';
-import { NewIncidentComponent } from './new-incident/new-incident.component';
-import { NewUserComponent } from './new-user/new-user.component';
-import { UserListingComponent } from './user-listing/user-listing.component';
+import { NewIncidentComponent } from './incidentComponents/new-incident/new-incident.component';
+import { NewUserComponent } from './userComponents/new-user/new-user.component';
+import { UserListingComponent } from './userComponents/user-listing/user-listing.component';
 
 // const routes: Routes = [
 //   { path: '', redirectTo: '/departments', pathMatch: 'full' },

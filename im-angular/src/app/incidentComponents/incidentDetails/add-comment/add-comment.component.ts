@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
-import { CommonService } from '../common.service';
+import { CommonService } from '../../../common.service';
 import swal from 'sweetalert2';
-import { IncidentService } from '../incident.service';
+import { IncidentService } from '../../../services/incident.service';
 
 @Component({
   selector: 'app-add-comment',

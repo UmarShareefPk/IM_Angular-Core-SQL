@@ -2,7 +2,7 @@ import { DOCUMENT  } from '@angular/common';
 import { Inject } from '@angular/core';
 import { Component, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from './auth.service';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
