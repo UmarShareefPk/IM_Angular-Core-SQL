@@ -6,7 +6,7 @@ import {  JsonHubProtocol,
   LogLevel
 } from '@microsoft/signalr';
 import { NotificationService } from '../notification.service';
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
 import { CommonService } from '../common.service';
 import { Apis } from '../config';
 

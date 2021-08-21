@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, NgZone, OnChanges, OnDestroy, OnInit, Sim
 import { Router } from '@angular/router';
 import { CommonService } from '../../common.service';
 import { map, takeUntil } from 'rxjs/operators';
-import { UserService } from '../../user.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-user-listing',

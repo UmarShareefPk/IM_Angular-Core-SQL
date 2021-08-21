@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { IncidentListingComponent } from './incidentComponents/incident-listing/incident-listing.component';
 import { IncidentDetailsComponent } from './incidentComponents/incidentDetails/incident-details/incident-details.component';
 import { AuthService } from './services/auth.service';
-import { UserService } from './user.service';
+import { UserService } from './services/user.service';
 import { IncidentService } from './services/incident.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
