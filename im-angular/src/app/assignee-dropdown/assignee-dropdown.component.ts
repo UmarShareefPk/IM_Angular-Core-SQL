@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { CommonService } from '../common.service';
+import { CommonService } from '../services/common.service';
 
 @Component({
   selector: 'app-assignee-dropdown',

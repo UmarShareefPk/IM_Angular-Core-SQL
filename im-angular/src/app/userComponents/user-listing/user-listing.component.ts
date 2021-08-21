@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, NgZone, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonService } from '../../common.service';
+import { CommonService } from '../../services/common.service';
 import { map, takeUntil } from 'rxjs/operators';
 import { UserService } from '../../services/user.service';
 

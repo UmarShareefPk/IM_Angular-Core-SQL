@@ -5,9 +5,9 @@ import {  JsonHubProtocol,
   HubConnectionBuilder,
   LogLevel
 } from '@microsoft/signalr';
-import { NotificationService } from '../notification.service';
+import { NotificationService } from '../services/notification.service';
 import { UserService } from '../services/user.service';
-import { CommonService } from '../common.service';
+import { CommonService } from '../services/common.service';
 import { Apis } from '../config';
 
 

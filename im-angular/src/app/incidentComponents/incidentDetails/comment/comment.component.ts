@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges,Output, EventEmitter } from '@angular/core';
-import { CommonService } from '../../../common.service';
+import { CommonService } from '../../../services/common.service';
 import { IncidentService } from '../../../services/incident.service';
 import swal from 'sweetalert2';
 

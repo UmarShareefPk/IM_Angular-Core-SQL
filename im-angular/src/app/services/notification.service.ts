@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { CommonService } from './common.service';
-import { Apis } from './config';
+import { Apis } from '../config';
 import {  JsonHubProtocol,
   HubConnectionBuilder,
   LogLevel
