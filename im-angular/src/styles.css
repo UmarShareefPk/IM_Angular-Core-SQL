@@ -223,3 +223,43 @@ i.fas {
 }
 
 /*----------------  Custom Tool Tip END----------------------------*/
+
+.status-new-color {
+  color: #F57C00 !important;
+}
+
+.status-inprogress-color {
+  color: #1976D2 !important;
+}
+
+.status-closed-color {
+  color: #43A047 !important;
+}
+
+.status-approved-color {
+  color: #1B5E20 !important;
+}
+
+.status-late-color {
+  color: #B71C1C !important;
+}
+
+.status-new-bg-color {
+  background-color: #F57C00 !important;
+}
+
+.status-inprogress-bg-color {
+  background-color: #1976D2 !important;
+}
+
+.status-closed-bg-color {
+  background-color: #43A047 !important;
+}
+
+.status-approved-bg-color {
+  background-color: #1B5E20 !important;
+}
+
+.status-late-bg-color {
+  background-color: #B71C1C !important;
+}

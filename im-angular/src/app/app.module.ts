@@ -26,6 +26,12 @@ import { NewIncidentComponent } from './incidentComponents/new-incident/new-inci
 import { UserListingComponent } from './userComponents/user-listing/user-listing.component';
 import { NewUserComponent } from './userComponents/new-user/new-user.component';
 import { DashboardComponent } from './incidentComponents/dashboard/dashboard/dashboard.component';
+import { KpibarComponent } from './incidentComponents/dashboard/kpibar/kpibar.component';
+import { Last5Component } from './incidentComponents/dashboard/last5/last5.component';
+import { Last5mostAssignedToUsersComponent } from './incidentComponents/dashboard/last5most-assigned-to-users/last5most-assigned-to-users.component';
+import { OldestOpenComponent } from './incidentComponents/dashboard/oldest-open/oldest-open.component';
+import { OverallWidgetComponent } from './incidentComponents/dashboard/overall-widget/overall-widget.component';
+import { KpiComponent } from './incidentComponents/dashboard/kpi/kpi.component';
 
 
 @NgModule({
@@ -42,7 +48,13 @@ import { DashboardComponent } from './incidentComponents/dashboard/dashboard/das
     NewIncidentComponent,
     UserListingComponent,
     NewUserComponent,
-    DashboardComponent
+    DashboardComponent,
+    KpibarComponent,
+    Last5Component,
+    Last5mostAssignedToUsersComponent,
+    OldestOpenComponent,
+    OverallWidgetComponent,
+    KpiComponent
   ],
   imports: [
     BrowserModule,

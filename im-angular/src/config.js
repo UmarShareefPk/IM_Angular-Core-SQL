@@ -22,3 +22,5 @@ export const incidentsUrls = {
     deleteAttachmentUrl : baseUrl + "api/Incidents/DeleteFile?",
     downloadFileUrl : baseUrl + "api/Incidents/DownloadFile?",
 }
+
+

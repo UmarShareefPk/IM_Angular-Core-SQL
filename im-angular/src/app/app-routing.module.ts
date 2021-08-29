@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { NewIncidentComponent } from './incidentComponents/new-incident/new-incident.component';
 import { NewUserComponent } from './userComponents/new-user/new-user.component';
 import { UserListingComponent } from './userComponents/user-listing/user-listing.component';
+import { DashboardComponent } from './incidentComponents/dashboard/dashboard/dashboard.component';
 
 // const routes: Routes = [
 //   { path: '', redirectTo: '/departments', pathMatch: 'full' },
@@ -26,6 +27,7 @@ import { UserListingComponent } from './userComponents/user-listing/user-listing
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'incidents', component: IncidentListingComponent },
   { path: 'incidentDetails/:id',   component: IncidentDetailsComponent },
   { path: 'newIncident',   component: NewIncidentComponent },

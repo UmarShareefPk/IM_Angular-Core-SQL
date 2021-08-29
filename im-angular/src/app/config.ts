@@ -26,6 +26,11 @@ export class Apis {
   deleteAttachmentUrl : string ;
   downloadFileUrl :string;
 
+  kpiUrl:string;
+  overallWidgetUrl:string;
+  last5IncidentsUrl:string;
+  oldest5UnresolvedIncidentsUrl:string;
+  mostAssignedToUsersIncidentsUrl:string;
 
   constructor() {
     this.authenticateUrl =  this.baseUrl + "api/Users/authenticate";
@@ -45,5 +50,13 @@ export class Apis {
     this.getIncidentByIdUrl =  this.baseUrl  + "api/Incidents/IncidentById?Id=";
     this.deleteAttachmentUrl =  this.baseUrl  + "api/Incidents/DeleteFile?";
     this.downloadFileUrl =  this.baseUrl  + "api/Incidents/DownloadFile?";
+
+    this.kpiUrl = this.baseUrl + "api/Incidents/KPI?userId=";
+    this.overallWidgetUrl = this.baseUrl + "api/Incidents/OverallWidget";
+    this.last5IncidentsUrl = this.baseUrl + "api/Incidents/Last5Incidents";
+    this.oldest5UnresolvedIncidentsUrl = this.baseUrl + "api/Incidents/Oldest5UnresolvedIncidents?";
+    this.mostAssignedToUsersIncidentsUrl = this.baseUrl + "api/Incidents/MostAssignedToUsersIncidents";
+
+
   }
 }
