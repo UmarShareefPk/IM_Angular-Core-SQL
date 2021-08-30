@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:dev" : "ng build --watch --deploy-url /ImAngular/ --base-href /ImAngular/",
+    "build:dev": "ng build --watch --deploy-url /ImAngular/ --base-href /ImAngular/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -23,7 +23,9 @@
     "@angular/platform-browser-dynamic": "~11.2.10",
     "@angular/router": "~11.2.10",
     "@microsoft/signalr": "^5.0.5",
+    "angular-highcharts": "^12.0.0",
     "bootstrap": "^4.6.0",
+    "highcharts": "^9.2.2",
     "jquery": "^3.6.0",
     "moment": "^2.29.1",
     "ng-pick-datetime": "^7.0.0",

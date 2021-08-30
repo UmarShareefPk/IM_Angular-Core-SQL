@@ -28,10 +28,12 @@ import { NewUserComponent } from './userComponents/new-user/new-user.component';
 import { DashboardComponent } from './incidentComponents/dashboard/dashboard/dashboard.component';
 import { KpibarComponent } from './incidentComponents/dashboard/kpibar/kpibar.component';
 import { Last5Component } from './incidentComponents/dashboard/last5/last5.component';
-import { Last5mostAssignedToUsersComponent } from './incidentComponents/dashboard/last5most-assigned-to-users/last5most-assigned-to-users.component';
+
 import { OldestOpenComponent } from './incidentComponents/dashboard/oldest-open/oldest-open.component';
 import { OverallWidgetComponent } from './incidentComponents/dashboard/overall-widget/overall-widget.component';
 import { KpiComponent } from './incidentComponents/dashboard/kpi/kpi.component';
+import { ChartModule } from 'angular-highcharts';
+import { MostAssignedToUsersComponent } from './incidentComponents/dashboard/most-assigned-to-users/most-assigned-to-users.component';
 
 
 @NgModule({
@@ -51,10 +53,10 @@ import { KpiComponent } from './incidentComponents/dashboard/kpi/kpi.component';
     DashboardComponent,
     KpibarComponent,
     Last5Component,
-    Last5mostAssignedToUsersComponent,
     OldestOpenComponent,
     OverallWidgetComponent,
-    KpiComponent
+    KpiComponent,
+    MostAssignedToUsersComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +66,7 @@ import { KpiComponent } from './incidentComponents/dashboard/kpi/kpi.component';
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
     BrowserAnimationsModule,
+    ChartModule,
 
   ],
   providers: [

@@ -20,4 +20,46 @@ export class DashboardServiceService {
       })
     );
   }
+
+  getOverallWidgetData() {
+    let url = this.api.overallWidgetUrl;
+
+    return this.http.get(url).pipe(
+      map((m) => {
+        return m;
+      })
+    );
+  }
+
+  getLast5Data() {
+    let url = this.api.last5IncidentsUrl;
+
+    return this.http.get(url).pipe(
+      map((m) => {
+        return m;
+      })
+    );
+  }
+
+  getMostAssignedToUsersData() {
+    let url = this.api.mostAssignedToUsersIncidentsUrl;
+
+    return this.http.get(url).pipe(
+      map((m) => {
+        return m;
+      })
+    );
+  }
+
+  getOldest5UnresolvedData() {
+    let url = this.api.oldest5UnresolvedIncidentsUrl;
+
+    return this.http.get(url).pipe(
+      map((m) => {
+        return m;
+      })
+    );
+  }
+
+
 }
