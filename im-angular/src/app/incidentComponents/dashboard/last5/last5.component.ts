@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/services/common.service';
+import { DashboardServiceService } from 'src/app/services/dashboard-service.service';
 
 @Component({
   selector: 'app-last5',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Last5Component implements OnInit {
 
-  constructor() { }
+  constructor(private dashboardService:DashboardServiceService, public commonService:CommonService) { }
+
+  incidents:any = [];
 
   ngOnInit(): void {
+    this.loadIncidents();
+  }
+
+  loadIncidents():any{
+
+    this.dashboardService.getLast5Data().subscribe((m:any)=>{
+      this.incidents = m;
+      console.log(m);
+    })
+
   }
 
 }

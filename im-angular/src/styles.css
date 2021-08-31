@@ -263,3 +263,70 @@ i.fas {
 .status-late-bg-color {
   background-color: #B71C1C !important;
 }
+
+/*-------------- Dashboard ---------------------*/
+
+.widget{
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 0 20px;
+  height: 450px;
+  min-height: 450px;
+  max-height: 450px;
+  overflow: auto;
+  margin: 10px;
+}
+
+.widget h5{
+  color: #1A237E ;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.incident{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 20px 0px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted;
+}
+
+.time-status{
+  display: flex;
+  flex-direction: column;
+  color: indigo;
+}
+
+.incident .timestamp{
+  white-space: nowrap;
+  font-size: small;
+  color: gray;
+}
+.incident .status{
+  white-space: nowrap;
+  font-size: small;
+}
+
+.incident .title {
+ display: inline-block;
+ min-width: 250px;
+ margin-left: 20px;
+}
+
+.incident .title a{
+  font-size: 16px;
+  margin-left: 5px;
+  color:  #1A237E;
+
+}
+.incident .title:hover{
+ text-decoration: underline;
+ cursor: pointer;
+}
+
+
+/*-------------- End Dashboard ---------------------*/

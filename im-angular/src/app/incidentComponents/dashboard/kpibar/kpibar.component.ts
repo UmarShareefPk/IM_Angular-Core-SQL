@@ -16,7 +16,6 @@ export class KpibarComponent implements OnInit {
   ngOnInit(): void {
 
     this.dashboardService.getkpiData().subscribe((m:any)=> {
-     console.log("KPIs", m)
       this.kpis = m
     })
   }

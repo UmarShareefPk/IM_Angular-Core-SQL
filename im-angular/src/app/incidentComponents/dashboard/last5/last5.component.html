@@ -1,1 +1,21 @@
-<p>last5 works!</p>
+<div class="widget">
+  <h5> Last 5 Incidents</h5>
+  <div class="incident" *ngFor="let incident of incidents">
+
+    <div class="time-status">
+      <span class="timestamp"
+        title='{{commonService.getMoment(incident.CreatedAT).format("MMMM DD YYYY, h:mm:ss a")}}'>{{commonService.getMoment(incident.CreatedAT).fromNow()
+        }} </span>
+      <span class="status">
+        {{commonService.statusName(incident.Status)}}
+      </span>
+    </div>
+
+    <div class="title">
+      <a>
+        {{incident.Title}}
+      </a>
+    </div>
+
+  </div>
+</div>
