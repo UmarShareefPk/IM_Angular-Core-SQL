@@ -81,7 +81,7 @@ search:string = "";
 
   dueDateClass(dueDate:string, status:string){
     if(status == "C" || status =="A")
-      return "text-success";
+      return "";
 
      if(new Date(dueDate) < (new Date()) )
        return "text-danger";

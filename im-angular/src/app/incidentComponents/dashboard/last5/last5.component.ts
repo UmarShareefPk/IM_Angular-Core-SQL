@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from 'src/app/services/common.service';
 import { DashboardServiceService } from 'src/app/services/dashboard-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-last5',
@@ -9,7 +10,7 @@ import { DashboardServiceService } from 'src/app/services/dashboard-service.serv
 })
 export class Last5Component implements OnInit {
 
-  constructor(private dashboardService:DashboardServiceService, public commonService:CommonService) { }
+  constructor(private dashboardService:DashboardServiceService, public commonService:CommonService,   private router: Router) { }
 
   incidents:any = [];
 
@@ -24,6 +25,10 @@ export class Last5Component implements OnInit {
       console.log(m);
     })
 
+  }
+
+  titleClick(id: string) {
+    this.router.navigate(['/incidentDetails', id]);
   }
 
 }
