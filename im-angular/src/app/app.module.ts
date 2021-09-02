@@ -34,6 +34,7 @@ import { OverallWidgetComponent } from './incidentComponents/dashboard/overall-w
 import { KpiComponent } from './incidentComponents/dashboard/kpi/kpi.component';
 import { ChartModule } from 'angular-highcharts';
 import { MostAssignedToUsersComponent } from './incidentComponents/dashboard/most-assigned-to-users/most-assigned-to-users.component';
+import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { MostAssignedToUsersComponent } from './incidentComponents/dashboard/mos
     OldestOpenComponent,
     OverallWidgetComponent,
     KpiComponent,
-    MostAssignedToUsersComponent
+    MostAssignedToUsersComponent,
+    UnauthorizedComponent
   ],
   imports: [
     BrowserModule,

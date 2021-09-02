@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import {  JsonHubProtocol,
@@ -9,6 +9,7 @@ import { NotificationService } from '../services/notification.service';
 import { UserService } from '../services/user.service';
 import { CommonService } from '../services/common.service';
 import { Apis } from '../config';
+import { DOCUMENT } from '@angular/common';
 
 
 @Component({
@@ -24,15 +25,18 @@ export class NavbarComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private router: Router,
+    private r: Renderer2,
     private notificationService: NotificationService,
     private userService:UserService,
     public common:CommonService,
-    private api: Apis
+    private api: Apis,
+    @Inject(DOCUMENT) document: any,
   ) {}
 
   ngOnInit(): void {
     this.getNotifications();
     this.ReceiveSignalRUpdates();
+
   }
 
   logoutClick() {
@@ -41,6 +45,7 @@ export class NavbarComponent implements OnInit {
   }
 
   manuChanged(target: string, event: any) {
+    this.r.removeClass(document.body, 'site-bg-img');
     event.preventDefault();
     if (target == 'incidents') this.router.navigate(['/incidents']);
     else if (target == 'users') this.router.navigate(['/users']);
