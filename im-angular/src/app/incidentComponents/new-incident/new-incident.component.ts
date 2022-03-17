@@ -17,7 +17,7 @@ export class NewIncidentComponent implements OnInit {
   startDate: string = '';
   dueDate: string = '';
   files: any = [];
-  filesText: string = 'Upload files';
+  filesText: string = 'No file selected.';
 
   constructor(
     public common: CommonService,

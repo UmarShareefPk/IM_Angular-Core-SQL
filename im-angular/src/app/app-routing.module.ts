@@ -7,6 +7,7 @@ import { NewIncidentComponent } from './incidentComponents/new-incident/new-inci
 import { NewUserComponent } from './userComponents/new-user/new-user.component';
 import { UserListingComponent } from './userComponents/user-listing/user-listing.component';
 import { DashboardComponent } from './incidentComponents/dashboard/dashboard/dashboard.component';
+import {MessagesComponent} from './messagesComponents/messages/messages.component'
 
 // const routes: Routes = [
 //   { path: '', redirectTo: '/departments', pathMatch: 'full' },
@@ -32,7 +33,8 @@ const routes: Routes = [
   { path: 'incidentDetails/:id',   component: IncidentDetailsComponent },
   { path: 'newIncident',   component: NewIncidentComponent },
   { path: 'users',   component: UserListingComponent },
-  { path: 'newUser',   component: NewUserComponent }
+  { path: 'newUser',   component: NewUserComponent },
+  { path: 'messages',   component: MessagesComponent}
 ];
 
 @NgModule({

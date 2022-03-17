@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\umar\Desktop\Learning\IM\IM_Angular-Core-SQL\im-angular\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! D:\GitHub\__Mine\IM\IM_Angular-Core-SQL\im-angular\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -1214,7 +1214,7 @@ __webpack_require__.r(__webpack_exports__);
 class Apis {
     constructor() {
         //baseUrl : string = "https://localhost:44310/";
-        this.baseUrl = "http://im/IMCore/";
+        this.baseUrl = "http://localhost/ImWebapiCore/";
         this.authenticateUrl = this.baseUrl + "api/Users/authenticate";
         this.allUsersUrl = this.baseUrl + "api/users/AllUsers";
         this.userssWithPageUrl = this.baseUrl + "api/Users/GetUsersWithPage?";

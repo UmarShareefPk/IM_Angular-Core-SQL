@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       (m) => {
         if (m) {
           this.r.removeClass(document.body, 'site-bg-img');
-          this.router.navigate(['/incidents']);
+          this.router.navigate(['/dashboard']);
           this.userService.getAllUsers().subscribe(m=> localStorage.setItem("allUsers", JSON.stringify(m)));
         } else {
           this.error = 'Incorrect username or password.';

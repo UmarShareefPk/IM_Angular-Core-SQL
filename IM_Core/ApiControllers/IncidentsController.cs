@@ -264,6 +264,13 @@ namespace IM_Core.ApiControllers
             return IncidentsMethods.GetIncidentsPage(PageSize, PageNumber, SortBy, SortDirection, Search);
         }
 
+        [HttpGet("GetIncidentsWithPageTest")]        
+        public object GetIncidentsWithPageTest(int PageSize, int PageNumber, string SortBy, string SortDirection, string Search)
+        {
+            //Thread.Sleep(000);
+            return IncidentsMethods.GetIncidentsPageTest(PageSize, PageNumber, SortBy, SortDirection, Search);
+        }
+
         // GET: api/<IncidentsController>
         [HttpGet]
         public IEnumerable<string> Get()

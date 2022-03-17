@@ -50,6 +50,7 @@ export class NavbarComponent implements OnInit {
     if (target == 'incidents') this.router.navigate(['/incidents']);
     else if (target == 'users') this.router.navigate(['/users']);
     else if (target == 'dashboard') this.router.navigate(['/dashboard']);
+    else if (target == 'messages') this.router.navigate(['/messages']);
   }
 
   setUnreadCount(){

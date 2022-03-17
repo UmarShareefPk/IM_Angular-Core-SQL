@@ -11,6 +11,9 @@
           <li class="nav-item">
               <a class="nav-link" href='#' (click)="manuChanged('users' , $event)">Users</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href='#' (click)="manuChanged('messages' , $event)">Messages</a>
+          </li>
           <!-- <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
           </li> -->
@@ -47,12 +50,15 @@
                       </div>
                   </div>
               </div>
+              <ng-container *ngIf="unReadCount>0">
+                <span class="notification-count1" id="notificationCount">{{unReadCount}}</span>
+              </ng-container>
+             
           </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#" *ngIf="unReadCount>0"><span class="notification-count" id="notificationCount">{{unReadCount}} new</span></a>
-          </li>
-          <li class="nav-item">
-        </li>
+          <!-- <li class="nav-item">
+              <a class="nav-link" href="#" *ngIf="unReadCount>0"><span class="notification-count" id="notificationCount">{{unReadCount}}</span></a>
+          </li> -->
+         
           <li class="nav-item">
             <a class="nav-link" (click)="logoutClick()" title="Log out"><i class="fas fa-sign-out-alt text-white"></i></a>
 

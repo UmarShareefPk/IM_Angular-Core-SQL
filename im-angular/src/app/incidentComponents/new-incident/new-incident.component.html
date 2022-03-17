@@ -31,7 +31,7 @@
         </tr>
         <tr>
           <td>
-            <h6 class="text-muted">Additional Details</h6>
+            <h6 class="text-muted text-nowrap">Additional Details</h6>
           </td>
           <td><textarea class="w-100 txt" [(ngModel)]="addtionalDetails" (input)="common.auto_grow($event)"></textarea>
           </td>
@@ -55,12 +55,19 @@
           </td>
         </tr>
         <tr>
-          <td colspan="2">
+          <td>
+            <h6 class="text-muted">Attachments</h6>
+          </td>
+          <td colspan="">
             <div class="custom-file upload-container w-100 text-left">
-              <button class="btn bg-primary text-white"><i class="fas fa-paperclip"></i></button>
+              <div class="file-container">
+                <button class="btn bg-primary text-white"><i class="fas fa-paperclip"></i></button>
+                <input type="text" id="filestxt" value="{{filesText}}" class="txt  text-muted" value="Click here to upload Files" readonly >
+              
+              </div>
               <input class="file" id="files"
               (change)="filesChange($event)" type="file" multiple />
-              <input type="text" id="filestxt" value="{{filesText}}" class="txt  text-muted" value="Click here to upload Files" readonly >
+            
             </div>
 
           </td>

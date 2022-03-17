@@ -10,6 +10,7 @@ import { IncidentDetailsComponent } from './incidentComponents/incidentDetails/i
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/user.service';
 import { IncidentService } from './services/incident.service';
+import { MessagesService } from './services/messages.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HttpInterceptorService } from './services/interceptors/http-interceptor.service';
@@ -35,6 +36,12 @@ import { KpiComponent } from './incidentComponents/dashboard/kpi/kpi.component';
 import { ChartModule } from 'angular-highcharts';
 import { MostAssignedToUsersComponent } from './incidentComponents/dashboard/most-assigned-to-users/most-assigned-to-users.component';
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
+import { MessagesComponent } from './messagesComponents/messages/messages.component';
+import { ComposeMessageComponent } from './messagesComponents/compose-message/compose-message.component';
+import { ReplyComponent } from './messagesComponents/reply/reply.component';
+import { MessageComponent } from './messagesComponents/message/message.component';
+import { ConversationsComponent } from './messagesComponents/conversations/conversations.component';
+
 
 
 @NgModule({
@@ -58,7 +65,13 @@ import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
     OverallWidgetComponent,
     KpiComponent,
     MostAssignedToUsersComponent,
-    UnauthorizedComponent
+    UnauthorizedComponent,
+    MessagesComponent,
+    ComposeMessageComponent,
+    ReplyComponent,
+    MessageComponent,
+    ConversationsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -77,6 +90,7 @@ import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
     IncidentService,
     Apis,
     CommonService,
+    MessagesService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpInterceptorService,

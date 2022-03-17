@@ -6,7 +6,7 @@ import { Injectable } from "@angular/core";
 
 export class Apis {
   //baseUrl : string = "https://localhost:44310/";
-  baseUrl : string = "http://im/IMCore/";
+  baseUrl : string = "http://localhost/ImWebapiCore/";
 
   authenticateUrl : string;
   allUsersUrl :string;
@@ -32,6 +32,14 @@ export class Apis {
   oldest5UnresolvedIncidentsUrl:string;
   mostAssignedToUsersIncidentsUrl:string;
 
+  messagesByUserUrl:string;
+  sendMessageUrl:string;
+  conversationsByUserUrl:string;
+  messagesByConversationsUrl:string;
+  deleteConversationUrl:string;
+  deleteMessageUrl:string;
+  changeMessageStatusUrl:string;
+
   constructor() {
     this.authenticateUrl =  this.baseUrl + "api/Users/authenticate";
     this.allUsersUrl = this.baseUrl + "api/users/AllUsers";
@@ -56,7 +64,14 @@ export class Apis {
     this.last5IncidentsUrl = this.baseUrl + "api/Incidents/Last5Incidents";
     this.oldest5UnresolvedIncidentsUrl = this.baseUrl + "api/Incidents/Oldest5UnresolvedIncidents?";
     this.mostAssignedToUsersIncidentsUrl = this.baseUrl + "api/Incidents/MostAssignedToUsersIncidents";
-
+ 
+    this.messagesByUserUrl= this.baseUrl + "api/Messages/MessagesByUser?UserId=";
+    this.sendMessageUrl= this.baseUrl + "api/Messages/AddMessage";
+    this.conversationsByUserUrl= this.baseUrl + "api/Messages/ConversationsByUser?UserId=";
+    this.messagesByConversationsUrl= this.baseUrl + "api/Messages/MessagesByConversations?ConversationId=";
+    this.deleteConversationUrl= this.baseUrl + "api/Messages/DeleteConversation?ConversationId=";
+    this.deleteMessageUrl= this.baseUrl + "api/Messages/DeleteMessage?MessageId=";
+    this.changeMessageStatusUrl= this.baseUrl + "api/Messages/ChangeMessageStatus?MessageId=";
 
   }
 }

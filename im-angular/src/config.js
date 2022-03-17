@@ -1,4 +1,4 @@
-const baseUrl = "https://localhost:44310/";
+const baseUrl = "http://localhost/ImWebapiCore/";
 
 export const usersUrls = {
     tokenUrl : baseUrl + "token",
