@@ -1,0 +1,25 @@
+ul{
+    list-style: none;
+}
+
+ul li .conversation{
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content:start;
+    align-items: center;
+}
+
+ul li .conversation .photo{
+     padding: 15px; 
+    width: 60px; 
+    height: 60px;
+    margin-right: 2vw;
+   background-color: darkgreen;
+   color: white;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+}

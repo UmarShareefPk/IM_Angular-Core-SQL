@@ -9,21 +9,6 @@ import { UserListingComponent } from './userComponents/user-listing/user-listing
 import { DashboardComponent } from './incidentComponents/dashboard/dashboard/dashboard.component';
 import {MessagesComponent} from './messagesComponents/messages/messages.component'
 
-// const routes: Routes = [
-//   { path: '', redirectTo: '/departments', pathMatch: 'full' },
-//   { path: 'departments', component: DepartmentListComponent },
-//   {
-//     path: 'departments/:id',
-//     component: DepartmentDetailComponent,
-//     children: [
-//       { path: 'overview', component: DepartmentOverviewComponent},
-//       { path: 'contact', component: DepartmentContactComponent}
-//     ]
-//    },
-//   { path: 'employees',   component: EmployeeListComponent },
-//   { path: '**',   component: PageNotFoundComponent }
-
-// ];
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },

@@ -51,13 +51,10 @@
                   </div>
               </div>
               <ng-container *ngIf="unReadCount>0">
-                <span class="notification-count1" id="notificationCount">{{unReadCount}}</span>
+                <span class="notification-count" id="notificationCount">{{unReadCount}}</span>
               </ng-container>
              
-          </li>
-          <!-- <li class="nav-item">
-              <a class="nav-link" href="#" *ngIf="unReadCount>0"><span class="notification-count" id="notificationCount">{{unReadCount}}</span></a>
-          </li> -->
+          </li>         
          
           <li class="nav-item">
             <a class="nav-link" (click)="logoutClick()" title="Log out"><i class="fas fa-sign-out-alt text-white"></i></a>

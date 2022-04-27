@@ -1,1 +1,25 @@
-<p>conversations works!</p>
+<ul>
+    <li *ngFor="let conversation of conversations">
+        <div class="conversation" >
+            <div class='photo'>             
+                <span title={{getUserToDisplay(conversation)}}>
+                    {{ getUserInitials(conversation) }}
+                </span>
+            </div>
+            <div class='name-message'>
+                <div class='name-unread' >
+                    <span class='name indigo-text darken-4'>{{ getUserToDisplay(conversation)}} </span>                  
+                     
+                        <span class='unread-count'>{{conversation.UnReadCount}} new</span>
+                </div>
+                <div class='last-message'>
+                    <span class='last-message-text'>{{conversation.LastMessage.slice(0,20)}}</span>
+                    <span class='date-time'>
+                        <span data-toggle="tooltip" class="bs-tooltip" title= '{{common.getMoment(conversation.LastMessageTime).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(conversation.LastMessageTime).fromNow() }} </span>
+                    </span>
+                </div>
+            </div>
+        </div>        
+
+    </li>
+</ul>
