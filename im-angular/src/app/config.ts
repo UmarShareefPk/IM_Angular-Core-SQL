@@ -6,7 +6,7 @@ import { Injectable } from "@angular/core";
 
 export class Apis {
   //baseUrl : string = "https://localhost:44310/";
-  baseUrl : string = "http://localhost/ImWebapiCore/";
+  baseUrl : string = "https://imwebapicore.azurewebsites.net/";
 
   authenticateUrl : string;
   allUsersUrl :string;
