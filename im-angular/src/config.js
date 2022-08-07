@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost/ImWebapiCore/";
+const baseUrl = "https://imwebapicore.azurewebsites.net/";
 
 export const usersUrls = {
     tokenUrl : baseUrl + "token",
