@@ -163,8 +163,17 @@ i.fas {
 
 
 .unread {
-  background: #F0F0F0;
+  background: rgb(223,215,205);
+background: linear-gradient(0deg, rgba(223,215,205,1) 0%, rgba(146,149,147,1) 74%);
+  color: honeydew;
+  font-size: small;
 }
+
+.read {
+  color: gray;
+  font-size: small;
+}
+
 
 .fields-update-icon i{
   margin-left: 5px;

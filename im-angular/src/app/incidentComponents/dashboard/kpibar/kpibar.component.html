@@ -1,11 +1,26 @@
 <div class="row kpibar">
 
+   <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 kpi-brick">
+      <app-kpi text="New" [value]="kpis.New"></app-kpi>
+   </div>
 
-   <app-kpi class="col-lg-2 col-md-6 col-sm-12" text="New" [value]="kpis.New"></app-kpi>
-   <app-kpi class="col-lg-2 col-md-6 col-sm-12" text="InProgress" [value]="kpis.InProgress"></app-kpi>
-   <app-kpi class="col-lg-2 col-md-6 col-sm-12" text="Closed" [value]="kpis.Closed"></app-kpi>
-   <app-kpi class="col-lg-2 col-md-6 col-sm-12" text="Approved" [value]="kpis.Approved"></app-kpi>
-   <app-kpi class="col-lg-2 col-md-6 col-sm-12" text="Late" [value]="kpis.Late"></app-kpi>
-   <app-kpi class="col-lg-2 col-md-6 col-sm-12" text="Assigned To Me" [value]="kpis.AssignedToMe"></app-kpi>
+   <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 kpi-brick">
+      <app-kpi text="In Progress" [value]="kpis.InProgress"></app-kpi>
+   </div>
+
+   <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 kpi-brick">
+      <app-kpi text="Closed" [value]="kpis.Closed"></app-kpi>
+   </div>
+   
+   <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 kpi-brick">
+      <app-kpi text="Approved" [value]="kpis.Approved"></app-kpi>
+   </div>
+   <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 kpi-brick">
+      <app-kpi text="Late" [value]="kpis.Late"></app-kpi>
+   </div>
+
+   <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 kpi-brick">
+      <app-kpi text="Assigned To Me" [value]="kpis.AssignedToMe"></app-kpi>
+   </div>
 
 </div>

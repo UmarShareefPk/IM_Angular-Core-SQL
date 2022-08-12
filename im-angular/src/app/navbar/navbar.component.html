@@ -1,8 +1,15 @@
-<nav class="navbar navbar-toggleable-md navbar-dark bg-custom  site-bg">
+<nav class="navbar navbar-toggleable-md navbar-dark bg-custom">
+
+
+
+  <a class="navbar-brand" href="#" style="font-size: larger;" (click)="manuChanged('dashboard' , $event)">
+    <img src="../../assets/images/logo-white.png" height="60px" />
+  </a>
+
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="fas fa-bars text-white"></i>
-  </button>
-  <a class="navbar-brand" href='#' (click)="manuChanged('dashboard' , $event)">Incident Manager</a>
+    <i class="fas fa-bars text-white"></i>
+</button>
+  <!-- <a class="navbar-brand" href='#' (click)="manuChanged('dashboard' , $event)">Incident Manager</a> -->
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
           <li class="nav-item ">
@@ -11,23 +18,29 @@
           <li class="nav-item">
               <a class="nav-link" href='#' (click)="manuChanged('users' , $event)">Users</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href='#' (click)="manuChanged('messages' , $event)">Messages</a>
-          </li>
+          </li> -->
           <!-- <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
           </li> -->
-          <li class="nav-item">
+          <li class="nav-item icon">
               <div class="btn-group">
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-bell"></i></a>
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                    <i class="fas fa-bell"></i>
+                    <ng-container *ngIf="unReadCount>0">
+                      <span class="badge badge-pill">{{unReadCount}} new</span>
+                      <!-- <span class="notification-count" id="notificationCount">{{unReadCount}}</span> -->
+                    </ng-container>
+                  </a>
                   <div class="dropdown-menu dropdown-menu-right justify-content-center">
                       <div id="notifications" class="notification-list scrollbar">
                         <table class="table">
                           <tbody>
                             <ng-container *ngFor="let notification of notifications">
-                              <tr  [class.unread]="!notification.IsRead">
+                              <tr  [class.unread]="!notification.IsRead" [class.read]="notification.IsRead" >
                                 <td colspan="3">
-                                  <a class="text-primary notification" (click)="openIncident(notification.IncidentId, notification.Id)" >{{notification.NotifyAbout}}</a>
+                                  <a class="notification" (click)="openIncident(notification.IncidentId, notification.Id)" >{{notification.NotifyAbout}}</a>
                                 </td>
                                 <td colspan="1">
                                   <small class="text-nowrap" style="margin-left:10px;">
@@ -50,9 +63,7 @@
                       </div>
                   </div>
               </div>
-              <ng-container *ngIf="unReadCount>0">
-                <span class="notification-count" id="notificationCount">{{unReadCount}}</span>
-              </ng-container>
+             
              
           </li>         
          

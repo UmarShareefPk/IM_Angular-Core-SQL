@@ -1,56 +1,64 @@
 
+.login-logo {
+  height: 100vh;
+  background: rgb(95,170,54);
+  background: linear-gradient(0deg, rgba(95,170,54,1) 0%, rgba(5,64,36,1) 88%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+  /*  background-color: #1a237e;*/
+}
+
+.login-container .form-group {
+   width:60%;
+}
+
+
  /* extra Small devices (landscape phones, 576px and up) */
  @media (min-width: 279px) {
-  .login-container{
-      margin-top: 0vh;
-      height: 100vh;
-  }
-
+  
 }
 
 /*  Small devices (landscape phones, 576px and up) */
 @media (min-width: 400px) {
-  .login-container{
-      margin-top: 0vh;
-      height: 100vh;
-  }
-
+ 
 }
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  .login-container{
-      margin-top: 0vh;
-      width: 60% !important;
-      height: 100vh;
-  }
-
+ 
 
 }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .login-container{
-      margin-top: 15vh;
-      height: 70vh;
-      width: 60% !important;
-  }
+ 
 
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  .login-container{
-      margin-top: 15vh;
-      height: 70vh;
-      width: 30% !important;
-  }
+ 
 
 }
 
+.site-bg{
+  background: rgb(95,170,54);
+  background: linear-gradient(0deg, rgba(95,170,54,1) 0%, rgba(5,64,36,1) 88%);
+  
+}
+
 .login-container{
-  background-color: white;
-  padding: 80px;
+ 
 }
 
 .site-bg-img {

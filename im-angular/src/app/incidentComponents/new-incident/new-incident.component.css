@@ -30,6 +30,7 @@ table th {
 }
 table td {
    color: darkslategrey;
+   text-align: left;
 }
 
 .table td, .table th {

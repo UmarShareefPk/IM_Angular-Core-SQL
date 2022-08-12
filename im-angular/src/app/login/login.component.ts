@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   username: string = '';
   password: string = '';
   error: string = '';
-
+  isloggedIn:boolean = false;
   constructor(
     private router: Router,
     @Inject(DOCUMENT) document: any,
@@ -23,7 +23,15 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.r.addClass(document.body, 'site-bg-img');
+  //  this.r.addClass(document.body, 'site-bg-img');
+
+
+  this.auth.userLoggedInObs.subscribe((m) => {
+    this.isloggedIn = m;
+    if(m)  this.router.navigate(['/dashboard']);
+  });// know as soon as login state is changed
+
+
   }
 
   loginClick(event: any) {

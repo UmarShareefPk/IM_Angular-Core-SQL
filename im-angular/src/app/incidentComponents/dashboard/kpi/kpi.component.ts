@@ -10,30 +10,31 @@ export class KpiComponent implements OnInit {
   @Input() text:string = "";
   @Input() value:number = 0;
 
+
   kpiClass:string = "";
 
   constructor() { }
 
   ngOnInit(): void {
-    switch (this.text.toLowerCase()) {
+    switch (this.text.toLowerCase().replace(" ", "")) {
       case 'new':
-        this.kpiClass = 'kpi status-new-bg-color';
+        this.kpiClass = 'kpi new-color';
         break;
       case 'inprogress':
-        this.kpiClass = 'kpi status-inprogress-bg-color';
+        this.kpiClass = 'kpi inprogress-color';
         break;
       case 'closed':
-        this.kpiClass = 'kpi status-closed-bg-color';
+        this.kpiClass = 'kpi closed-color';
         break;
       case 'approved':
-        this.kpiClass = 'kpi status-approved-bg-color';
+        this.kpiClass = 'kpi approved-color';
         break;
       case 'late':
-        this.kpiClass = 'kpi status-late-bg-color';
+        this.kpiClass = 'kpi late-color';
         break;
 
       default:
-        this.kpiClass = 'kpi';
+        this.kpiClass = 'kpi assignedToMe-color';
         break;
     }
   }

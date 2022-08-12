@@ -1,7 +1,71 @@
+.navbar{
+  background: rgb(95,170,54);
+  background: linear-gradient(0deg, rgba(95,170,54,1) 0%, rgba(5,64,36,1) 88%);
+}
+
+.nav-item.icon{
+  display:flex;
+  /* width:2vw; */
+  flex-direction:row;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+
+ /* margin-top:0.5vh;*/
+}
+
+a.nav-link.dropdown-toggle{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.badge.badge-pill {
+  background: rgb(224,5,5);
+  background: linear-gradient(90deg, rgba(224,5,5,1) 14%, rgba(185,87,180,1) 74%);
+  color: white;
+}
+
+/* .navbar-toggler.navbar-toggler-right{
+margin-top: 2vh;
+} */
+
 table tr td a.notification{
   cursor: pointer;
 }
 
 table tr td a.notification:hover{
   text-decoration: underline;
+}
+
+@media (max-width:980px) {
+  .nav-item.icon {
+      margin-top: 1vh;
+  }
+}
+
+/* Small devices  */
+@media (min-width: 300px) {
+    
+}
+
+/* (tablets, 768px and up) */
+@media (min-width: 700px) {
+   
+}
+
+/* Large Tablets  */
+@media (min-width: 1000px) {
+    .nav-item.icon {
+       
+        margin-left: 30px;
+        /* margin-top:0.5vh;*/
+    }
+}
+
+/* Computer */
+@media (min-width: 1500px) {
+
+    
 }
