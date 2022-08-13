@@ -39,7 +39,8 @@ table td a {
 
 .table td, .table th {
 
-   line-height: 2;
+   line-height: 1.25;
+   font-size: medium;
 }
 .row.search-bar{
    padding-top : 15px;

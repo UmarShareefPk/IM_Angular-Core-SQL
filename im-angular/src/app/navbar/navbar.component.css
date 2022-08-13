@@ -22,8 +22,9 @@ a.nav-link.dropdown-toggle{
 }
 
 .badge.badge-pill {
-  background: rgb(224,5,5);
-  background: linear-gradient(90deg, rgba(224,5,5,1) 14%, rgba(185,87,180,1) 74%);
+  /* background: rgb(224,5,5);
+  background: linear-gradient(90deg, rgba(224,5,5,1) 14%, rgba(185,87,180,1) 74%); */
+  background-color: darkorchid;
   color: white;
 }
 

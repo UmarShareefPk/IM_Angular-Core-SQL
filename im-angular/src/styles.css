@@ -3,14 +3,20 @@
 @import "~ng-pick-datetime/assets/style/picker.min.css";
 
 /* extra Small devices (landscape phones, 576px and up) */
-@media only screen (min-width: 280px) {
+
+.report-title{
+  font-size: larger;
+  font-weight: bold;
+}
+
+@media (min-width: 280px) {
   .main-container {
       min-height: 100vh;
       background-color: white;
   }
 
   notification-list {
-      max-height: 80vh;
+      max-height: 50vh;
       overflow-y: auto;
 
       padding: 10px 30px;
@@ -18,16 +24,21 @@
 }
 
 /*  Small devices (landscape phones, 576px and up) */
-@media (min-width: 400px) {
+@media (min-width: 300px) {
   .main-container {
       min-height: 100vh;
   }
 
+  .report-title{
+    margin-top: 1vh;
+  }
+
   .notification-list {
-      max-height: 80vh;
+      max-height: 50vh;
       overflow-y: auto;
 
-      padding: 10px 30px;
+      padding: 10px 5px;
+      font-size: small;
   }
 }
 
@@ -48,7 +59,7 @@
       min-height: 100vh;
   }
   .notification-list {
-      max-height: 80vh;
+      max-height: 60vh;
       overflow-y: auto;
       width: 35vw;
       padding: 10px 30px;
@@ -69,7 +80,7 @@
       /* min-height: 12vh; */
   }
   .notification-list {
-      max-height: 80vh;
+      max-height: 60vh;
       overflow-y: auto;
       width: 35vw;
       padding: 10px 30px;
@@ -163,8 +174,7 @@ i.fas {
 
 
 .unread {
-  background: rgb(223,215,205);
-background: linear-gradient(0deg, rgba(223,215,205,1) 0%, rgba(146,149,147,1) 74%);
+  background-color: darkgreen;
   color: honeydew;
   font-size: small;
 }
@@ -236,7 +246,7 @@ background: linear-gradient(0deg, rgba(223,215,205,1) 0%, rgba(146,149,147,1) 74
 }
 
 /*----------------  Custom Tool Tip END----------------------------*/
-
+/* 
 .status-new-color {
   color: #F57C00 !important;
 }
@@ -275,7 +285,7 @@ background: linear-gradient(0deg, rgba(223,215,205,1) 0%, rgba(146,149,147,1) 74
 
 .status-late-bg-color {
   background-color: #B71C1C !important;
-}
+} */
 
 /*-------------- Dashboard ---------------------*/
 
