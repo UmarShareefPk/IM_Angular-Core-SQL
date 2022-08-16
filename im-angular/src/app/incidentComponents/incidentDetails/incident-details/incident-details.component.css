@@ -24,6 +24,17 @@
 
 }
 
+.fas.fa-pen{
+   color: gray;
+   font-size: small;
+   margin-right: 0.1vw;
+}
+
+.incident-field-heading{
+   color: green;
+
+}
+
 table th {
    white-space: nowrap;
    color:  #003018;

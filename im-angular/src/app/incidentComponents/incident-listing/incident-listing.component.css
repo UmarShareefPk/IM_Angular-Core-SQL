@@ -1,6 +1,11 @@
 
  /* extra Small devices (landscape phones, 576px and up) */
  @media (min-width: 279px) {
+   .table td, .table th {
+
+      line-height: 0.75;
+      font-size: medium;
+   }
 
 }
 
@@ -11,16 +16,30 @@
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+   .table td, .table th {
+
+      line-height: 1;
+      font-size: medium;
+   }
 
 }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+   .table td, .table th {
 
+      line-height: 2;
+      font-size: medium;
+   }
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+   .table td, .table th {
+
+      line-height: 2;
+      font-size: medium;
+   }
 
 }
 
@@ -37,11 +56,7 @@ table td a {
 }
 
 
-.table td, .table th {
 
-   line-height: 1.25;
-   font-size: medium;
-}
 .row.search-bar{
    padding-top : 15px;
 }

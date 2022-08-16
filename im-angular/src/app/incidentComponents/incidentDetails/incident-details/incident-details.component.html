@@ -2,14 +2,14 @@
   <!-- Page Title-->
   <div class="row">
     <div class="col col-sm-12">
-      <h3 class="site-cl">Incident Details</h3>
+      <h3 class="report-title">Incident Details</h3>
     </div>
   </div>
   <br> <br>
   <!-- Title-->
   <div class="row section">
     <div class="col-md-8 col-sm-12">
-      <h4 class="text-primary"> {{title}} <i class="fas fa-edit text-primary" (click)="titleEditClick(!titleEdit)"></i></h4>
+      <h4 class="incident-field-heading"> <i class="fas fa-pen" (click)="titleEditClick(!titleEdit)"></i> {{title}} </h4>
 
       <ng-container  *ngIf="titleEdit">
         <input type="text" id="titleTxt" class="input-text w-100" [(ngModel)]="titleEditText" maxlength="100" />
@@ -30,9 +30,9 @@
    <!-- Fields and updates-->
   <div class="row section">
     <div class=" col-md-6  col-sm-12" >
-      <h6 class="text-primary">
-        Description :
-        <i class="fas fa-edit text-primary" (click)="descriptionEditClick(!descriptionEdit)" ></i>
+      <h6 class="incident-field-heading">
+        <i class="fas fa-pen" (click)="descriptionEditClick(!descriptionEdit)" ></i>
+        Description :        
       </h6>
       <div class="field scrollbar">
         <p class="text-muted">
@@ -40,7 +40,7 @@
         </p>
       </div>
       <div class="" *ngIf="descriptionEdit">
-        <textarea id="description " class="scrollbar" [(ngModel)]="descriptionEditText" (input)="common.auto_grow($event)">
+        <textarea id="description" class="scrollbar" [(ngModel)]="descriptionEditText" (input)="common.auto_grow($event)">
          </textarea>
          <div class="w-100 text-right fields-update-icon">
           <i class="fas fa-times-circle text-warning" title="Cancel" (click)="descriptionEditClick(false)"></i>
@@ -49,8 +49,9 @@
 
       </div>
 
-      <h6 class="text-primary">Additional Details :
-        <i class="fas fa-edit text-primary" (click)="addtionalDataEditClick(!addtionalDataEdit)"></i>
+      <h6 class="incident-field-heading">        
+        <i class="fas fa-pen" (click)="addtionalDataEditClick(!addtionalDataEdit)"></i>
+        Additional Details :
       </h6>
       <div class="field scrollbar">
         <p class="text-muted  ">
@@ -66,7 +67,7 @@
            </div>
       </div>
 
-      <h6 class="text-primary"> Attachments:</h6>
+      <h6 class="incident-field-heading"> Attachments:</h6>
         <table class="table">
           <tr *ngFor="let file of incident.Attachments">
             <td>
@@ -82,7 +83,7 @@
     <div class=" col-md-5 offset-md-1 col-sm-12">
       <table class="table update-section">
         <tr>
-          <td ><h6 class="text-primary">Status</h6></td>
+          <td ><h6 class="incident-field-heading">Status</h6></td>
           <td>
             <select [(ngModel)]="status" (change)="statusChanged($event)"  class="browser-default  dropdown-custom">
               <option value="I">In Progress</option>
@@ -93,15 +94,15 @@
           </td>
         </tr>
         <tr>
-          <td><h6 class="text-primary">Assignee</h6></td>
+          <td><h6 class="incident-field-heading">Assignee</h6></td>
             <td>
               <app-assignee-dropdown [selectedAssignee]="incident.AssignedTo" [width]="'w-75'" (assigneeChanged)="assigneeChanged($event)" ></app-assignee-dropdown>
             </td>
         </tr>
         <tr>
           <td>
-            <h6 class="text-primary">
-              Start Date  <i class="fas fa-edit text-primary" (click)="startDateEditClick(!startDateEdit)"></i>
+            <h6 class="incident-field-heading">
+              Start Date  <i class="fas fa-pen" (click)="startDateEditClick(!startDateEdit)"></i>
             </h6>
           </td>
           <td>
@@ -113,7 +114,7 @@
           </td>
         </tr>
         <tr>
-          <td><h6 class="text-primary">Due Date <i class="fas fa-edit text-primary" (click)="dueDateEditClick(!dueDateEdit)"></i></h6></td>
+          <td><h6 class="incident-field-heading">Due Date <i class="fas fa-pen" (click)="dueDateEditClick(!dueDateEdit)"></i></h6></td>
           <td>
             <span *ngIf="!dueDateEdit" title='{{common.getMoment(dueDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(dueDate).fromNow()}}</span>
             <ng-container *ngIf="dueDateEdit">
@@ -133,7 +134,7 @@
   <div class="row section">
     <div class=" col-md-6 col-sm-12">
 
-      <h4>Comments</h4>
+      <h5 class="incident-field-heading">Comments</h5>
   <br>
     <div *ngFor="let c of incident.Comments">
       <app-comment [comment]="c" (commentChanged)="commentChanged($event)" (commentDeleted)="commentDeleted($event)" ></app-comment>

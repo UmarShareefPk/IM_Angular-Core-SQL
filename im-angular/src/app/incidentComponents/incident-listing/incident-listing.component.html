@@ -41,15 +41,16 @@
             <td colspan="7" *ngIf="status==='error'" > <h3 class="text-center text-danger">An Error has occured. Try logging in again.</h3> </td>
         </tr>
           <tr *ngFor="let incident of incidents">
-            <td class="text-nowrap title" (click)="titleClick(incident.Id)"><a title="{{incident.Title}}" >{{(incident.Title.length > 15 ? incident.Title.slice(0, 15) + "..." : incident.Title)}}</a></td>
+            <td class="text-nowrap title" (click)="titleClick(incident.Id)"><a title="{{incident.Title}}" >{{(incident.Title.length > 25 ? incident.Title.slice(0, 25) + "..." : incident.Title)}}</a></td>
             <td class="description text-muted text-nowrap w-25"
               title="{{incident.Description}}">
-              {{incident.Description.slice(0,30)}}...</td>
-            <td>{{commonService.getUserNameById(incident.AssignedTo)}}</td>
-            <td>{{commonService.getUserNameById(incident.CreatedBy)}}</td>
+              {{(incident.Description.length > 15 ? incident.Description.slice(0, 15) + "..." : incident.Description)}}
+             
+            <td class="text-nowrap">{{commonService.getUserNameById(incident.AssignedTo)}}</td>
+            <td class="text-nowrap">{{commonService.getUserNameById(incident.CreatedBy)}}</td>
             <td><span data-toggle="tooltip" class="bs-tooltip" title= '{{commonService.getMoment(incident.CreatedAT).format("MMMM DD YYYY, h:mm:ss a")}}'>{{commonService.getMoment(incident.CreatedAT).fromNow() }} </span></td>
-            <td class="{{dueDateClass(incident.DueDate, incident.Status)}}"><span title= '{{commonService.getMoment(incident.DueDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{commonService.getMoment(incident.DueDate).fromNow() }} </span></td>
-            <td>{{commonService.statusName(incident.Status)}}</td>
+            <td class="text-nowrap {{dueDateClass(incident.DueDate, incident.Status)}}"><span title= '{{commonService.getMoment(incident.DueDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{commonService.getMoment(incident.DueDate).fromNow() }} </span></td>
+            <td class="text-nowrap">{{commonService.statusName(incident.Status)}}</td>
 
           </tr>
         </tbody>

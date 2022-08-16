@@ -39,6 +39,11 @@ table td {
    vertical-align: middle !important;
 }
 
+.table>tbody>tr>td,
+.table>tbody>tr>th {
+  border-top: none;
+}
+
 
 
 .section{

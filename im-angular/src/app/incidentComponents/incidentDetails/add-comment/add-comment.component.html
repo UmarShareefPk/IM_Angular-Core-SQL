@@ -1,19 +1,18 @@
-<h5>Add Comment</h5>
+<!-- <h5>Add Comment</h5> -->
 
 <div class="input-field">
   <textarea [(ngModel)]="comment"  placeholder="Type a comment here" (input)="common.auto_grow($event)" class=""></textarea>
 </div>
 
 <div class="custom-file upload-container">
-  <button class="btn bg-primary text-white"><i class="fas fa-paperclip"></i></button>
+  <i class="fas fa-paperclip text-success"></i>
   <input class="file" id="commentFiles"  (change)="fileChange($event)"  type="file" multiple />
-  <input type="text" id="filestxt" value="{{filesText}}" class="txt w-75 text-muted" value="Upload Files" readonly>
+  <input type="text" id="filestxt" value="{{filesText}}" class="txt w-75" value="Upload Files" readonly>
 </div>
 
-<div class="comment-buttons text-center ">
-  <button class="btn  text-white bg-success" (click)="saveComment()">
-    <span>Add</span>
-    <i class="fas fa-check "></i>
+<div class="comment-buttons ">
+  <button class="btn  text-white" (click)="saveComment()">    
+    <i class="fas fa-check save-comment-icon" ></i>    
   </button>
 
   <!-- <button class="btn bg-warning text-white">

@@ -39,22 +39,27 @@
                           <tbody>
                             <ng-container *ngFor="let notification of notifications">
                               <tr  [class.unread]="!notification.IsRead" [class.read]="notification.IsRead" >
+                                                               
+                                <td colspan="2" class="notification-time" *ngIf="notification.IsRead">   
+                                  <small class="text-nowrap" >
+                                    <span title= '{{common.getMoment(notification.CreateDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(notification.CreateDate).fromNow() }} </span>
+                                  </small>                               
+                                  <i title="Mark Unread" class="fas fa-envelope-open text-right" (click)="setNotificationStatus($event, notification.Id, false)" aria-hidden="true"></i>
+                                  <span class="sr-only">Mark Unread</span>
+                                </td>
+                                <td colspan="2" class="notification-time" *ngIf="!notification.IsRead">
+                                  <small class="text-nowrap" >
+                                    <span title= '{{common.getMoment(notification.CreateDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(notification.CreateDate).fromNow() }} </span>
+                                  </small>
+                                  <i title="Mark Read" class="fas fa-envelope  text-right" (click)="setNotificationStatus($event, notification.Id, true)" aria-hidden="true"></i>
+                                  <span class="sr-only">Mark Read</span>
+                                </td>
+
                                 <td colspan="3">
                                   <a class="notification" (click)="openIncident(notification.IncidentId, notification.Id)" >{{notification.NotifyAbout}}</a>
                                 </td>
-                                <td colspan="1">
-                                  <small class="text-nowrap" style="margin-left:10px;">
-                                    <span title= '{{common.getMoment(notification.CreateDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(notification.CreateDate).fromNow() }} </span>
-                                  </small>
-                                </td>
-                                <td colspan="1" *ngIf="notification.IsRead">
-                                  <i title="Mark Unread" class="far fa-bookmark text-right" (click)="setNotificationStatus($event, notification.Id, false)" aria-hidden="true"></i>
-                                  <span class="sr-only">Mark Unread</span>
-                                </td>
-                                <td colspan="1" *ngIf="!notification.IsRead">
-                                  <i title="Mark Read" class="fas fa-bookmark text-right" (click)="setNotificationStatus($event, notification.Id, true)" aria-hidden="true"></i>
-                                  <span class="sr-only">Mark Read</span>
-                                </td>
+                            
+                            
                              </tr>
 
                             </ng-container>
