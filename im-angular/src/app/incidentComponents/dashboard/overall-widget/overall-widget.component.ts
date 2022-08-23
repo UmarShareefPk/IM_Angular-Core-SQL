@@ -58,8 +58,7 @@ export class OverallWidgetComponent implements OnInit {
   drawChart(): any {
     this.chart = new Chart({
       chart: {
-        type: 'pie',
-        height: 80 + '%',
+        type: 'pie',        
       },
       title: {
         text: '',

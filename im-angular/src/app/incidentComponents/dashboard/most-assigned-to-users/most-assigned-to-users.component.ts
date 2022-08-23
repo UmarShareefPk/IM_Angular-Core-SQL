@@ -68,7 +68,7 @@ export class MostAssignedToUsersComponent implements OnInit {
 
       chart: {
         type: 'bar',
-        height: (70) + '%',
+       
         //width: (100) + '%',
        },
        title:{
