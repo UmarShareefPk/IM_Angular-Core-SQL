@@ -1,4 +1,5 @@
-<div class="widget">
+<div class="card">
+  <div class="card-body">
   <h5> 5 Oldest Unresolved Incidents</h5>
   <div class="incident" *ngFor="let incident of incidents">
 
@@ -6,9 +7,9 @@
       <span class="timestamp"
         title='{{commonService.getMoment(incident.CreatedAT).format("MMMM DD YYYY, h:mm:ss a")}}'>{{commonService.getMoment(incident.CreatedAT).fromNow()
         }} </span>
-      <span class="status">
-        {{commonService.statusName(incident.Status)}}
-      </span>
+        <span class="status {{commonService.statusName(incident.Status).replace(' ', '').toLowerCase()}}">
+          {{commonService.statusName(incident.Status)}}
+        </span>
     </div>
 
     <div class="title">
@@ -18,4 +19,5 @@
     </div>
 
   </div>
+</div>
 </div>

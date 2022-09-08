@@ -3,7 +3,7 @@
  @media (min-width: 279px) {
    .table td, .table th {
 
-      line-height: 0.75;
+      line-height: 1.5;
       font-size: medium;
    }
 
@@ -18,7 +18,7 @@
 @media (min-width: 768px) {
    .table td, .table th {
 
-      line-height: 1;
+      line-height: 1.5;
       font-size: medium;
    }
 
@@ -43,12 +43,19 @@
 
 }
 
+.page-actions{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
 table th {
    white-space: nowrap;
    color:  #003018;
 }
 table td {
    color: darkslategrey;
+   line-height: 2;
 }
 
 table td a {
@@ -58,13 +65,18 @@ table td a {
 
 
 .row.search-bar{
-   padding-top : 15px;
+   /* padding-top : 15px; */
 }
 
 .row.search-bar .txt {
    border: none;
    border-bottom: 1px solid #9e9e9e;
    line-height:2 !important;
+}
+
+table tr td{
+   color: slategray;
+   font-size: small;
 }
 
 .row.search-bar .txt:focus {

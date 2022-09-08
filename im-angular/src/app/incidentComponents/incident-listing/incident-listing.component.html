@@ -2,25 +2,40 @@
 
 
 
+
+
   <div class="row">
     <div class="col-sm-6">
       <h3 class="report-title">Incidents</h3>
     </div>
-    <div class="col-sm-6 text-right">
-       <a  class="btn text-white bg-success" (click)="newincident()">Add New</a>
-    </div>
+   
   </div>
 
-  <div class="row search-bar">
-    <div class="col-sm-12">
+<div class="card">
+  <div class="card-body">
+
+    <div class="page-actions">
+
+
+      <div class="">
         <!-- <span class="text-muted" > Search : </span> -->
-        <input type="text" class="txt w-50 text-muted" (input)="searchChanged($event)"  placeholder="Type title or description" />
+        <input type="text" class="txt text-muted" (input)="searchChanged($event)"
+          placeholder="Type title or description" />
+      </div>
+      <div class=" text-right">
+        <a class="btn text-white bg-success" (click)="newincident()">Add New</a>
+      </div>
     </div>
+
+  </div>
 </div>
+
 
  <!-- Listing-->
 <div class="row">
   <div class="col col-sm-12">
+    <div class="card">
+      <div class="card-body">
     <div class="table-responsive">
       <table class="table ">
         <thead>
@@ -57,11 +72,14 @@
       </table>
     </div>
 
-  <app-pagination *ngIf="status==='' || status == 'loading'" [totalRecords]="totalRecords" [pageNumber]="pageNumber"
-    (pageNumberChanged)="pageNumberChanged($event)" (pageSizeChanged)="pageSizeChanged($event)">
-  </app-pagination>
-
-
+    <div class="card-footer">
+    
+      <app-pagination *ngIf="status==='' || status == 'loading'" [totalRecords]="totalRecords" [pageNumber]="pageNumber"
+        (pageNumberChanged)="pageNumberChanged($event)" (pageSizeChanged)="pageSizeChanged($event)">
+      </app-pagination>
+    </div>
+</div>
+</div>
 
   </div>
 </div>

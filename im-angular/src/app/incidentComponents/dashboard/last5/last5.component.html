@@ -1,12 +1,13 @@
-<div class="widget">
-  <h5> Last 5 Incidents</h5>
+<div class="card">
+  <div class="card-body">
+    <h5> Last 5 Incidents</h5>
   <div class="incident" *ngFor="let incident of incidents">
 
     <div class="time-status">
       <span class="timestamp"
         title='{{commonService.getMoment(incident.CreatedAT).format("MMMM DD YYYY, h:mm:ss a")}}'>{{commonService.getMoment(incident.CreatedAT).fromNow()
         }} </span>
-      <span class="status">
+      <span class="status {{commonService.statusName(incident.Status).replace(' ', '').toLowerCase()}}">
         {{commonService.statusName(incident.Status)}}
       </span>
     </div>
@@ -18,4 +19,5 @@
     </div>
 
   </div>
+</div>
 </div>

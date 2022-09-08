@@ -11,38 +11,38 @@ export class OverallWidgetComponent implements OnInit {
   chart: any;
   overallWidgetData:any;
   newColor: any = {
-    linearGradient: [0, 0, 0, 300],
+    radialGradient: [0, 0, 0, 300],
     stops: [
       [0, 'rgba(245,124,0,1)'],
       [1, 'rgba(255,226,0,1)']
     ]
   };
   InProgresColor: any = {
-    linearGradient: [0, 0, 0, 300],
+    radialGradient: [0, 0, 0, 300],
     stops: [
-      [0, 'rgba(25,118,210,1)'],
-      [1, 'rgba(0,237,255,1)']
+      [0, 'rgba(113, 166, 247, 1)'],
+      [1, 'rgba(48, 128, 204, 1)']
     ]
   };
   closedColor: any = {
-    linearGradient: [0, 0, 0, 300],
+    radialGradient: [0, 0, 0, 300],
     stops: [
-      [0, 'rgba(67,160,71,1)'],
-      [1, 'rgba(0,255,187,1)']
+      [0, 'rgba(66, 194, 56, 1)'],
+      [1, 'rgba(113, 200, 120, 1)']
     ]
   };
   approvedColor:any = {
-    linearGradient:  [0, 0, 0, 300],
+    radialGradient:  [0, 0, 0, 300],
     stops: [
-        [0, 'rgba(27,94,32,1)'],
-        [1, 'rgba(19,255,0,1)']
+      [0, 'rgba(12, 99, 5, 1)'],
+      [1, 'rgba(14, 131, 22, 1)']
     ]
   };
   LateColor:any = {
-    linearGradient:  [0, 0, 0, 300],
+    radialGradient:  [0, 0, 0, 300],
     stops: [
-        [0, 'rgba(183,28,28,1)'],
-        [1, 'rgba(255,140,0,1)']
+      [0, 'rgba(218, 30, 28, 1)'],
+      [1, 'rgba(131, 55, 14, 1)']
     ]
   };
 
