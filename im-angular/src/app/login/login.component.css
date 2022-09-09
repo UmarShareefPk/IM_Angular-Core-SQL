@@ -1,7 +1,7 @@
 
 .login-logo {
   height: 100vh;
-  background: radial-gradient(circle, rgba(26,97,34,1) 0%, rgba(0,22,2,1) 100%);
+  background: radial-gradient(circle, rgba(2,74,130,1) 0%, rgba(0,0,0,1) 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
