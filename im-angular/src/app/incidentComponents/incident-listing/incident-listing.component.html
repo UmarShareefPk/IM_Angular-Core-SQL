@@ -65,8 +65,11 @@
             <td class="text-nowrap">{{commonService.getUserNameById(incident.CreatedBy)}}</td>
             <td><span data-toggle="tooltip" class="bs-tooltip" title= '{{commonService.getMoment(incident.CreatedAT).format("MMMM DD YYYY, h:mm:ss a")}}'>{{commonService.getMoment(incident.CreatedAT).fromNow() }} </span></td>
             <td class="text-nowrap {{dueDateClass(incident.DueDate, incident.Status)}}"><span title= '{{commonService.getMoment(incident.DueDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{commonService.getMoment(incident.DueDate).fromNow() }} </span></td>
-            <td class="text-nowrap">{{commonService.statusName(incident.Status)}}</td>
-
+            <td class="text-nowrap">
+              <div class="status {{commonService.statusName(incident.Status).replace(' ', '').toLowerCase()}}">
+                {{commonService.statusName(incident.Status)}}
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>

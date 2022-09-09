@@ -8,7 +8,10 @@
   <br> <br>
   <!-- Title-->
   <div class="row section">
-    <div class="col-md-8 col-sm-12">
+    <div class="col-md-12 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+      <div class="title-section">
       <h4 class="incident-field-heading"> <i class="fas fa-pen" (click)="titleEditClick(!titleEdit)"></i> {{title}} </h4>
 
       <ng-container  *ngIf="titleEdit">
@@ -20,16 +23,24 @@
       </ng-container>
     </div>
 
-    <div class="col-md-4 col-sm-12">
-      <p class="text-muted timstamp">Created by  <a class="text-primary">{{common.getUserNameById(incident.CreatedBy)}} </a>
-        <span title='{{common.getMoment(incident.CreatedAT).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(incident.CreatedAT).fromNow()}}</span>
-      </p>
+      <div class="time-stamp">
+        <p class="text-muted text-right timstamp">Created by  <a class="text-primary">{{common.getUserNameById(incident.CreatedBy)}} </a>
+          <span title='{{common.getMoment(incident.CreatedAT).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(incident.CreatedAT).fromNow()}}</span>
+        </p>
+      </div>
     </div>
+  </div>
+</div>
+
+    
   </div>
 
    <!-- Fields and updates-->
+   
   <div class="row section">
     <div class=" col-md-6  col-sm-12" >
+      <div class="card">
+        <div class="card-body">
       <h6 class="incident-field-heading">
         <i class="fas fa-pen" (click)="descriptionEditClick(!descriptionEdit)" ></i>
         Description :        
@@ -77,73 +88,95 @@
           </tr>
 
         </table>
-
+      </div>
+    </div>
     </div>
 
-    <div class=" col-md-5 offset-md-1 col-sm-12">
-      <table class="table update-section">
-        <tr>
-          <td ><h6 class="incident-field-heading">Status</h6></td>
-          <td>
-            <select [(ngModel)]="status" (change)="statusChanged($event)"  class="browser-default  dropdown-custom">
-              <option value="I">In Progress</option>
-              <option value="N">New</option>
-              <option value="C">Closed</option>
-              <option value="A">Approved</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td><h6 class="incident-field-heading">Assignee</h6></td>
-            <td>
-              <app-assignee-dropdown [selectedAssignee]="incident.AssignedTo" [width]="'w-75'" (assigneeChanged)="assigneeChanged($event)" ></app-assignee-dropdown>
-            </td>
-        </tr>
-        <tr>
-          <td>
-            <h6 class="incident-field-heading">
-              Start Date  <i class="fas fa-pen" (click)="startDateEditClick(!startDateEdit)"></i>
-            </h6>
-          </td>
-          <td>
-            <span *ngIf="!startDateEdit" title='{{common.getMoment(startDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(startDate).fromNow()}}</span>
-            <ng-container *ngIf="startDateEdit">
-              <input [owlDateTime]="startdt" [(ngModel)]="startDate" [owlDateTimeTrigger]="startdt" class="input-text">
-              <owl-date-time #startdt (afterPickerClosed)="startDateChanged()"></owl-date-time>
-            </ng-container>
-          </td>
-        </tr>
-        <tr>
-          <td><h6 class="incident-field-heading">Due Date <i class="fas fa-pen" (click)="dueDateEditClick(!dueDateEdit)"></i></h6></td>
-          <td>
-            <span *ngIf="!dueDateEdit" title='{{common.getMoment(dueDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(dueDate).fromNow()}}</span>
-            <ng-container *ngIf="dueDateEdit">
-              <input [owlDateTime]="duetDatedt" [(ngModel)]="dueDate" [owlDateTimeTrigger]="duetDatedt" class="input-text">
-              <owl-date-time #duetDatedt (afterPickerClosed)="dueDateChanged()"></owl-date-time>
-            </ng-container>
-          </td>
-        </tr>
-
-      </table>
-
+    <div class=" col-md-6  col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <table class="table update-section">
+            <tr>
+              <td>
+                <h6 class="incident-field-heading">Status</h6>
+              </td>
+              <td>
+                <select [(ngModel)]="status" (change)="statusChanged($event)" class="browser-default  dropdown-custom">
+                  <option value="I">In Progress</option>
+                  <option value="N">New</option>
+                  <option value="C">Closed</option>
+                  <option value="A">Approved</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6 class="incident-field-heading">Assignee</h6>
+              </td>
+              <td>
+                <app-assignee-dropdown [selectedAssignee]="incident.AssignedTo" [width]="'w-75'"
+                  (assigneeChanged)="assigneeChanged($event)"></app-assignee-dropdown>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6 class="incident-field-heading">
+                  Start Date <i class="fas fa-pen" (click)="startDateEditClick(!startDateEdit)"></i>
+                </h6>
+              </td>
+              <td>
+                <span *ngIf="!startDateEdit"
+                  title='{{common.getMoment(startDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(startDate).fromNow()}}</span>
+                <ng-container *ngIf="startDateEdit">
+                  <input [owlDateTime]="startdt" [(ngModel)]="startDate" [owlDateTimeTrigger]="startdt" class="input-text">
+                  <owl-date-time #startdt (afterPickerClosed)="startDateChanged()"></owl-date-time>
+                </ng-container>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6 class="incident-field-heading">Due Date <i class="fas fa-pen"
+                    (click)="dueDateEditClick(!dueDateEdit)"></i></h6>
+              </td>
+              <td>
+                <span *ngIf="!dueDateEdit"
+                  title='{{common.getMoment(dueDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(dueDate).fromNow()}}</span>
+                <ng-container *ngIf="dueDateEdit">
+                  <input [owlDateTime]="duetDatedt" [(ngModel)]="dueDate" [owlDateTimeTrigger]="duetDatedt"
+                    class="input-text">
+                  <owl-date-time #duetDatedt (afterPickerClosed)="dueDateChanged()"></owl-date-time>
+                </ng-container>
+              </td>
+            </tr>
+    
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 
 
-   <!-- Comments-->
+  <!-- Comments-->
+  
   <div class="row section">
-    <div class=" col-md-6 col-sm-12">
-
-      <h5 class="incident-field-heading">Comments</h5>
-  <br>
-    <div *ngFor="let c of incident.Comments">
-      <app-comment [comment]="c" (commentChanged)="commentChanged($event)" (commentDeleted)="commentDeleted($event)" ></app-comment>
+    <div class="col-md-6 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="incident-field-heading">Comments</h5>
+          <br>
+          <div class="all-comments">
+            <div *ngFor="let c of incident.Comments">
+              <app-comment [comment]="c" (commentChanged)="commentChanged($event)"
+                (commentDeleted)="commentDeleted($event)">
+              </app-comment>
+            </div>
+          </div>
+  
+          <app-add-comment [incidentId]="incident.Id" (commentAdded)="commentAdded($event)"></app-add-comment>
+        </div>
+  
+      </div>
     </div>
-
-    <app-add-comment [incidentId]="incident.Id" (commentAdded)="commentAdded($event)" ></app-add-comment>
-    </div>
-
   </div>
-
 
 </div><!-- end of container-->

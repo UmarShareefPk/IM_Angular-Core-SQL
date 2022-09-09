@@ -1,9 +1,14 @@
 .page-row{
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.page-row ul{
+  margin-bottom: 0px;
+}
 .records-info {
-  margin-top: 10px;
+  color: #9e9e9e;
 }
 
 .dropdown-custom {

@@ -42,6 +42,16 @@ body{
 
 }
 
+input, input:focus {
+  border-width: 0px;
+  border-bottom: 1px solid black;
+  outline: 0;
+  -webkit-appearance: none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
 .report-title{
   font-size: larger;
   font-weight: bold;
@@ -50,10 +60,10 @@ body{
 @media (min-width: 280px) {
   .main-container {
       min-height: 100vh;
-      background-color: white;
+      background: #F8F9FE;
   }
 
-  notification-list {
+  .notification-list {
       max-height: 50vh;
       overflow-y: auto;
 
@@ -107,8 +117,7 @@ body{
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .main-container {
-      min-height: 100vh;
-      background-color: white;
+      min-height: 100vh;     
       margin-top: 2vh;
   }
 
@@ -368,19 +377,19 @@ i.fas {
   border-radius: 7px;
 }
 
-.incident .status.new {
+ .status.new {
   background: var( --new-bg-color);
 }
 
-.incident .status.inprogress {
+ .status.inprogress {
   background: var(--inprogress-bg-color);
 }
 
-.incident .status.closed {
+ .status.closed {
   background: var(--closed-bg-color);
 }
 
-.incident .status.approved {
+ .status.approved {
   background: var(--approved-bg-color);
 }
 

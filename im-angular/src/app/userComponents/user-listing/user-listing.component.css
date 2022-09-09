@@ -24,6 +24,13 @@
 
 }
 
+.page-actions{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+
 table th {
    white-space: nowrap;
    color:  #003018;
@@ -34,6 +41,11 @@ table td {
 
 table td a {
    color: darkblue;
+}
+
+table tr td{
+   color: slategray;
+   font-size: small;
 }
 
 

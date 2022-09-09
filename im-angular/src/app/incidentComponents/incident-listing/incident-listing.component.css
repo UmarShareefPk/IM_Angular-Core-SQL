@@ -68,7 +68,7 @@ table td a {
    /* padding-top : 15px; */
 }
 
-.row.search-bar .txt {
+.txt {
    border: none;
    border-bottom: 1px solid #9e9e9e;
    line-height:2 !important;
@@ -88,6 +88,16 @@ table tr td.title{
 
 }
 
+
+table tr td .status{
+   white-space: nowrap;
+   font-size: small;
+   text-align: center;
+   padding: 4px;
+   min-width: 70px;
+   color: white;
+   border-radius: 7px;
+ }
 
 
 table tr td.title:hover{
