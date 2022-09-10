@@ -30,8 +30,14 @@
    margin-right: 0.1vw;
 }
 
+.title-text{
+   color: #02355D;
+   font-size: large;
+}
 .incident-field-heading{
-   color: green;
+   color: #02355D;
+   font-size: medium;
+   font-weight: bold;
 
 }
 
@@ -65,7 +71,7 @@ textarea{
 }
 
 .section{
-   padding-bottom: 2vh;
+   /* padding-bottom: 2vh; */
 }
 
 .timstamp{
@@ -86,6 +92,9 @@ textarea{
 .field{
    max-height: 25vh;
    overflow-y: auto;
+   font-size: small;
+   line-height: 1.5;
+   white-space:pre-wrap;
 }
 
 
@@ -94,8 +103,8 @@ select.dropdown-custom{
 }
 
 select.dropdown-custom option{
-   background: darkgreen;
-   color: white;
+   /* background: darkgreen;
+   color: white; */
 }
 
 .input-text, textarea {
@@ -113,14 +122,50 @@ ul.field li {
    cursor: pointer;
 }
 
-.incident-file{
-  cursor: pointer;
-}
-a.incident-file:hover{
-  text-decoration: underline;
-  color: black;
+.incident-attachments{
+
 }
 
+/********** Files *************/
+
+.file-box {
+   display: flex;
+   justify-content: center;
+   font-size: medium;
+   line-height: 2;
+   border-bottom: dotted 0.5px lightgray;
+}
+
+.file-box .file-name {
+   min-width: 190px;
+   color: gray;
+}
+.file-box .file-name span {
+   display: flex;
+   font-size: small;
+}
+
+.file-box .file-name i {
+   color: #cfbf13;
+   margin-right:2px;
+   margin-top:4px;
+}
+
+.file-box .file-actions {
+   font-size: medium;
+}
+.file-actions i{
+   cursor:pointer;
+}
+.file-actions i.del {
+   color: red;
+}
+.file-actions i.download {
+   color: dodgerblue;
+}
+
+
+/******************** Comments ******************/
 
 .all-comments{
    max-height: 40vh;

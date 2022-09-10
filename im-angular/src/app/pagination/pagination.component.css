@@ -29,11 +29,13 @@ select.dropdown-custom:focus {
 }
 .pagination a:hover{
 text-decoration: underline;
-background-color:  #003018;
+background: radial-gradient(circle, rgba(2,74,130,1) 0%, rgba(0,0,0,1) 100%);
+  
 color: white;
 }
 
 .pagination .active{
-  background-color:  #003018;
+   background: radial-gradient(circle, rgba(2,74,130,1) 0%, rgba(0,0,0,1) 100%);
+  
   color: white;
 }

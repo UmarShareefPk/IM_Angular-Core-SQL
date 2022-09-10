@@ -1,10 +1,24 @@
+.commentBox{
+  padding-right: 5px;
+}
+
 .commentHeader{
   padding-bottom: 20px;
+  font-size: small;
   }
 
+  .commentHeader .username{
+    font-weight: bold;
+  }
   .comment-buttons{
      margin-top: 1vh;
   }
+
+  .comment-text{
+    font-size: small;
+    font-style: italic;
+  }
+
   .input-text, textarea {
     border: none;
     border-bottom: 1px solid #9e9e9e;
@@ -31,4 +45,43 @@
 a.comment-file:hover{
   text-decoration: underline;
   color: black;
+}
+
+
+/********** Files *************/
+
+.file-box {
+  display: flex;
+  justify-content: center;
+  font-size: medium;
+  line-height: 2;
+  border-bottom: dotted 0.5px lightgray;
+}
+
+.file-box .file-name {
+  min-width: 190px;
+  color: gray;
+}
+.file-box .file-name span {
+  display: flex;
+  font-size: small;
+}
+
+.file-box .file-name i {
+  color: #cfbf13;
+  margin-right:2px;
+  margin-top:4px;
+}
+
+.file-box .file-actions {
+  font-size: medium;
+}
+.file-actions i{
+  cursor:pointer;
+}
+.file-actions i.del {
+  color: red;
+}
+.file-actions i.download {
+  color: dodgerblue;
 }

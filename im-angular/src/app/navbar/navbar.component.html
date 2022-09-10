@@ -3,7 +3,7 @@
 
 
   <a class="navbar-brand" href="#" style="font-size: larger;" (click)="manuChanged('dashboard' , $event)">
-    <img src="../../assets/images/logo-white.png" height="60px" />
+    <img src="../../assets/images/logo-white.png" height="50px" />
   </a>
 
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,17 +13,20 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
           <li class="nav-item ">
-              <a class="nav-link" href='#' (click)="manuChanged('incidents' , $event)">Incidents</a>
+              <a class="nav-link d-flex" href='#' (click)="manuChanged('incidents' , $event)">
+                <i class="material-icons mr-1">pest_control</i>
+                Incidents
+              </a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href='#' (click)="manuChanged('users' , $event)">Users</a>
+              <a class="nav-link d-flex " href='#' (click)="manuChanged('users' , $event)">
+                <i class="material-icons mr-1">people</i>
+                Users
+              </a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href='#' (click)="manuChanged('messages' , $event)">Messages</a>
-          </li> -->
-          <!-- <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-          </li> -->
+          </li> -->   
           <li class="nav-item icon">
               <div class="btn-group">
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">

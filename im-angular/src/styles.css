@@ -52,6 +52,10 @@ input, input:focus {
   -webkit-box-shadow: none;
 }
 
+.heading{
+  padding: 5px 0px;
+}
+
 .report-title{
   font-size: larger;
   font-weight: bold;

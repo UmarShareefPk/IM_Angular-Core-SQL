@@ -1,18 +1,18 @@
 <div class="container main-container">
   <!-- Page Title-->
-  <div class="row">
+  <div class="row heading">
     <div class="col col-sm-12">
       <h3 class="report-title">Incident Details</h3>
     </div>
   </div>
-  <br> <br>
+
   <!-- Title-->
   <div class="row section">
     <div class="col-md-12 col-sm-12">
       <div class="card">
         <div class="card-body">
       <div class="title-section">
-      <h4 class="incident-field-heading"> <i class="fas fa-pen" (click)="titleEditClick(!titleEdit)"></i> {{title}} </h4>
+      <h4 class="title-text"> <i class="fas fa-pen" (click)="titleEditClick(!titleEdit)"></i> {{title}} </h4>
 
       <ng-container  *ngIf="titleEdit">
         <input type="text" id="titleTxt" class="input-text w-100" [(ngModel)]="titleEditText" maxlength="100" />
@@ -79,15 +79,22 @@
       </div>
 
       <h6 class="incident-field-heading"> Attachments:</h6>
-        <table class="table">
-          <tr *ngFor="let file of incident.Attachments">
-            <td>
-              <i class="fas fa-times-circle  text-danger" title="Remove"  (click)="deleteFile(file)"></i>
-              <a class="incident-file text-primary" (click)="downloadFile(file)"> {{file.FileName}} </a>
-            </td>
-          </tr>
+        <div class="">
+          <div *ngFor="let file of incident.Attachments" class="file-box"> 
+            <div class="file-box">
+              <div class="file-name"><span class="text-nowrap" title="{{file.FileName}}">
+                 <i class="material-icons">attachment</i>
+                   {{file.FileName.length > 20? file.FileName.slice(0,20) + "..." : file.FileName }}
+                </span></div>
+             
+              <div class="file-actions">
+                <i title="Download file" (click)="downloadFile(file)" class="material-icons download">download</i>               
+                <i title="Delete file" (click)="deleteFile(file)" class="material-icons del">delete_forever</i>
+              </div>
+            </div>             
+          </div>
+        </div>
 
-        </table>
       </div>
     </div>
     </div>
@@ -162,9 +169,9 @@
     <div class="col-md-6 col-sm-12">
       <div class="card">
         <div class="card-body">
-          <h5 class="incident-field-heading">Comments</h5>
+          <h4 class="incident-field-heading">Comments</h4>
           <br>
-          <div class="all-comments">
+          <div class="all-comments scrollbar">
             <div *ngFor="let c of incident.Comments">
               <app-comment [comment]="c" (commentChanged)="commentChanged($event)"
                 (commentDeleted)="commentDeleted($event)">

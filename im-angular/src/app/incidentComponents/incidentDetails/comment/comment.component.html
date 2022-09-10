@@ -2,9 +2,9 @@
 
   <div class="commentHeader d-flex">
     <div class="w-75">
-      <a class="text-primary">{{common.getUserNameById(comment.UserId)}}</a>
-      added a comment. -
-      <span
+      <a class="username">{{common.getUserNameById(comment.UserId)}}</a>
+         <small> added a comment. </small> -
+      <span class="time-stamp"
         title='{{common.getMoment(comment.CreateDate).format("MMMM DD YYYY, h:mm:ss a")}}'>{{common.getMoment(comment.CreateDate).fromNow()}}</span>
     </div>
 
@@ -23,9 +23,9 @@
       <i class="fas fa-check text-success" title="Save"  (click)="commentEditSave()"></i>
     </div>
   </div>
-  <p class="text-muted field scrollbar text-center">{{commentText}}
+  <p class="comment-text text-muted field scrollbar text-center">{{commentText}}
   </p>
-
+<!-- 
   <table class="table">
 
     <tr *ngFor="let file of comment.attachments">
@@ -35,7 +35,22 @@
       </td>
     </tr>
 
-  </table>
+  </table> -->
+  <div class="">
+    <div *ngFor="let file of comment.attachments" class="file-box"> 
+      <div class="file-box">
+        <div class="file-name"><span class="text-nowrap" title="{{file.FileName}}">
+           <i class="material-icons">attachment</i>
+             {{file.FileName.length > 20? file.FileName.slice(0,20) + "..." : file.FileName }}
+          </span></div>
+       
+        <div class="file-actions">
+          <i title="Download file" (click)="downloadFile(file)" class="material-icons download">download</i>               
+          <i title="Delete file" (click)="deleteFile(file)" class="material-icons del">delete_forever</i>
+        </div>
+      </div>             
+    </div>
+  </div>
 
 
   <hr>

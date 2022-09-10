@@ -1,12 +1,8 @@
 <div class="container main-container">
 
-
-
-
-
-  <div class="row">
+  <div class="row heading">
     <div class="col-sm-6">
-      <h3 class="report-title">Incidents</h3>
+      <h3 class="report-title ">Incidents</h3>
     </div>
    
   </div>
@@ -23,7 +19,10 @@
           placeholder="Type title or description" />
       </div>
       <div class=" text-right">
-        <a class="btn text-white bg-success" (click)="newincident()">Add New</a>
+        <a class="btn bg-primary text-white d-flex align-items-center" (click)="newincident()">
+          <i class="material-icons mr-1">add</i>
+          Add New
+        </a>
       </div>
     </div>
 
