@@ -21,29 +21,48 @@ a.nav-link.dropdown-toggle{
 }
 
 .badge.badge-pill {
-  /* background: rgb(224,5,5);
-  background: linear-gradient(90deg, rgba(224,5,5,1) 14%, rgba(185,87,180,1) 74%); */
-  background-color: #b0b8ff;
-  color: #020b5e;
+  background-color: forestgreen;
+  color: white;
 }
 
-/* .navbar-toggler.navbar-toggler-right{
-margin-top: 2vh;
-} */
 
-table tr td a.notification{
-  cursor: pointer;
+/************** Notifications ***************/
+
+.navbar-toggler{
+  margin-top: 8px;
 }
 
-table tr td a.notification:hover{
-  text-decoration: underline;
+
+.notification{
+  padding: 10px 10px;
+  margin-bottom: 5px;;
+  border-bottom: solid 1px gray;
 }
 
-@media (max-width:980px) {
-  .nav-item.icon {
-      margin-top: 1vh;
-  }
+.notification-icon{
+  color:rgba(2,74,130,1);
 }
+
+.notification-text{
+ max-width: 60%;
+}
+
+.notification-time{
+  
+}
+
+.unread {
+  background-color: lightgray;
+  color: rgba(2,74,130,1);
+  font-size: small;
+}
+
+.read {
+  color: gray;
+  font-size: small;
+}
+
+
 
 /* Small devices  */
 @media (min-width: 300px) {

@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: small;
 }
 
 .page-row ul{
@@ -14,7 +15,6 @@
 .dropdown-custom {
   border: none;
   border-bottom: 1px solid #9e9e9e;
-
 }
 
 select.dropdown-custom {
@@ -28,14 +28,31 @@ select.dropdown-custom:focus {
   color:  darkblue;
 }
 .pagination a:hover{
-text-decoration: underline;
-background: radial-gradient(circle, rgba(2,74,130,1) 0%, rgba(0,0,0,1) 100%);
-  
-color: white;
+  text-decoration: underline;
+  background: radial-gradient(circle, rgba(2,74,130,1) 0%, rgba(0,0,0,1) 100%);
+  color: white;
 }
 
 .pagination .active{
    background: radial-gradient(circle, rgba(2,74,130,1) 0%, rgba(0,0,0,1) 100%);
+   color: white;
+}
+
+@media (min-width: 300px) {
+  .page-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   
-  color: white;
+}
+
+@media (min-width: 1200px) {
+  .page-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

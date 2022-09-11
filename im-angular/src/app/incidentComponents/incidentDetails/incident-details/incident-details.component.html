@@ -46,7 +46,7 @@
         Description :        
       </h6>
       <div class="field scrollbar">
-        <p class="text-muted">
+        <p class="text-muted pl-2">
           {{description}}
         </p>
       </div>
@@ -65,7 +65,7 @@
         Additional Details :
       </h6>
       <div class="field scrollbar">
-        <p class="text-muted  ">
+        <p class="text-muted  pl-2">
           {{addtionalData}}
         </p>
       </div>
@@ -77,7 +77,7 @@
             <i class="fas fa-check text-success" title="Save" (click)="updateIncident('additionalData');"></i>
            </div>
       </div>
-
+<br/>
       <h6 class="incident-field-heading"> Attachments:</h6>
         <div class="">
           <div *ngFor="let file of incident.Attachments" class="file-box"> 

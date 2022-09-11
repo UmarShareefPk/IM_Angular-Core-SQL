@@ -30,8 +30,13 @@
       <div class="form-group">
         <label class="text-danger"> {{error}}</label>
       </div>
-      <button type="submit" (click)="loginClick($event)" class="btn site-bg text-white"><a style="color: white;"
-         >Login</a></button>
+      <button type="submit" (click)="loginClick($event)" class="btn site-bg text-white">      
+         <div class="d-flex align-items-center">
+          Login 
+          <i class="material-icons ml-2" >send</i>
+              
+      </div>    
+      </button>
     
   </div>
 </div>
