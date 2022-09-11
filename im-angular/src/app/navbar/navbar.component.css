@@ -52,7 +52,7 @@ a.nav-link.dropdown-toggle{
 }
 
 .unread {
-  background-color: lightgray;
+  background-color: #e9e9e9;
   color: rgba(2,74,130,1);
   font-size: small;
 }
