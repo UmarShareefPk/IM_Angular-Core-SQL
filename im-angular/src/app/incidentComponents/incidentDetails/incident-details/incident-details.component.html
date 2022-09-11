@@ -7,12 +7,12 @@
   </div>
 
   <!-- Title-->
-  <div class="row section">
+  <div class="row section" id="title-text">
     <div class="col-md-12 col-sm-12">
       <div class="card">
         <div class="card-body">
       <div class="title-section">
-      <h4 id="title-text" class="title-text "> <i class="fas fa-pen" (click)="titleEditClick(!titleEdit)"></i> {{title}} </h4>
+      <h4  class="title-text "> <i class="fas fa-pen" (click)="titleEditClick(!titleEdit)"></i> {{title}} </h4>
 
       <ng-container  *ngIf="titleEdit">
         <input type="text" id="titleTxt" class="input-text w-100" [(ngModel)]="titleEditText" maxlength="100" />
