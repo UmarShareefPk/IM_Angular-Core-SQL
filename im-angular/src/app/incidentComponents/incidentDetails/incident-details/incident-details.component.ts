@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { CommonService } from '../../../services/common.service';
 import { IncidentService } from '../../../services/incident.service';
@@ -33,6 +33,7 @@ export class IncidentDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private r: Renderer2,
     private router: Router,
     private incidentService: IncidentService,
     public common: CommonService
@@ -60,6 +61,9 @@ export class IncidentDetailsComponent implements OnInit {
     this.status = this.incident.Status;
     this.startDate= this.incident.StartTime;
     this.dueDate = this.incident.DueDate;
+   
+    this.r.addClass(document.getElementById("title-text"), 'animate__animated');
+    this.r.addClass(document.getElementById("title-text"), 'animate__bounce');
   }
 
   downloadFile(file:any){
@@ -215,7 +219,7 @@ export class IncidentDetailsComponent implements OnInit {
   }
 
   commentAdded(newComment:any){
-    console.log("newcomment" , newComment);
+   // console.log("newcomment" , newComment);
     let changedincident = { ...this.incident };
     changedincident.Comments = [newComment].concat(
       changedincident.Comments
