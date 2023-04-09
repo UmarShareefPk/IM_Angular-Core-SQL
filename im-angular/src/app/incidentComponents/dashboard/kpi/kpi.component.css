@@ -9,7 +9,7 @@ align-items: center;
 justify-content: space-between;
 background-color: #1A237E;
 padding: 25px 10px;
-border-radius: 30px;
+border-radius: 5px;
 color: white; 
 
 }
@@ -51,7 +51,7 @@ white-space: nowrap;
   .kpi {
     padding: 10px 0px;
     margin-bottom: 20px;
-    border-radius: 10%;  
+    
   }
 
   .kpi-value {
@@ -74,7 +74,7 @@ white-space: nowrap;
 /* Large Tablets  */
 @media (min-width: 1000px) {
   .kpi {
-    padding: 25px 10px;
+    padding: 15px 10px;
     margin-bottom: 0px;
   }
 
@@ -91,13 +91,13 @@ white-space: nowrap;
 /* Computer */
 @media (min-width: 1500px) {
   .kpi {
-    padding: 25px 10px;
+    padding: 10px 10px;
     margin-bottom: 0px;
   }
 
   .kpi-value {
 
-    font-size: 25px;
+    font-size: 15px;
     margin-bottom: 5px;
   }
 

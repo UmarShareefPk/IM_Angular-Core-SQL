@@ -13,15 +13,15 @@ export class OverallWidgetComponent implements OnInit {
   newColor: any = {
     radialGradient: [0, 0, 0, 300],
     stops: [
-      [0, 'rgba(245,124,0,1)'],
-      [1, 'rgba(255,226,0,1)']
+      [0, 'rgba(193,163,56,1)'],
+      [1, 'rgba(203,180,64,1)']
     ]
   };
   InProgresColor: any = {
     radialGradient: [0, 0, 0, 300],
     stops: [
-      [0, 'rgba(113, 166, 247, 1)'],
-      [1, 'rgba(48, 128, 204, 1)']
+      [0, 'rgba(47,108,235,1)'],
+      [1, 'rgba(26,90,193,1)']
     ]
   };
   closedColor: any = {
@@ -41,8 +41,8 @@ export class OverallWidgetComponent implements OnInit {
   LateColor:any = {
     radialGradient:  [0, 0, 0, 300],
     stops: [
-      [0, 'rgba(218, 30, 28, 1)'],
-      [1, 'rgba(131, 55, 14, 1)']
+      [0, 'rgba(172,42,40,1)'],
+      [1, 'rgba(163,20,18,1)']
     ]
   };
 

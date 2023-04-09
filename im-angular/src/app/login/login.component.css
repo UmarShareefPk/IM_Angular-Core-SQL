@@ -18,6 +18,18 @@
   overflow: hidden;
 }
 
+.login-box{
+  padding: 50px 0px;
+
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 .login-container .form-group {
    width:60%;
    overflow: hidden;
