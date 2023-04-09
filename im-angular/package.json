@@ -1,6 +1,6 @@
 {
   "name": "im-angular",
-  "version": "11.2.10",
+  "version": "11.2.14",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
