@@ -49,13 +49,20 @@
    align-items: center;
 }
 
+.page-actions .addnew-btn{
+   border: 1px solid darkblue;
+   color: darkblue;
+}
+
 table th {
    white-space: nowrap;
    color:  #003018;
+   cursor: pointer;
 }
 table td {
    color: darkslategrey;
    line-height: 2;
+ 
 }
 
 table td a {

@@ -13,6 +13,15 @@
  /* margin-top:0.5vh;*/
 }
 
+.nav-link:hover{
+  text-decoration: none;
+}
+
+li.nav-item:hover{
+  text-decoration: underline;
+  border-bottom: 1px solid white;
+}
+
 a.nav-link.dropdown-toggle{
   display: flex;
   flex-direction: row;
@@ -22,6 +31,8 @@ a.nav-link.dropdown-toggle{
 
 .badge.badge-pill {
   background-color: forestgreen;
+  margin-left: 3px;
+  border-radius: 3px;
   color: white;
 }
 

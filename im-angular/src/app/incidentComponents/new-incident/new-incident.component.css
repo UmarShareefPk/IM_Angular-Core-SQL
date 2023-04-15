@@ -95,10 +95,16 @@ table td {
    display: flex;
 }
 .custom-file.upload-container .fa-paperclip{
-   font-size: x-large;
+   font-size: large;
 }
 .custom-file.upload-container #filestxt{
    width:91%;
+   padding-left: 15px;
+   color: #9e9e9e;
+}
+.custom-file.upload-container .btn{
+   background-color: darkblue;
+   border-radius: 10px;
 }
 
 .assignee-list {

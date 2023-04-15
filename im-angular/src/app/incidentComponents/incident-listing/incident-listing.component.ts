@@ -16,6 +16,8 @@ status:string = "loading"; //loading, error, noData
 
 pageSize:number = 5;
 pageNumber:number = 1;
+sortBy:string = "CreatedAT";
+sortDir:string = "desc";
 totalRecords:number = 0;
 incidents:any[] = [];
 search:string = "";
@@ -40,7 +42,7 @@ search:string = "";
     this.incidents = [];
    this.status = "loading";
 
-    this.request =  this.incidentService.getIncidentsWithPage(this.pageSize, this.pageNumber, '', '', this.search)
+    this.request =  this.incidentService.getIncidentsWithPage(this.pageSize, this.pageNumber, this.sortBy, this.sortDir, this.search)
     .pipe(map(m => {this.status = ""; return m}))
     .subscribe(
       (m: any) => {
@@ -72,6 +74,12 @@ search:string = "";
     let text = event.target.value;
     this.pageNumber = 1;
     this.search = text;
+    this.loadIncidents();
+  }
+
+  sortColumn(column:string){
+    this.sortBy = column;
+    this.sortDir = this.sortDir == "asc"? "desc" : "asc";
     this.loadIncidents();
   }
 

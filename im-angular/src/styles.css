@@ -115,6 +115,7 @@ input, input:focus {
       overflow-y: auto;
       width: 35vw;
       padding: 10px 10px;
+      max-width: 450px;
   }
 }
 
