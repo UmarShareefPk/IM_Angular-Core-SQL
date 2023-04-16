@@ -54,6 +54,14 @@
    color: darkblue;
 }
 
+
+.page-actions .addnew-btn:hover{
+   border: 1px solid darkblue;
+   background-color: darkblue;
+   color: white;
+}
+
+
 table th {
    white-space: nowrap;
    color:  #003018;

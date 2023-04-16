@@ -35,7 +35,12 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.getNotifications();
-    this.ReceiveSignalRUpdates();
+    this.notificationService.ReceiveSignalRUpdates();
+    this.notificationService.notificationseSourceObserable.subscribe( m => {
+      console.log("getting notifications now");
+      this.getNotifications();
+    })
+   // this.ReceiveSignalRUpdates();
 
   }
 
@@ -104,42 +109,42 @@ export class NavbarComponent implements OnInit {
     );
   }
 
-  ReceiveSignalRUpdates() {
-    const newConnection = new HubConnectionBuilder()
-      .withUrl( this.api.baseUrl +  'hubs/notifications')
-      .withAutomaticReconnect()
-      .withHubProtocol(new JsonHubProtocol())
-      .configureLogging(LogLevel.Information)
-      .build();
-    console.log('newConnection', newConnection);
-    newConnection
-      .start()
-      .then((result) => {
-        console.log('Connected!');
-        let hubId:any = newConnection.connectionId;
-        this.userService.updateHubId(hubId, this.common.getLoggedInUser()).subscribe(
-          (m) => {
-            console.log(m)
-          },
-          (err) => {}
-        );
+  // ReceiveSignalRUpdates() {
+  //   const newConnection = new HubConnectionBuilder()
+  //     .withUrl( this.api.baseUrl +  'hubs/notifications')
+  //     .withAutomaticReconnect()
+  //     .withHubProtocol(new JsonHubProtocol())
+  //     .configureLogging(LogLevel.Information)
+  //     .build();
+  //   console.log('newConnection', newConnection);
+  //   newConnection
+  //     .start()
+  //     .then((result) => {
+  //       console.log('Connected!');
+  //       let hubId:any = newConnection.connectionId;
+  //       this.userService.updateHubId(hubId, this.common.getLoggedInUser()).subscribe(
+  //         (m) => {
+  //           console.log(m)
+  //         },
+  //         (err) => {}
+  //       );
 
-        newConnection.on('ReceiveMessage', (message) => {
-          console.log(message);
-         // commentRecieved(message);
-        });
-        newConnection.on('UpdateNotifications', (incidentId) => {
-          console.log(incidentId);
-         this.notificationService.getAllNotifications().subscribe(
-            (m) => {
-              this.notifications =  m;
-              this.setUnreadCount();
-            },
-            (err) => {}
-          );
+  //       newConnection.on('ReceiveMessage', (message) => {
+  //         console.log(message);
+  //        // commentRecieved(message);
+  //       });
+  //       newConnection.on('UpdateNotifications', (incidentId) => {
+  //         console.log(incidentId);
+  //        this.notificationService.getAllNotifications().subscribe(
+  //           (m) => {
+  //             this.notifications =  m;
+  //             this.setUnreadCount();
+  //           },
+  //           (err) => {}
+  //         );
 
-        });
-      })
-      .catch((e) => console.log('Connection failed: ', e));
-  }
+  //       });
+  //     })
+  //     .catch((e) => console.log('Connection failed: ', e));
+  // }
 }
